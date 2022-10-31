@@ -2,8 +2,6 @@
 HelloWord Keyboard Firmware
 # Code specification
 ```C
-uint8_t int_int = 0;
-
 /*
 * Copyright (C)
 * @file         test.c
@@ -13,6 +11,8 @@ uint8_t int_int = 0;
 * @version      1.0
 */
 int main (int argc, char * argv[]){
+  uint8_t int_int = 0;
+  printf("The int_int Value is = %d", &int_int);
   return 0;
 }
 ```
