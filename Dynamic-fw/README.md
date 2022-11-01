@@ -1,5 +1,5 @@
-# HelloWord_Keyboard
-HelloWord Keyboard Firmware
+# HelloWord_Dynamic
+HelloWord Dynamic Firmware
 # Code specification
 ```C
 /*
@@ -22,13 +22,9 @@ int main (int argc, char * argv[]){
 |---|---|
 |HID Communication|in progress|
 |Flash IO|in progress|
-|Key Map|in progress|
-|Touch Bar|in progress|
-|Key Map On Host|in progress|
-|Touch Bar On Host|in progress|
-|LED Brightness|in progress|
-|Lighting Effect|in progress|
-|Communication To Dynamic|in progress|
+|FOC|in progress|
+|Ink|in progress|
+|RTOS|in progress|
 
 # Participants
 |Name|Email|
