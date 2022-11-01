@@ -1,4 +1,4 @@
-# Keyboard_fw
+# HelloWord_Keyboard
 HelloWord Keyboard Firmware
 # Code specification
 ```C
