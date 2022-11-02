@@ -48,6 +48,7 @@ void Main()
 				keyboard.SyncLights();
 			break;
 			case 1 :
+				continue;
 			break;
 		}
     }
@@ -57,11 +58,10 @@ void Main()
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
     keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-    keyboard.ApplyDebounceFilter(100);
+    keyboard.ApplyDebounceFilter(120); // DebounceFilter Default value is 100
     keyboard.Remap(keyboard.FnPressed() ? 2 : 1);  // When Fn pressed use layer-2
 
-    if (keyboard.KeyPressed(HWKeyboard::LEFT_CTRL) &&
-        keyboard.KeyPressed(HWKeyboard::ESC))
+    if (keyboard.KeyPressed(HWKeyboard::F12))
     {
         // do something...
 		light_mode = 1;

@@ -34,7 +34,6 @@ uint8_t* HWKeyboard::ScanKeyStates()
     return scanBuffer;
 }
 
-
 void HWKeyboard::ApplyDebounceFilter(uint32_t _filterTimeUs)
 {
     memcpy(debounceBuffer, spiBuffer, IO_NUMBER / 8 + 1);
@@ -71,17 +70,17 @@ uint8_t* HWKeyboard::Remap(uint8_t _layer)
     memset(hidBuffer, 0, KEY_REPORT_SIZE);
 
     int i = 0, j = 0;
-    while (8 * i + j < IO_NUMBER - 6)
+    while (8 * i + j < IO_NUMBER - 6) // TouchBar Number is 6
     {
         for (j = 0; j < 8; j++)
         {
-            index = (int16_t) (keyMap[_layer][i * 8 + j] / 8 + 1); // +1 for modifier
-            bitIndex = (int16_t) (keyMap[_layer][i * 8 + j] % 8);
+            index = (int16_t) (keyMap[_layer][8 * i + j] / 8 + 1); // +1 for modifier
+            bitIndex = (int16_t) (keyMap[_layer][8 * i + j] % 8);
             if (bitIndex < 0)
             {
                 index -= 1;
                 bitIndex += 8;
-            } else if (index > 100)
+            } else if (index > 100) // Restrictions here
                 continue;
 
             if (remapBuffer[i] & (0x80 >> j))

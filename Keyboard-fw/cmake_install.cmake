@@ -1,4 +1,4 @@
-# Install script for directory: /e/Documents/Workspace/HelloWord/HW_Firmware_Upload/HelloWord-Keyboard-fw-offset
+# Install script for directory: /e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/e/Documents/Workspace/HelloWord/HW_Firmware_Upload/HelloWord-Keyboard-fw-offset/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
