@@ -21,9 +21,15 @@ void Main()
 				.keyMap={},
 				.light_mode=1,
 				.light_level=1,
-				.key_speed_level=1
+				.key_speed_level=5
 		};
 		memset(config.keyMap, -1, 128);
+		eeprom.Push(0, config);
+	}
+	if (config.light_mode < 1 || config.light_level < 1 || config.key_speed_level < 1){
+		config.light_mode = 1;
+		config.light_level = 1;
+		config.key_speed_level = 1;
 		eeprom.Push(0, config);
 	}
 
@@ -74,23 +80,40 @@ void Main()
 /* Event Callbacks -----------------------------------------------------------*/
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
-	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	keyboard.ApplyDebounceFilter(120); // DebounceFilter Default value is 100
-	keyboard.Remap(keyboard.FnPressed() ? 2 : 1);  // When Fn pressed use layer-2
 
-	if (keyboard.KeyPressed(HWKeyboard::RIGHT_CTRL))
+	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
+	keyboard.ApplyDebounceFilter(config.key_speed_level * 20); // DebounceFilter Default value is 100
+	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
+	keyboard.Remap(layer);  // When Fn pressed use layer-2
+
+	if (layer == 2 && keyboard.KeyPressed(HWKeyboard::SPACE))
 	{
-		// do something...
 		config.light_mode = (config.light_mode + 1 ) % 4 ;
 		eeprom.Push(0, config);
-		// or trigger some keys...
-		/* keyboard.Press(HWKeyboard::DELETE); */
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::UP_ARROW)) {
+
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::DOWN_ARROW)) {
+
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::LEFT_ARROW)) {
+		config.key_speed_level = config.key_speed_level++;
+		if (config.key_speed_level > 6){
+			config.key_speed_level = 6;
+		}
+		eeprom.Push(0,config);
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW)) {
+		config.key_speed_level = config.key_speed_level--;
+		if (config.key_speed_level < 1){
+			config.key_speed_level = 1;
+		}
+		eeprom.Push(0,config);
+
+	}else{
+		// Report HID key states
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
+				keyboard.GetHidReportBuffer(1),
+				HWKeyboard::KEY_REPORT_SIZE);
 	}
 
-	// Report HID key states
-	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
-			keyboard.GetHidReportBuffer(1),
-			HWKeyboard::KEY_REPORT_SIZE);
 }
 
 
