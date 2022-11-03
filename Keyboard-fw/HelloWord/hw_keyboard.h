@@ -53,6 +53,7 @@ public:
         PAD_PERIOD , NONUS_BACKSLASH,APPLICATION,POWER,PAD_EQUAL,
         F13,F14,F15,F16,F17,F18,F19,F20,F21,F22,F23,F24, EXECUTE,
         HELP,MENU,SELECT,STOP,AGAIN,UNDO,CUT,COPY,PASTE,FIND,MUTE,VOLUME_UP,VOLUME_DOWN,
+		LIGHT_MODE,
         FN = 1000
         /*------------------------- HID report data -------------------------*/
     };

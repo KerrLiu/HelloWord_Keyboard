@@ -162,7 +162,7 @@ bool HWKeyboard::KeyPressed(KeyCode_t _key)
 }
 
 
-void HWKeyboard::Press(HWKeyboard::KeyCode_t _key)
+void HWKeyboard::Press(KeyCode_t _key)
 {
     int index, bitIndex;
 

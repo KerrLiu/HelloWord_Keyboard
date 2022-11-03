@@ -6,7 +6,7 @@
 /* Component Definitions -----------------------------------------------------*/
 KeyboardConfig_t config;
 HWKeyboard keyboard(&hspi1);
-static uint8_t light_mode=0;
+int light_mode = 1;
 
 /* Main Entry ----------------------------------------------------------------*/
 void Main()
@@ -31,26 +31,41 @@ void Main()
 
     while (true)
     {
-		switch(light_mode){
-			case 0 :
-				/*---- This is a demo RGB effect ----*/
-				static uint8_t color_v = 1;
-				static bool color_flag = true;
-				color_flag ? color_v++ : color_v--;
-				if (color_v > 254) color_flag = false;
-				else if (color_v < 1) color_flag = true;
+		/*---- This is a demo RGB effect ----*/
+		static uint8_t color_v = 1;
+		static bool color_flag = true;
+		color_flag ? color_v++ : color_v--;
+		if (color_v > 254) color_flag = false;
+		else if (color_v < 1) color_flag = true;
 
-				for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++)
-					keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{color_v, 20, 100});
-				/*-----------------------------------*/
+		if (light_mode == 1){
+			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
+				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{color_v, 20, 100});
+			}
 
-				// Send RGB buffers to LEDs
-				keyboard.SyncLights();
-			break;
-			case 1 :
-				continue;
-			break;
+		}else if (light_mode == 2){
+			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
+				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0});
+			}
+
+		}else if (light_mode == 3){
+			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
+				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0});
+			}
+		
+		}else if (light_mode == 4){
+			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
+				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0});
+			}
+		
+		}else {
+			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
+				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0});
+			}
+		
 		}
+		// Send RGB buffers to LEDs
+		keyboard.SyncLights();
     }
 }
 
@@ -61,10 +76,10 @@ extern "C" void OnTimerCallback() // 1000Hz callback
     keyboard.ApplyDebounceFilter(120); // DebounceFilter Default value is 100
     keyboard.Remap(keyboard.FnPressed() ? 2 : 1);  // When Fn pressed use layer-2
 
-    if (keyboard.KeyPressed(HWKeyboard::F12))
+    if (keyboard.KeyPressed(HWKeyboard::RIGHT_CTRL))
     {
         // do something...
-		light_mode = 1;
+		light_mode = (light_mode + 1 ) % 4 ;
         // or trigger some keys...
         /* keyboard.Press(HWKeyboard::DELETE); */
     }
