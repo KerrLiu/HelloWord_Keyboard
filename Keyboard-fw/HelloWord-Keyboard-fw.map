@@ -1434,7 +1434,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
                 0x0000000008007000                g_pfnVectors
                 0x000000000800710c                . = ALIGN (0x4)
 
-.text           0x0000000008007110     0x6dc8
+.text           0x0000000008007110     0x6db0
                 0x0000000008007110                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008007110      0x168 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
@@ -2161,146 +2161,146 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
  .text.Main     0x000000000800da38      0x1e0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
                 0x000000000800da38                Main
  .text.OnTimerCallback
-                0x000000000800dc18      0x238 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800dc18      0x220 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
                 0x000000000800dc18                OnTimerCallback
  .text._GLOBAL__sub_I_config
-                0x000000000800de50        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- *fill*         0x000000000800de5e        0x2 
+                0x000000000800de38        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ *fill*         0x000000000800de46        0x2 
  .text.Reset_Handler
-                0x000000000800de60       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x000000000800de60                Reset_Handler
+                0x000000000800de48       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x000000000800de48                Reset_Handler
  .text.Default_Handler
-                0x000000000800dea8        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x000000000800dea8                RTC_Alarm_IRQHandler
-                0x000000000800dea8                EXTI2_IRQHandler
-                0x000000000800dea8                TIM1_CC_IRQHandler
-                0x000000000800dea8                PVD_IRQHandler
-                0x000000000800dea8                EXTI3_IRQHandler
-                0x000000000800dea8                EXTI0_IRQHandler
-                0x000000000800dea8                I2C2_EV_IRQHandler
-                0x000000000800dea8                ADC1_2_IRQHandler
-                0x000000000800dea8                TAMPER_IRQHandler
-                0x000000000800dea8                DMA1_Channel4_IRQHandler
-                0x000000000800dea8                USART3_IRQHandler
-                0x000000000800dea8                RTC_IRQHandler
-                0x000000000800dea8                DMA1_Channel7_IRQHandler
-                0x000000000800dea8                CAN1_RX1_IRQHandler
-                0x000000000800dea8                I2C1_EV_IRQHandler
-                0x000000000800dea8                DMA1_Channel6_IRQHandler
-                0x000000000800dea8                TIM3_IRQHandler
-                0x000000000800dea8                RCC_IRQHandler
-                0x000000000800dea8                TIM1_TRG_COM_IRQHandler
-                0x000000000800dea8                DMA1_Channel1_IRQHandler
-                0x000000000800dea8                Default_Handler
-                0x000000000800dea8                EXTI15_10_IRQHandler
-                0x000000000800dea8                EXTI9_5_IRQHandler
-                0x000000000800dea8                EXTI4_IRQHandler
-                0x000000000800dea8                USB_HP_CAN1_TX_IRQHandler
-                0x000000000800dea8                DMA1_Channel3_IRQHandler
-                0x000000000800dea8                TIM1_UP_IRQHandler
-                0x000000000800dea8                WWDG_IRQHandler
-                0x000000000800dea8                TIM2_IRQHandler
-                0x000000000800dea8                TIM1_BRK_IRQHandler
-                0x000000000800dea8                EXTI1_IRQHandler
-                0x000000000800dea8                USART2_IRQHandler
-                0x000000000800dea8                I2C2_ER_IRQHandler
-                0x000000000800dea8                CAN1_SCE_IRQHandler
-                0x000000000800dea8                FLASH_IRQHandler
-                0x000000000800dea8                USART1_IRQHandler
-                0x000000000800dea8                I2C1_ER_IRQHandler
-                0x000000000800dea8                USBWakeUp_IRQHandler
- *fill*         0x000000000800deaa        0x2 
- .text.startup  0x000000000800deac       0x14 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x000000000800de90        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x000000000800de90                RTC_Alarm_IRQHandler
+                0x000000000800de90                EXTI2_IRQHandler
+                0x000000000800de90                TIM1_CC_IRQHandler
+                0x000000000800de90                PVD_IRQHandler
+                0x000000000800de90                EXTI3_IRQHandler
+                0x000000000800de90                EXTI0_IRQHandler
+                0x000000000800de90                I2C2_EV_IRQHandler
+                0x000000000800de90                ADC1_2_IRQHandler
+                0x000000000800de90                TAMPER_IRQHandler
+                0x000000000800de90                DMA1_Channel4_IRQHandler
+                0x000000000800de90                USART3_IRQHandler
+                0x000000000800de90                RTC_IRQHandler
+                0x000000000800de90                DMA1_Channel7_IRQHandler
+                0x000000000800de90                CAN1_RX1_IRQHandler
+                0x000000000800de90                I2C1_EV_IRQHandler
+                0x000000000800de90                DMA1_Channel6_IRQHandler
+                0x000000000800de90                TIM3_IRQHandler
+                0x000000000800de90                RCC_IRQHandler
+                0x000000000800de90                TIM1_TRG_COM_IRQHandler
+                0x000000000800de90                DMA1_Channel1_IRQHandler
+                0x000000000800de90                Default_Handler
+                0x000000000800de90                EXTI15_10_IRQHandler
+                0x000000000800de90                EXTI9_5_IRQHandler
+                0x000000000800de90                EXTI4_IRQHandler
+                0x000000000800de90                USB_HP_CAN1_TX_IRQHandler
+                0x000000000800de90                DMA1_Channel3_IRQHandler
+                0x000000000800de90                TIM1_UP_IRQHandler
+                0x000000000800de90                WWDG_IRQHandler
+                0x000000000800de90                TIM2_IRQHandler
+                0x000000000800de90                TIM1_BRK_IRQHandler
+                0x000000000800de90                EXTI1_IRQHandler
+                0x000000000800de90                USART2_IRQHandler
+                0x000000000800de90                I2C2_ER_IRQHandler
+                0x000000000800de90                CAN1_SCE_IRQHandler
+                0x000000000800de90                FLASH_IRQHandler
+                0x000000000800de90                USART1_IRQHandler
+                0x000000000800de90                I2C1_ER_IRQHandler
+                0x000000000800de90                USBWakeUp_IRQHandler
+ *fill*         0x000000000800de92        0x2 
+ .text.startup  0x000000000800de94       0x14 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
  *(.glue_7)
- .glue_7        0x000000000800dec0        0x0 linker stubs
+ .glue_7        0x000000000800dea8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000000000800dec0        0x0 linker stubs
+ .glue_7t       0x000000000800dea8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x000000000800dec0        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x000000000800dea8        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x000000000800dec0        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
-                0x000000000800dec0                _init
- .init          0x000000000800dec4        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
+ .init          0x000000000800dea8        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
+                0x000000000800dea8                _init
+ .init          0x000000000800deac        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x000000000800decc        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
-                0x000000000800decc                _fini
- .fini          0x000000000800ded0        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
-                0x000000000800ded8                . = ALIGN (0x4)
-                0x000000000800ded8                _etext = .
+ .fini          0x000000000800deb4        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
+                0x000000000800deb4                _fini
+ .fini          0x000000000800deb8        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
+                0x000000000800dec0                . = ALIGN (0x4)
+                0x000000000800dec0                _etext = .
 
-.vfp11_veneer   0x000000000800ded8        0x0
- .vfp11_veneer  0x000000000800ded8        0x0 linker stubs
+.vfp11_veneer   0x000000000800dec0        0x0
+ .vfp11_veneer  0x000000000800dec0        0x0 linker stubs
 
-.v4_bx          0x000000000800ded8        0x0
- .v4_bx         0x000000000800ded8        0x0 linker stubs
+.v4_bx          0x000000000800dec0        0x0
+ .v4_bx         0x000000000800dec0        0x0 linker stubs
 
-.iplt           0x000000000800ded8        0x0
- .iplt          0x000000000800ded8        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x000000000800dec0        0x0
+ .iplt          0x000000000800dec0        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x000000000800ded8       0x84
-                0x000000000800ded8                . = ALIGN (0x4)
+.rodata         0x000000000800dec0       0x84
+                0x000000000800dec0                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800ded8        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
-                0x000000000800ded8                _global_impure_ptr
+ .rodata        0x000000000800dec0        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
+                0x000000000800dec0                _global_impure_ptr
  *(.rodata*)
  .rodata.APBPrescTable
-                0x000000000800dedc        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
-                0x000000000800dedc                APBPrescTable
+                0x000000000800dec4        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
+                0x000000000800dec4                APBPrescTable
  .rodata.AHBPrescTable
-                0x000000000800dee4       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
-                0x000000000800dee4                AHBPrescTable
+                0x000000000800decc       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
+                0x000000000800decc                AHBPrescTable
  .rodata.HAL_RCC_GetSysClockFreq.str1.4
-                0x000000000800def4       0x11 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- *fill*         0x000000000800df05        0x3 
+                0x000000000800dedc       0x11 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ *fill*         0x000000000800deed        0x3 
  .rodata.USBD_FS_ProductStrDescriptor.str1.4
-                0x000000000800df08       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800df21        0x3 
+                0x000000000800def0       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800df09        0x3 
  .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4
-                0x000000000800df24        0xb CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800df2f        0x1 
+                0x000000000800df0c        0xb CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800df17        0x1 
  .rodata.USBD_FS_ConfigStrDescriptor.str1.4
-                0x000000000800df30       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800df42        0x2 
+                0x000000000800df18       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800df2a        0x2 
  .rodata.USBD_FS_InterfaceStrDescriptor.str1.4
-                0x000000000800df44       0x15 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800df5c                . = ALIGN (0x4)
- *fill*         0x000000000800df59        0x3 
+                0x000000000800df2c       0x15 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800df44                . = ALIGN (0x4)
+ *fill*         0x000000000800df41        0x3 
 
-.rel.dyn        0x000000000800df5c        0x0
- .rel.iplt      0x000000000800df5c        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x000000000800df44        0x0
+ .rel.iplt      0x000000000800df44        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x000000000800df5c        0x0
-                0x000000000800df5c                __exidx_start = .
+.ARM            0x000000000800df44        0x0
+                0x000000000800df44                __exidx_start = .
  *(.ARM.exidx*)
-                0x000000000800df5c                __exidx_end = .
+                0x000000000800df44                __exidx_end = .
 
-.preinit_array  0x000000000800df5c        0x0
-                0x000000000800df5c                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000000800df44        0x0
+                0x000000000800df44                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000000800df5c                PROVIDE (__preinit_array_end = .)
+                0x000000000800df44                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000000800df5c        0xc
-                0x000000000800df5c                PROVIDE (__init_array_start = .)
+.init_array     0x000000000800df44        0xc
+                0x000000000800df44                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x000000000800df5c        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x000000000800df44        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x000000000800df60        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
- .init_array    0x000000000800df64        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800df68                PROVIDE (__init_array_end = .)
+ .init_array    0x000000000800df48        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+ .init_array    0x000000000800df4c        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800df50                PROVIDE (__init_array_end = .)
 
-.fini_array     0x000000000800df68        0x4
-                0x000000000800df68                PROVIDE (__fini_array_start = .)
+.fini_array     0x000000000800df50        0x4
+                0x000000000800df50                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x000000000800df68        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
-                0x000000000800df6c                PROVIDE (__fini_array_end = .)
-                0x000000000800df6c                _sidata = LOADADDR (.data)
+ .fini_array    0x000000000800df50        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+                0x000000000800df54                PROVIDE (__fini_array_end = .)
+                0x000000000800df54                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x5d8 load address 0x000000000800df6c
+.data           0x0000000020000000      0x5d8 load address 0x000000000800df54
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2366,11 +2366,11 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
                 0x00000000200005d8                . = ALIGN (0x4)
                 0x00000000200005d8                _edata = .
 
-.igot.plt       0x00000000200005d8        0x0 load address 0x000000000800e544
+.igot.plt       0x00000000200005d8        0x0 load address 0x000000000800e52c
  .igot.plt      0x00000000200005d8        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
                 0x00000000200005d8                . = ALIGN (0x4)
 
-.bss            0x00000000200005d8     0x1cb0 load address 0x000000000800e544
+.bss            0x00000000200005d8     0x1cb0 load address 0x000000000800e52c
                 0x00000000200005d8                _sbss = .
                 0x00000000200005d8                __bss_start__ = _sbss
  *(.bss)
@@ -2440,7 +2440,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
                 0x0000000020002288                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020002288      0xa00 load address 0x000000000800e544
+                0x0000000020002288      0xa00 load address 0x000000000800e52c
                 0x0000000020002288                . = ALIGN (0x8)
                 0x0000000020002288                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -2572,7 +2572,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-
 LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x1e84b
+.debug_info     0x0000000000000000    0x1e836
  .debug_info    0x0000000000000000      0x32b CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_info    0x000000000000032b      0x3d8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_info    0x0000000000000703      0x433 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -2607,14 +2607,14 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_info    0x00000000000199b1      0x1e0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_info    0x0000000000019b91      0x5b3 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_info    0x000000000001a144     0x1c1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_info    0x000000000001bd62     0x27df CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_info    0x000000000001e541       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_info    0x000000000001e56f       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_info    0x000000000001e5ab       0xc0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x000000000001e66b       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_info    0x000000000001e6a7       0xaf d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_info    0x000000000001e756       0xbc d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_info    0x000000000001e812       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_info    0x000000000001bd62     0x27ca CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_info    0x000000000001e52c       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_info    0x000000000001e55a       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_info    0x000000000001e596       0xc0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x000000000001e656       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_info    0x000000000001e692       0xaf d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_info    0x000000000001e741       0xbc d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_info    0x000000000001e7fd       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
 .debug_abbrev   0x0000000000000000     0x51c6
  .debug_abbrev  0x0000000000000000      0x119 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
@@ -2821,7 +2821,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_rnglists
                 0x000000000000131e       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_line     0x0000000000000000    0x18d18
+.debug_line     0x0000000000000000    0x18cc8
  .debug_line    0x0000000000000000      0x20f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_line    0x000000000000020f      0x29a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_line    0x00000000000004a9      0x48c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -2856,14 +2856,14 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_line    0x0000000000016cd6      0x280 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_line    0x0000000000016f56      0x390 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_line    0x00000000000172e6      0x8af CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_line    0x0000000000017b95      0xc6d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_line    0x0000000000018802       0x79 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_line    0x000000000001887b       0xbd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_line    0x0000000000018938      0x16f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x0000000000018aa7       0x76 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_line    0x0000000000018b1d      0x103 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_line    0x0000000000018c20       0x9a d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_line    0x0000000000018cba       0x5e d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_line    0x0000000000017b95      0xc1d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_line    0x00000000000187b2       0x79 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_line    0x000000000001882b       0xbd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_line    0x00000000000188e8      0x16f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000000000018a57       0x76 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line    0x0000000000018acd      0x103 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_line    0x0000000000018bd0       0x9a d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_line    0x0000000000018c6a       0x5e d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
 .debug_str      0x0000000000000000     0x76fe
  .debug_str     0x0000000000000000      0x500 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
@@ -2989,7 +2989,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .comment       0x0000000000000012       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .comment       0x0000000000000012       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
 
-.debug_frame    0x0000000000000000     0x3dd8
+.debug_frame    0x0000000000000000     0x3ddc
  .debug_frame   0x0000000000000000       0x2c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_frame   0x000000000000002c       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_frame   0x0000000000000064       0x58 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -3024,23 +3024,23 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_frame   0x00000000000034ac       0x40 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_frame   0x00000000000034ec       0xe0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_frame   0x00000000000035cc      0x2ec CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_frame   0x00000000000038b8      0x108 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_frame   0x00000000000039c0       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_frame   0x00000000000039e4       0xac d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x0000000000003a90       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x0000000000003ab4       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_frame   0x0000000000003b00       0xc8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_frame   0x0000000000003bc8       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
- .debug_frame   0x0000000000003bec       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-atexit.o)
- .debug_frame   0x0000000000003c0c       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-fini.o)
- .debug_frame   0x0000000000003c40       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-init.o)
- .debug_frame   0x0000000000003c6c       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memset.o)
- .debug_frame   0x0000000000003c98       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__atexit.o)
- .debug_frame   0x0000000000003ccc       0x5c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x0000000000003d28       0xb0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-lock.o)
+ .debug_frame   0x00000000000038b8      0x10c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_frame   0x00000000000039c4       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_frame   0x00000000000039e8       0xac d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000000000003a94       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x0000000000003ab8       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x0000000000003b04       0xc8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_frame   0x0000000000003bcc       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_frame   0x0000000000003bf0       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-atexit.o)
+ .debug_frame   0x0000000000003c10       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-fini.o)
+ .debug_frame   0x0000000000003c44       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-init.o)
+ .debug_frame   0x0000000000003c70       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memset.o)
+ .debug_frame   0x0000000000003c9c       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__atexit.o)
+ .debug_frame   0x0000000000003cd0       0x5c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x0000000000003d2c       0xb0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-lock.o)
 
 .debug_loclists
-                0x0000000000000000     0xcc2f
+                0x0000000000000000     0xcc26
  .debug_loclists
                 0x0000000000000000       0x71 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/spi.c.obj
  .debug_loclists
@@ -3100,7 +3100,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_loclists
                 0x000000000000c173      0x718 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .debug_loclists
-                0x000000000000c88b      0x3a4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000000c88b      0x39b CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
 
 .debug_line_str
                 0x0000000000000000      0x15c

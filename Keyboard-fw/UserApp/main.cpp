@@ -87,7 +87,6 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
 	keyboard.ApplyDebounceFilter(20 * config.key_speed_level); // DebounceFilter Default value is 100
 	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
-	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
 	if (layer == 2 && keyboard.KeyPressed(HWKeyboard::SPACE) && !isKeyDown_Space)
 	{
@@ -106,30 +105,32 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		eeprom.Push(0, config);
 		is_Send = false;
 
-	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) && !isKeyDown_ArrowPressed) {
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) && isKeyDown_ArrowPressed) {
 		config.key_speed_level += 1;
 		if (config.key_speed_level > 6){
 			config.key_speed_level = 6;
 		}
 		eeprom.Push(0,config);
 		is_Send = false;
-	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) && !isKeyDown_ArrowPressed) {
+	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) && isKeyDown_ArrowPressed) {
 		config.key_speed_level -= 1;
 		if (config.key_speed_level < 1){
 			config.key_speed_level = 1;
 		}
 		eeprom.Push(0,config);
 		is_Send = false;
-	}else{
-		if (is_Send && !isKeyDown_Space && !isKeyDown_ArrowPressed){
-			// Report HID key states
-			USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
-					keyboard.GetHidReportBuffer(1),
-					HWKeyboard::KEY_REPORT_SIZE);
-		}
 	}
 	isKeyDown_Space = keyboard.KeyPressed(HWKeyboard::SPACE);
-	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) || keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) || keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) || keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
+	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
+
+	keyboard.Remap(layer);  // When Fn pressed use layer-2
+
+	if (is_Send){
+		// Report HID key states
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
+				keyboard.GetHidReportBuffer(1),
+				HWKeyboard::KEY_REPORT_SIZE);
+	}
 
 }
 
