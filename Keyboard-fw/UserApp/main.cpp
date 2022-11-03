@@ -80,7 +80,7 @@ void Main()
 /* Event Callbacks -----------------------------------------------------------*/
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
-
+	bool is_Send = true;
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
 	keyboard.ApplyDebounceFilter(config.key_speed_level * 20); // DebounceFilter Default value is 100
 	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
@@ -90,9 +90,12 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	{
 		config.light_mode = (config.light_mode + 1 ) % 4 ;
 		eeprom.Push(0, config);
+		is_Send = false;
 	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::UP_ARROW)) {
+		is_Send = false;
 
 	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::DOWN_ARROW)) {
+		is_Send = false;
 
 	}else if (layer == 2 && keyboard.KeyPressed(HWKeyboard::LEFT_ARROW)) {
 		config.key_speed_level = config.key_speed_level++;
@@ -106,8 +109,9 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 			config.key_speed_level = 1;
 		}
 		eeprom.Push(0,config);
+	}
 
-	}else{
+	if (is_Send){
 		// Report HID key states
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
 				keyboard.GetHidReportBuffer(1),
