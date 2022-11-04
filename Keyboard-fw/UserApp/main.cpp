@@ -93,32 +93,35 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
 	if (layer == 2){
-		is_Send = false;
 		if (keyboard.KeyPressed(HWKeyboard::SPACE) && isKeyDown_Space) {
+			is_Send = false;
 			light_mode = (light_mode + 1 ) % 4 ;
 		}else if (keyboard.KeyPressed(HWKeyboard::UP_ARROW) && !isKeyDown_ArrowPressed) {
+			is_Send = false;
 			led_brightness += 0.25;
 			led_brightness = MIN(1, led_brightness);
 		}else if (keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) && !isKeyDown_ArrowPressed) {
+			is_Send = false;
 			led_brightness -= 0.25;
 			led_brightness = MAX(0.25, led_brightness);
 		}else if (keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) && !isKeyDown_ArrowPressed) {
+			is_Send = false;
 			key_speed_level += 1;
 			key_speed_level = MIN(6, key_speed_level);	
 		}else if (keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) && !isKeyDown_ArrowPressed) {
+			is_Send = false;
 			key_speed_level -= 1;
 			key_speed_level = MAX(1, key_speed_level);	
-		}
-	}else{
-		if (is_Send){
-			// Report HID key states
-			USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
-					keyboard.GetHidReportBuffer(1),
-					HWKeyboard::KEY_REPORT_SIZE);
 		}
 	}
 	isKeyDown_Space = keyboard.KeyPressed(HWKeyboard::SPACE);
 	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
+	if (is_Send){
+		// Report HID key states
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
+				keyboard.GetHidReportBuffer(1),
+				HWKeyboard::KEY_REPORT_SIZE);
+	}
 
 }
 
