@@ -84,12 +84,12 @@ uint8_t* HWKeyboard::Remap(uint8_t _layer)
 				continue;
 
 			if (remapBuffer[i] & (0x80 >> j))
+				
 				hidBuffer[index + 1] |= 1 << (bitIndex); // +1 for Report-ID
 		}
 		i++;
 		j = 0;
 	}
-
 	return hidBuffer;
 }
 
@@ -99,6 +99,24 @@ bool HWKeyboard::FnPressed()
 	return remapBuffer[9] & 0x04;
 }
 
+void HWKeyboard::IsKeyDown()
+{
+	/* if (skip){ */
+	/* 	bool skip_flag = skip; */
+	/* 	skip = false; */
+	/* 	return skip_flag; */
+	/* }else{ */
+	/* 	uint8_t flag = 0; */
+	/* 	for (int i = 0; i < KEY_REPORT_SIZE; i++) */
+	/* 	{ */
+	/* 		flag |= hidBuffer[i]; */
+	/* 	} */
+	/* 	skip = true; */
+	/* 	return flag; */
+	/* } */
+	isCanSend = memcmp(lastHidBuffer, hidBuffer, HID_REPORT_SIZE) != 0;
+	memcpy(lastHidBuffer, hidBuffer, HID_REPORT_SIZE);
+}
 
 void HWKeyboard::SetRgbBufferByID(uint8_t _keyId, HWKeyboard::Color_t _color, float _brightness)
 {

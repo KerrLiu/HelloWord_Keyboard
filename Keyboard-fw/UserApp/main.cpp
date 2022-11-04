@@ -7,6 +7,7 @@
 /* KeyboardConfig_t config; */
 HWKeyboard keyboard(&hspi1);
 /* EEPROM eeprom; */
+
 bool isKeyDown_ArrowPressed = false;
 bool isKeyDown_Space = false;
 uint8_t light_mode = 1;
@@ -116,12 +117,11 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	}
 	isKeyDown_Space = keyboard.KeyPressed(HWKeyboard::SPACE);
 	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
-	if (is_Send){
+	if (is_Send && keyboard.isCanSend) {
 		// Report HID key states
-		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,
-				keyboard.GetHidReportBuffer(1),
-				HWKeyboard::KEY_REPORT_SIZE);
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
 	}
+	keyboard.IsKeyDown();
 
 }
 

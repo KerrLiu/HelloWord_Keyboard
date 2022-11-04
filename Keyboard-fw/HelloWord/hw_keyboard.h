@@ -76,6 +76,7 @@ public:
     uint8_t* Remap(uint8_t _layer = 1);
     void SyncLights();
     bool FnPressed();
+    void IsKeyDown();
     bool KeyPressed(KeyCode_t _key);
     void Press(KeyCode_t _key);
     void Release(KeyCode_t _key);
@@ -140,6 +141,7 @@ public:
 
     volatile bool isRgbTxBusy;
     bool isCapsLocked = false;
+    bool isCanSend = false;
 
 
 private:
@@ -147,8 +149,9 @@ private:
     uint8_t spiBuffer[IO_NUMBER / 8 + 1]{};
     uint8_t* scanBuffer;
     uint8_t debounceBuffer[IO_NUMBER / 8 + 1]{};
-    uint8_t hidBuffer[HID_REPORT_SIZE]{};
     uint8_t remapBuffer[IO_NUMBER / 8]{};
+    uint8_t hidBuffer[HID_REPORT_SIZE]{};
+    uint8_t lastHidBuffer[HID_REPORT_SIZE]{};
     uint8_t rgbBuffer[LED_NUMBER][3][8]{};
     uint8_t wsCommit[64] = {0};
     uint8_t brightnessPreDiv = 2; // 1/4
