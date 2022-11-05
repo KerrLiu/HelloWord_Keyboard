@@ -13,6 +13,7 @@ bool isKeyDown_Space = false;
 uint8_t light_mode = 1;
 float led_brightness = 0.25;
 uint8_t key_speed_level = 5;
+uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
 
 
 /* Main Entry ----------------------------------------------------------------*/
@@ -117,12 +118,13 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	}
 	isKeyDown_Space = keyboard.KeyPressed(HWKeyboard::SPACE);
 	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
-	if (is_Send && keyboard.isCanSend) {
+	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(1) + 1, HWKeyboard::KEY_REPORT_SIZE - 1) != 0) {
 		// Report HID key states
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
+		/* uint8_t voidHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0}; */
+		/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, HWKeyboard::KEY_REPORT_SIZE); */
 	}
-	keyboard.IsKeyDown();
-
+	memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
 }
 
 

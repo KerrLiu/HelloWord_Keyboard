@@ -99,23 +99,17 @@ bool HWKeyboard::FnPressed()
 	return remapBuffer[9] & 0x04;
 }
 
-void HWKeyboard::IsKeyDown()
+/* isCanSend = memcmp(lastHidBuffer, hidBuffer, HID_REPORT_SIZE) != 0; */
+/* memcpy(lastHidBuffer, hidBuffer, HID_REPORT_SIZE); */
+
+bool HWKeyboard::IsKeyDown()
 {
-	/* if (skip){ */
-	/* 	bool skip_flag = skip; */
-	/* 	skip = false; */
-	/* 	return skip_flag; */
-	/* }else{ */
-	/* 	uint8_t flag = 0; */
-	/* 	for (int i = 0; i < KEY_REPORT_SIZE; i++) */
-	/* 	{ */
-	/* 		flag |= hidBuffer[i]; */
-	/* 	} */
-	/* 	skip = true; */
-	/* 	return flag; */
-	/* } */
-	isCanSend = memcmp(lastHidBuffer, hidBuffer, HID_REPORT_SIZE) != 0;
-	memcpy(lastHidBuffer, hidBuffer, HID_REPORT_SIZE);
+	uint8_t flag = 0;
+	for (int i = 0; i < KEY_REPORT_SIZE; i++)
+	{
+		flag |= hidBuffer[i];
+	}
+	return flag;
 }
 
 void HWKeyboard::SetRgbBufferByID(uint8_t _keyId, HWKeyboard::Color_t _color, float _brightness)
@@ -144,7 +138,6 @@ void HWKeyboard::SyncLights()
 	isRgbTxBusy = true;
 	HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
 }
-
 
 uint8_t* HWKeyboard::GetHidReportBuffer(uint8_t _reportId)
 {

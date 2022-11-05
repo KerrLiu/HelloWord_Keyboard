@@ -76,7 +76,7 @@ public:
     uint8_t* Remap(uint8_t _layer = 1);
     void SyncLights();
     bool FnPressed();
-    void IsKeyDown();
+    bool IsKeyDown();
     bool KeyPressed(KeyCode_t _key);
     void Press(KeyCode_t _key);
     void Release(KeyCode_t _key);
@@ -141,8 +141,6 @@ public:
 
     volatile bool isRgbTxBusy;
     bool isCapsLocked = false;
-    bool isCanSend = false;
-
 
 private:
     SPI_HandleTypeDef* spiHandle;
