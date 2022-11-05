@@ -1,11 +1,13 @@
 #include "common_inc.h"
 /* #include "configurations.h" */
 #include "HelloWord/hw_keyboard.h"
+#include "HelloWord/hw_led.h"
 
 
 /* Component Definitions -----------------------------------------------------*/
 /* KeyboardConfig_t config; */
 HWKeyboard keyboard(&hspi1);
+HW_Led hwled(&hspi1);
 /* EEPROM eeprom; */
 
 bool isKeyDown_ArrowPressed = false;
@@ -55,33 +57,33 @@ void Main()
 		else if (color_v < 1) color_flag = true;
 
 		if (light_mode == 1){
-			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
-				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{color_v, 20, 100}, led_brightness);
+			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
+				hwled.SetRgbBufferByID(i, HW_Led::Color_t{color_v, 20, 100}, led_brightness);
 			}
 
 		}else if (light_mode == 2){
-			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
-				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0}, 0);
+			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
+				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
 			}
 
 		}else if (light_mode == 3){
-			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
-				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0}, 0);
+			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
+				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
 			}
 
 		}else if (light_mode == 4){
-			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
-				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0}, 0);
+			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
+				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
 			}
 
 		}else {
-			for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++){
-				keyboard.SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0}, 0);
+			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
+				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
 			}
 
 		}
 		// Send RGB buffers to LEDs
-		keyboard.SyncLights();
+		hwled.SyncLights();
 	}
 }
 

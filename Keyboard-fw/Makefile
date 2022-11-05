@@ -897,6 +897,30 @@ HelloWord/hw_keyboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/build.make CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.s
 .PHONY : HelloWord/hw_keyboard.cpp.s
 
+HelloWord/hw_led.obj: HelloWord/hw_led.cpp.obj
+.PHONY : HelloWord/hw_led.obj
+
+# target to build an object file
+HelloWord/hw_led.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/build.make CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+.PHONY : HelloWord/hw_led.cpp.obj
+
+HelloWord/hw_led.i: HelloWord/hw_led.cpp.i
+.PHONY : HelloWord/hw_led.i
+
+# target to preprocess a source file
+HelloWord/hw_led.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/build.make CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.i
+.PHONY : HelloWord/hw_led.cpp.i
+
+HelloWord/hw_led.s: HelloWord/hw_led.cpp.s
+.PHONY : HelloWord/hw_led.s
+
+# target to generate assembly for a file
+HelloWord/hw_led.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/build.make CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.s
+.PHONY : HelloWord/hw_led.cpp.s
+
 Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.obj: Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
 .PHONY : Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.obj
 
@@ -1250,6 +1274,9 @@ help:
 	@echo "... HelloWord/hw_keyboard.obj"
 	@echo "... HelloWord/hw_keyboard.i"
 	@echo "... HelloWord/hw_keyboard.s"
+	@echo "... HelloWord/hw_led.obj"
+	@echo "... HelloWord/hw_led.i"
+	@echo "... HelloWord/hw_led.s"
 	@echo "... Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.obj"
 	@echo "... Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.i"
 	@echo "... Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.s"

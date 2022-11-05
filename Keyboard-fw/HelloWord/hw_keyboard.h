@@ -3,7 +3,6 @@
 
 #include "spi.h"
 
-
 class HWKeyboard
 {
 public:
@@ -16,15 +15,15 @@ public:
         HAL_GPIO_WritePin(CE_GPIO_Port,CE_Pin,GPIO_PIN_RESET);
 
         // Init RGB buffer
-        for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++)
-            SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0});
+        /* for (uint8_t i = 0; i < HWKeyboard::LED_NUMBER; i++) */
+        /*     SetRgbBufferByID(i, HWKeyboard::Color_t{0, 0, 0}); */
     }
 
 
     static const uint8_t IO_NUMBER = 11 * 8; // Used 11 pcs 74HC165
     static const uint8_t KEY_NUMBER = 82;
     static const uint8_t TOUCHPAD_NUMBER = 6;
-    static const uint8_t LED_NUMBER = 104;
+    /* static const uint8_t LED_NUMBER = 104; */
     static const uint16_t KEY_REPORT_SIZE = 1 + 16;
     static const uint16_t RAW_REPORT_SIZE = 1 + 32;
     static const uint16_t HID_REPORT_SIZE = KEY_REPORT_SIZE + RAW_REPORT_SIZE;
@@ -58,23 +57,23 @@ public:
         /*------------------------- HID report data -------------------------*/
     };
 
-    struct Color_t
-    {
-        uint8_t r;
-        uint8_t g;
-        uint8_t b;
-    };
+    /* struct Color_t */
+    /* { */
+    /*     uint8_t r; */
+    /*     uint8_t g; */
+    /*     uint8_t b; */
+    /* }; */
 
-    enum SpiWs2812Byte_t : uint8_t
-    {
-        WS_HIGH = 0xFE,
-        WS_LOW = 0xE0
-    };
+    /* enum SpiWs2812Byte_t : uint8_t */
+    /* { */
+    /*     WS_HIGH = 0xFE, */
+    /*     WS_LOW = 0xE0 */
+    /* }; */
 
     uint8_t* ScanKeyStates();
     void ApplyDebounceFilter(uint32_t _filterTimeUs = 100);
     uint8_t* Remap(uint8_t _layer = 1);
-    void SyncLights();
+    /* void SyncLights(); */
     bool FnPressed();
     bool IsKeyDown();
     bool KeyPressed(KeyCode_t _key);
@@ -82,7 +81,7 @@ public:
     void Release(KeyCode_t _key);
     uint8_t* GetHidReportBuffer(uint8_t _reportId);
     uint8_t  GetTouchBarState(uint8_t _id = 0);
-    void SetRgbBufferByID(uint8_t _keyId, Color_t _color, float _brightness = 1);
+    /* void SetRgbBufferByID(uint8_t _keyId, Color_t _color, float _brightness = 1); */
 
 
     int16_t keyMap[5][IO_NUMBER] = {
@@ -150,9 +149,9 @@ private:
     uint8_t remapBuffer[IO_NUMBER / 8]{};
     uint8_t hidBuffer[HID_REPORT_SIZE]{};
     uint8_t lastHidBuffer[HID_REPORT_SIZE]{};
-    uint8_t rgbBuffer[LED_NUMBER][3][8]{};
-    uint8_t wsCommit[64] = {0};
-    uint8_t brightnessPreDiv = 2; // 1/4
+    /* uint8_t rgbBuffer[LED_NUMBER][3][8]{}; */
+    /* uint8_t wsCommit[64] = {0}; */
+    /* uint8_t brightnessPreDiv = 2; // 1/4 */
 };
 
 
