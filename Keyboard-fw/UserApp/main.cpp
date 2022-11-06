@@ -7,13 +7,10 @@
 /* Component Definitions -----------------------------------------------------*/
 /* KeyboardConfig_t config; */
 HWKeyboard keyboard(&hspi1);
-HW_Led hwled(&hspi1);
+HW_Led hwled(&hspi2);;
 /* EEPROM eeprom; */
 
-bool isKeyDown_ArrowPressed = false;
-bool isKeyDown_Space = false;
-uint8_t light_mode = 1;
-float led_brightness = 0.25;
+bool isKeyDownCombination = false;
 uint8_t key_speed_level = 5;
 uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
 
@@ -56,32 +53,27 @@ void Main()
 		if (color_v > 254) color_flag = false;
 		else if (color_v < 1) color_flag = true;
 
-		if (light_mode == 1){
-			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
-				hwled.SetRgbBufferByID(i, HW_Led::Color_t{color_v, 20, 100}, led_brightness);
-			}
-
-		}else if (light_mode == 2){
-			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
-				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
-			}
-
-		}else if (light_mode == 3){
-			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
-				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
-			}
-
-		}else if (light_mode == 4){
-			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
-				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
-			}
-
-		}else {
-			for (uint8_t i = 0; i < hwled.LED_NUMBER; i++){
-				hwled.SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
-			}
-
+		switch (hwled.GetLedMode()) {
+			case 1 :
+				hwled.RespiratoryEffect(HW_Led::Color_t{color_v, 20, 100});
+				break;
+			case 2:
+				hwled.TurnLight();
+				break;
+			case 3:
+				hwled.TurnLight();
+				break;
+			case 4:
+				hwled.TurnLight();
+				break;
+			case 5:
+				hwled.TurnLight();
+				break;
+			case 6:
+				hwled.TurnLight();
+				break;
 		}
+
 		// Send RGB buffers to LEDs
 		hwled.SyncLights();
 	}
@@ -96,44 +88,44 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
-	if (layer == 2){
-		if (keyboard.KeyPressed(HWKeyboard::SPACE) && isKeyDown_Space) {
+	if (layer == 2 && !isKeyDownCombination){
+		if (keyboard.KeyPressed(HWKeyboard::SPACE)) {
 			is_Send = false;
-			light_mode = (light_mode + 1 ) % 4 ;
-		}else if (keyboard.KeyPressed(HWKeyboard::UP_ARROW) && !isKeyDown_ArrowPressed) {
+			uint8_t tmp = hwled.GetLedMode();
+			hwled.SetLedMode((tmp + 1) % 6);
+		}else if (keyboard.KeyPressed(HWKeyboard::UP_ARROW)) {
 			is_Send = false;
-			led_brightness += 0.25;
-			led_brightness = MIN(1, led_brightness);
-		}else if (keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) && !isKeyDown_ArrowPressed) {
+			float tmp = hwled.GetBrightness() + 0.25;
+			hwled.SetBrightness(MIN(1, tmp));
+		}else if (keyboard.KeyPressed(HWKeyboard::DOWN_ARROW)) {
 			is_Send = false;
-			led_brightness -= 0.25;
-			led_brightness = MAX(0.25, led_brightness);
-		}else if (keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) && !isKeyDown_ArrowPressed) {
+			float tmp = hwled.GetBrightness() - 0.25;
+			hwled.SetBrightness(MAX(0.25, tmp));
+		}else if (keyboard.KeyPressed(HWKeyboard::LEFT_ARROW)) {
 			is_Send = false;
 			key_speed_level += 1;
 			key_speed_level = MIN(6, key_speed_level);	
-		}else if (keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) && !isKeyDown_ArrowPressed) {
+		}else if (keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW)) {
 			is_Send = false;
 			key_speed_level -= 1;
 			key_speed_level = MAX(1, key_speed_level);	
 		}
 	}
-	isKeyDown_Space = keyboard.KeyPressed(HWKeyboard::SPACE);
-	isKeyDown_ArrowPressed = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW);
+	isKeyDownCombination = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) | keyboard.KeyPressed(HWKeyboard::SPACE);
 	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(1) + 1, HWKeyboard::KEY_REPORT_SIZE - 1) != 0) {
 		// Report HID key states
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
-		/* uint8_t voidHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0}; */
-		/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, HWKeyboard::KEY_REPORT_SIZE); */
 	}
 	memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
+	/* uint8_t voidHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0}; */
+	/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, HWKeyboard::KEY_REPORT_SIZE); */
 }
 
 
 	extern "C"
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 {
-	keyboard.isRgbTxBusy = false;
+	hwled.isRgbTxBusy = false;
 }
 
 	extern "C"

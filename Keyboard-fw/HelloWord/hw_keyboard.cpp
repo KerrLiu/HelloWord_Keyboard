@@ -1,6 +1,7 @@
 #include <cstring>
 #include "hw_keyboard.h"
 
+
 inline void DelayUs(uint32_t _us)
 {
 	for (int i = 0; i < _us; i++)

@@ -25,3 +25,18 @@ void HW_Led::SyncLights()
 	isRgbTxBusy = true;
 	HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
 }
+
+void HW_Led::RespiratoryEffect(HW_Led::Color_t _color)
+{
+	for (uint8_t i = 0; i < LED_NUMBER; i++){
+		SetRgbBufferByID(i, _color, brightness);
+	}
+}
+
+void HW_Led::TurnLight()
+{
+	for (uint8_t i = 0; i < LED_NUMBER; i++){
+		SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
+	}
+}
+

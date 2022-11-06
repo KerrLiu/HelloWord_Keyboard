@@ -3,6 +3,7 @@
 
 #include "spi.h"
 
+
 class HWKeyboard
 {
 public:
@@ -138,7 +139,7 @@ public:
             LEFT_CTRL,LEFT_GUI,LEFT_ALT,SPACE,RIGHT_ALT,FN,RIGHT_CTRL,LEFT_ARROW,DOWN_ARROW,RIGHT_ARROW }
     };
 
-    volatile bool isRgbTxBusy;
+    /* volatile bool isRgbTxBusy; */
     bool isCapsLocked = false;
 
 private:

@@ -13,6 +13,8 @@ function clean(){
 	rm ./HelloWord-Keyboard-fw.elf
 	echo "Delete CMakeCache.txt"
 	rm CMakeCache.txt
+	echo "Delete Makefile.txt"
+	rm Makefile
 }
 [ "$1_1" = "clean_1" ] && clean && exit
 
