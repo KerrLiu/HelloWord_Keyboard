@@ -26,17 +26,26 @@ void HW_Led::SyncLights()
 	HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
 }
 
+// -----------------------Lamp efficiency code----------------------
 void HW_Led::RespiratoryEffect(HW_Led::Color_t _color)
 {
-	for (uint8_t i = 0; i < LED_NUMBER; i++){
+	for (uint8_t i = 0; i < LED_NUMBER; i++)
+	{
 		SetRgbBufferByID(i, _color, brightness);
 	}
 }
 
 void HW_Led::TurnLight()
 {
-	for (uint8_t i = 0; i < LED_NUMBER; i++){
+	for (uint8_t i = 0; i < LED_NUMBER; i++)
+	{
 		SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
 	}
 }
+
+void HW_Led::OneButton(uint8_t _index, HW_Led::Color_t _color)
+{
+	SetRgbBufferByID(keyLEDMap[_index], _color, brightness);
+}
+// -----------------------------------------------------------------
 

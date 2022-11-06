@@ -35,7 +35,7 @@ void Main()
 	/* } */
 	/* if (config.light_mode < 1 || config.key_speed_level < 1){ */
 	/* 	config.light_mode = 1; */
-	/* 	config.led_brightness = 0.2; */
+	/* 	config.led_brightness = 0.25; */
 	/* 	config.key_speed_level = 5; */
 	/* 	eeprom.Push(0, config); */
 	/* } */
@@ -49,16 +49,31 @@ void Main()
 	static bool color_flag = true;
 	while (true)
 	{
-		color_flag ? color_v++ : color_v--;
-		if (color_v > 254) color_flag = false;
-		else if (color_v < 1) color_flag = true;
+		if (hwled.GetLedMode() != 0)
+		{
+			color_flag ? color_v++ : color_v--;
+			if (color_v > 254) color_flag = false;
+			else if (color_v < 1) color_flag = true;
+		}
 
 		switch (hwled.GetLedMode()) {
-			case 1 :
+			case 0 :
+				hwled.TurnLight();
+				break;
+			case 1:
 				hwled.RespiratoryEffect(HW_Led::Color_t{color_v, 20, 100});
 				break;
 			case 2:
-				hwled.TurnLight();
+				for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+				{
+					hwled.OneButton(i, HW_Led::Color_t{(uint8_t)(keyboard.IsPcbDown(i) * color_v), 
+							(uint8_t)(keyboard.IsPcbDown(i) * 20), 
+							(uint8_t)(keyboard.IsPcbDown(i) * 100)});
+				}
+				for (uint8_t i = 82; i < HW_Led::LED_NUMBER; i++)
+				{
+					hwled.SetRgbBufferByID(i, HW_Led::Color_t{color_v, 20, 100}, hwled.GetBrightness());
+				}
 				break;
 			case 3:
 				hwled.TurnLight();
@@ -67,9 +82,6 @@ void Main()
 				hwled.TurnLight();
 				break;
 			case 5:
-				hwled.TurnLight();
-				break;
-			case 6:
 				hwled.TurnLight();
 				break;
 		}

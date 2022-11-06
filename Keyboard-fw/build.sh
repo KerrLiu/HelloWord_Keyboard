@@ -18,6 +18,6 @@ function clean(){
 }
 [ "$1_1" = "clean_1" ] && clean && exit
 
-cmake ./CMakeList.txt
+cmake ./CMakeLists.txt
 make
 
