@@ -60,7 +60,7 @@ public:
     /* void SyncLights(); */
     bool FnPressed();
     bool IsKeyDown();
-    bool IsPcbDown(uint8_t _customId);
+    bool GetButtonStatus(uint8_t _customId);
     bool KeyPressed(KeyCode_t _key);
     void Press(KeyCode_t _key);
     void Release(KeyCode_t _key);

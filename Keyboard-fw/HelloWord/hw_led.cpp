@@ -43,9 +43,59 @@ void HW_Led::TurnLight()
 	}
 }
 
-void HW_Led::OneButton(uint8_t _index, HW_Led::Color_t _color)
+void HW_Led::OneButton(HWKeyboard _keyboard, uint8_t _color_v)
 {
-	SetRgbBufferByID(keyLEDMap[_index], _color, brightness);
+	uint8_t keyState;
+	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+	{
+		keyState = _keyboard.GetButtonStatus(i);
+		SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+	}
+	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++){
+		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
+	}
+}
+
+bool HW_Led::OneButtonRetention(HWKeyboard _keyboard, uint8_t _color_v)
+{
+	uint8_t keyState;
+	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+	{
+		keyState = _keyboard.GetButtonStatus(i);
+		SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+	}
+	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++){
+		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
+	}
+	return keyState;
+}
+
+void HW_Led::ButtonRange(HWKeyboard _keyboard, uint8_t _color_v)
+{
+	uint8_t keyState;
+	/* for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++) */
+	/* { */
+	/* 	keyState = _keyboard.GetButtonStatus(i); */
+	/* 	SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness); */
+	/* } */
+	TurnLight();
+	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++)
+	{
+		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
+	}
+	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+	{
+		keyState = _keyboard.GetButtonStatus(i);
+		if (!keyState){
+			continue;
+		}
+		for (uint8_t j = 0; j < 6; j++)
+		{
+			uint8_t index = keyNearMap[i][j];
+			if(index != 127)
+				SetRgbBufferByID(keyNearMap[i][j], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+		}
+	}
 }
 // -----------------------------------------------------------------
 

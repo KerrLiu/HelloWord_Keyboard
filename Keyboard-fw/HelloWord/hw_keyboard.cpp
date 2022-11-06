@@ -99,7 +99,7 @@ bool HWKeyboard::FnPressed()
 	return remapBuffer[9] & 0x04;
 }
 
-bool HWKeyboard::IsPcbDown(uint8_t _customId)
+bool HWKeyboard::GetButtonStatus(uint8_t _customId)
 {
 	uint8_t index = _customId / 8;
 	uint8_t bitIndex = _customId % 8;

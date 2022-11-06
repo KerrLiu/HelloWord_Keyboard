@@ -13,6 +13,7 @@ HW_Led hwled(&hspi2);;
 bool isKeyDownCombination = false;
 uint8_t key_speed_level = 5;
 uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
+bool ledDelay = false;
 
 
 /* Main Entry ----------------------------------------------------------------*/
@@ -64,22 +65,16 @@ void Main()
 				hwled.RespiratoryEffect(HW_Led::Color_t{color_v, 20, 100});
 				break;
 			case 2:
-				for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
-				{
-					hwled.OneButton(i, HW_Led::Color_t{(uint8_t)(keyboard.IsPcbDown(i) * color_v), 
-							(uint8_t)(keyboard.IsPcbDown(i) * 20), 
-							(uint8_t)(keyboard.IsPcbDown(i) * 100)});
-				}
-				for (uint8_t i = 82; i < HW_Led::LED_NUMBER; i++)
-				{
-					hwled.SetRgbBufferByID(i, HW_Led::Color_t{color_v, 20, 100}, hwled.GetBrightness());
-				}
+				hwled.OneButton(keyboard, color_v);
 				break;
 			case 3:
-				hwled.TurnLight();
+				if (!ledDelay)
+				{
+					ledDelay = hwled.OneButtonRetention(keyboard, color_v);
+				}
 				break;
 			case 4:
-				hwled.TurnLight();
+				hwled.ButtonRange(keyboard, color_v);
 				break;
 			case 5:
 				hwled.TurnLight();
