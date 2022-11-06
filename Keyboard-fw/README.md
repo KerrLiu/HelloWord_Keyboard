@@ -26,7 +26,7 @@ int main (int argc, char * argv[]){
 |Touch Bar|in progress|
 |Key Map On Host|in progress|
 |Touch Bar On Host|in progress|
-|LED Brightness|in progress|
+|LED Brightness|complete|
 |Lighting Effect|in progress|
 |Communication To Dynamic|in progress|
 
