@@ -4,15 +4,15 @@
 #include "spi.h"
 #include "HelloWord/hw_keyboard.h"
 
-class HW_Led {
+class HWLed {
 	public:
-		explicit HW_Led(SPI_HandleTypeDef* _spi) :
+		explicit HWLed(SPI_HandleTypeDef* _spi) :
 			spiHandle(_spi)
 	{
 		// Init RGB buffer
 		/* TurnLight(); */
-		for (uint8_t i = 0; i < HW_Led::LED_NUMBER; i++)
-			SetRgbBufferByID(i, HW_Led::Color_t{0, 0, 0}, 0);
+		for (uint8_t i = 0; i < LED_NUMBER; i++)
+			SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
 	}
 		static const uint8_t LED_NUMBER = 104;
 		struct Color_t { uint8_t r, g, b; };
@@ -110,7 +110,7 @@ class HW_Led {
 			{72, 73, 60, 127, 127, 127},
 			{73, 74, 72, 71, 127, 127},
 			{74, 71, 73, 69, 127, 127},
-			{75, 66, 65, 127, 127, 127},
+			{75, 67, 66, 65, 127, 127},
 			{76, 77, 62, 127, 127, 127},
 			{77, 78, 76, 61, 127, 127},
 			{78, 77, 60, 127, 127, 127},
@@ -132,7 +132,6 @@ class HW_Led {
 		void RespiratoryEffect(Color_t _color);
 		void TurnLight();
 		void OneButton(HWKeyboard _keyboard, uint8_t _color_v);
-		bool OneButtonRetention(HWKeyboard _keyboard, uint8_t _color_v);
 		void ButtonRange(HWKeyboard _keyboard, uint8_t _color_v);
 
 		volatile bool isRgbTxBusy{};

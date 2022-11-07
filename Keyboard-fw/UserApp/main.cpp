@@ -7,13 +7,12 @@
 /* Component Definitions -----------------------------------------------------*/
 /* KeyboardConfig_t config; */
 HWKeyboard keyboard(&hspi1);
-HW_Led hwled(&hspi2);;
+HWLed hwled(&hspi2);;
 /* EEPROM eeprom; */
 
 bool isKeyDownCombination = false;
 uint8_t key_speed_level = 5;
 uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
-bool ledDelay = false;
 
 
 /* Main Entry ----------------------------------------------------------------*/
@@ -62,19 +61,15 @@ void Main()
 				hwled.TurnLight();
 				break;
 			case 1:
-				hwled.RespiratoryEffect(HW_Led::Color_t{color_v, 20, 100});
+				hwled.RespiratoryEffect(HWLed::Color_t{color_v, 20, 100});
 				break;
 			case 2:
 				hwled.OneButton(keyboard, color_v);
 				break;
 			case 3:
-				if (!ledDelay)
-				{
-					ledDelay = hwled.OneButtonRetention(keyboard, color_v);
-				}
+				hwled.ButtonRange(keyboard, color_v);
 				break;
 			case 4:
-				hwled.ButtonRange(keyboard, color_v);
 				break;
 			case 5:
 				hwled.TurnLight();
@@ -139,4 +134,15 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 void HID_RxCpltCallback(uint8_t* _data)
 {
 
+}
+
+	extern "C"
+void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state)
+{
+	if (event_idx == 1)
+	{
+		keyboard.isCapsLocked = (state & 0b10) >> 1;
+		/* keyboard.isScrollLocked = (state & 0b100) >> 2; */
+		/* keyboard.ledCtrler->isCapsChanged = true; */
+	}
 }

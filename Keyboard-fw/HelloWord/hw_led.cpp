@@ -1,6 +1,6 @@
 #include "hw_led.h"
 
-void HW_Led::SetRgbBufferByID(uint8_t _keyId, HW_Led::Color_t _color, float _brightness)
+void HWLed::SetRgbBufferByID(uint8_t _keyId, HWLed::Color_t _color, float _brightness)
 {
 	// To ensure there's no sequence zero bits, otherwise will case ws2812b protocol error.
 	if (_color.b < 1) _color.b = 1;
@@ -16,7 +16,7 @@ void HW_Led::SetRgbBufferByID(uint8_t _keyId, HW_Led::Color_t _color, float _bri
 	}
 }
 
-void HW_Led::SyncLights()
+void HWLed::SyncLights()
 {
 	while (isRgbTxBusy);
 	isRgbTxBusy = true;
@@ -27,7 +27,7 @@ void HW_Led::SyncLights()
 }
 
 // -----------------------Lamp efficiency code----------------------
-void HW_Led::RespiratoryEffect(HW_Led::Color_t _color)
+void HWLed::RespiratoryEffect(HWLed::Color_t _color)
 {
 	for (uint8_t i = 0; i < LED_NUMBER; i++)
 	{
@@ -35,7 +35,7 @@ void HW_Led::RespiratoryEffect(HW_Led::Color_t _color)
 	}
 }
 
-void HW_Led::TurnLight()
+void HWLed::TurnLight()
 {
 	for (uint8_t i = 0; i < LED_NUMBER; i++)
 	{
@@ -43,45 +43,26 @@ void HW_Led::TurnLight()
 	}
 }
 
-void HW_Led::OneButton(HWKeyboard _keyboard, uint8_t _color_v)
+void HWLed::OneButton(HWKeyboard _keyboard, uint8_t _color_v)
 {
 	uint8_t keyState;
 	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
 	{
 		keyState = _keyboard.GetButtonStatus(i);
-		SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+		SetRgbBufferByID(keyLEDMap[i], HWLed::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
 	}
 	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++){
-		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
+		SetRgbBufferByID(i, HWLed::Color_t{_color_v, 20, 100}, brightness);
 	}
 }
 
-bool HW_Led::OneButtonRetention(HWKeyboard _keyboard, uint8_t _color_v)
+void HWLed::ButtonRange(HWKeyboard _keyboard, uint8_t _color_v)
 {
 	uint8_t keyState;
-	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
-	{
-		keyState = _keyboard.GetButtonStatus(i);
-		SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
-	}
-	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++){
-		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
-	}
-	return keyState;
-}
-
-void HW_Led::ButtonRange(HWKeyboard _keyboard, uint8_t _color_v)
-{
-	uint8_t keyState;
-	/* for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++) */
-	/* { */
-	/* 	keyState = _keyboard.GetButtonStatus(i); */
-	/* 	SetRgbBufferByID(keyLEDMap[i], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness); */
-	/* } */
 	TurnLight();
 	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++)
 	{
-		SetRgbBufferByID(i, HW_Led::Color_t{_color_v, 20, 100}, brightness);
+		SetRgbBufferByID(i, HWLed::Color_t{_color_v, 20, 100}, brightness);
 	}
 	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
 	{
@@ -93,9 +74,10 @@ void HW_Led::ButtonRange(HWKeyboard _keyboard, uint8_t _color_v)
 		{
 			uint8_t index = keyNearMap[i][j];
 			if(index != 127)
-				SetRgbBufferByID(keyNearMap[i][j], HW_Led::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+				SetRgbBufferByID(keyNearMap[i][j], HWLed::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
 		}
 	}
 }
+
 // -----------------------------------------------------------------
 
