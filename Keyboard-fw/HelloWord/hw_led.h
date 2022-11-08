@@ -2,7 +2,6 @@
 #define HELLO_WORD_KEYBOARD_FW_HW_LED_H
 
 #include "spi.h"
-#include "HelloWord/hw_keyboard.h"
 
 class HWLed {
 	public:
@@ -23,6 +22,24 @@ class HWLed {
 			WS_LOW = 0xE0   // 0b11100000
 		};
 
+		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, float _brightness);
+		void SyncLights();
+
+		float GetBrightness() { return brightness; }
+		uint8_t GetLedMode() { return ledMode; }
+
+		void SetBrightness(float _brightness) { brightness = _brightness; }
+		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
+
+		// Lamp efficiency code
+		void RespiratoryEffect();
+		void TurnLight();
+		void OneButton(uint8_t _index);
+		void ButtonRange(uint8_t _index);
+		void SingleLight();
+
+		volatile bool isRgbTxBusy{};
+
 		static constexpr uint8_t keyLEDMap[LED_NUMBER] = {
 			13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
 			14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,  28,
@@ -34,7 +51,34 @@ class HWLed {
 			85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
 		};
 
-		static constexpr uint8_t keyNearMap[HWKeyboard::KEY_NUMBER][6] = {
+		static constexpr uint8_t colLEDMap[15][6] = {
+			{13, 14, 43, 44, 71, 72},
+			{12, 15, 42, 45, 70, 73},
+			{11, 16, 41, 46, 69, 74},
+			{10, 17, 40, 47, 68, 75},
+			{9, 18, 39, 48, 67, 76},
+			{8, 19, 38, 49, 66, 77},
+			{7, 20, 37, 50, 65, 78},
+			{6, 21, 36, 51, 64, 79},
+			{5, 22, 35, 52, 63, 80},
+			{4, 23, 34, 53, 62, 81},
+			{3, 24, 33, 54, 61, 127},
+			{2, 25, 32, 55, 60, 127},
+			{1, 26, 31, 56, 59, 127},
+			{0, 27, 30, 57, 58, 127},
+			{127, 28, 29, 127, 127, 127}
+		};
+
+		static constexpr uint8_t rowLEDMap[6][15] = {
+			{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 127},
+			{14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28},
+			{43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29},
+			{44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 127},
+			{71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 127},
+			{72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 127, 127, 127, 127, 127},
+		};
+
+		static constexpr uint8_t keyNearMap[82][6] = {
 			{13, 14, 127, 127, 127, 127},
 			{12, 11, 15, 16, 127, 127},
 			{11, 12, 10, 15, 16, 127},
@@ -118,25 +162,6 @@ class HWLed {
 			{80, 79, 81, 59, 127, 127},
 			{81, 80, 79, 59, 127, 127}
 		};
-
-		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, float _brightness);
-		void SyncLights();
-
-		float GetBrightness() { return brightness; }
-		uint8_t GetLedMode() { return ledMode; }
-
-		void SetBrightness(float _brightness) { brightness = _brightness; }
-		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
-
-		// Lamp efficiency code
-		void RespiratoryEffect();
-		void TurnLight();
-		void OneButton(uint8_t _index);
-		void ButtonRange(uint8_t _index);
-		void SingleLight();
-
-		volatile bool isRgbTxBusy{};
-
 	private:
 		SPI_HandleTypeDef* spiHandle;
 		uint8_t rgbBuffer[LED_NUMBER][3][8]{};

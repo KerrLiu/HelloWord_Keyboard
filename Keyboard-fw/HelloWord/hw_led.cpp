@@ -58,6 +58,32 @@ void HWLed::TurnLight()
 
 void HWLed::SingleLight()
 {
+	uint8_t color_v = 1;
+	bool color_flag = true;
+	uint8_t index = 0;
+	while(true)
+	{
+		if (ledMode != 4){
+			break;
+		}
+		for (uint8_t i = 0; i < 10; i++)
+		{
+			float brightness_step = (brightness - 0) / 10;
+			SetRgbBufferByID(index - i, Color_t{color_v - (i * (color_v / 10)), 20 - (2 * i), 100 - (10 * i)}, brightness - (brightness_step * i));
+		}
+		SyncLights();
+
+		index++;
+		if (index > LED_NUMBER) index = 0;
+
+		for (int i = 0; i < 50000; i++)
+			for (int j = 0; j < 8; j++)  // ToDo: tune this for different chips
+				__NOP();
+
+		color_flag ? color_v ++ : color_v --;
+		if (color_v > 254) color_flag = false;
+		else if (color_v < 1) color_flag = true;
+	}
 }
 
 void HWLed::OneButton(uint8_t _index)

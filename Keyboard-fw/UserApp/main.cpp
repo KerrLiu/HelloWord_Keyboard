@@ -60,7 +60,7 @@ void Main()
 				hwled.ButtonRange(keyboard.GetKeyIndex());
 				break;
 			case 4:
-				hwled.TurnLight();
+				hwled.SingleLight();
 				break;
 			case 5:
 				hwled.TurnLight();
@@ -102,6 +102,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		}
 	}
 	isKeyDownCombination = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) | keyboard.KeyPressed(HWKeyboard::SPACE);
+
 	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(1) + 1, HWKeyboard::KEY_REPORT_SIZE - 1) != 0) {
 		// Report HID key states
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
