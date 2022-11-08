@@ -129,10 +129,11 @@ class HWLed {
 		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
 
 		// Lamp efficiency code
-		void RespiratoryEffect(Color_t _color);
+		void RespiratoryEffect();
 		void TurnLight();
-		void OneButton(HWKeyboard _keyboard, uint8_t _color_v);
-		void ButtonRange(HWKeyboard _keyboard, uint8_t _color_v);
+		void OneButton(uint8_t _index);
+		void ButtonRange(uint8_t _index);
+		void SingleLight();
 
 		volatile bool isRgbTxBusy{};
 

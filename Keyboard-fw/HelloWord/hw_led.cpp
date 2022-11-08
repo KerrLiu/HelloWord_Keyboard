@@ -27,11 +27,23 @@ void HWLed::SyncLights()
 }
 
 // -----------------------Lamp efficiency code----------------------
-void HWLed::RespiratoryEffect(HWLed::Color_t _color)
+void HWLed::RespiratoryEffect()
 {
-	for (uint8_t i = 0; i < LED_NUMBER; i++)
+	uint8_t color_v = 1;
+	bool color_flag = true;
+	while(true)
 	{
-		SetRgbBufferByID(i, _color, brightness);
+		if(ledMode != 1){
+			break;
+		}
+		for (uint8_t i = 0; i < LED_NUMBER; i++)
+		{
+			SetRgbBufferByID(i, Color_t{color_v, 20, 100}, brightness);
+		}
+		color_flag ? color_v ++ : color_v --;
+		if (color_v > 254) color_flag = false;
+		else if (color_v < 1) color_flag = true;
+		SyncLights();
 	}
 }
 
@@ -41,43 +53,47 @@ void HWLed::TurnLight()
 	{
 		SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
 	}
+	SyncLights();
 }
 
-void HWLed::OneButton(HWKeyboard _keyboard, uint8_t _color_v)
+void HWLed::SingleLight()
 {
-	uint8_t keyState;
-	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+}
+
+void HWLed::OneButton(uint8_t _index)
+{
+	if (_index == 254) return;
+
+	uint8_t color_v = 1;
+	bool color_flag = true;
+	while(color_v > 0)
 	{
-		keyState = _keyboard.GetButtonStatus(i);
-		SetRgbBufferByID(keyLEDMap[i], HWLed::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
+		SetRgbBufferByID(keyLEDMap[_index], Color_t{color_v, 20, 100}, brightness);
+		color_flag ? color_v += 3 : color_v -= 3;
+		if (color_v > 254) color_flag = false;
+		SyncLights();
 	}
-	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++){
-		SetRgbBufferByID(i, HWLed::Color_t{_color_v, 20, 100}, brightness);
-	}
-}
-
-void HWLed::ButtonRange(HWKeyboard _keyboard, uint8_t _color_v)
-{
-	uint8_t keyState;
 	TurnLight();
-	for (uint8_t i = HWKeyboard::KEY_NUMBER; i < LED_NUMBER; i++)
-	{
-		SetRgbBufferByID(i, HWLed::Color_t{_color_v, 20, 100}, brightness);
-	}
-	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
-	{
-		keyState = _keyboard.GetButtonStatus(i);
-		if (!keyState){
-			continue;
-		}
-		for (uint8_t j = 0; j < 6; j++)
-		{
-			uint8_t index = keyNearMap[i][j];
-			if(index != 127)
-				SetRgbBufferByID(keyNearMap[i][j], HWLed::Color_t{(uint8_t)(keyState * _color_v), (uint8_t)(keyState * 20), (uint8_t)(keyState * 100)}, brightness);
-		}
-	}
 }
 
+void HWLed::ButtonRange(uint8_t _index){
+	if (_index == 254) return;
+	uint8_t color_v = 1;
+	bool color_flag = true;
+	while(color_v > 0)
+	{
+		uint8_t index;
+		for(uint8_t i = 0; i < 6; i++)
+		{
+			index = keyNearMap[_index][i];
+			if(index != 127)
+				SetRgbBufferByID(index, Color_t{color_v, 20, 100}, brightness);
+		}
+		color_flag ? color_v += 5 : color_v -= 5;
+		if (color_v > 254) color_flag = false;
+		SyncLights();
+	}
+	TurnLight();
+}
 // -----------------------------------------------------------------
 

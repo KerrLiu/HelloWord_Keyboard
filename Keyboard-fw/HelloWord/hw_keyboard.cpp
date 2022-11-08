@@ -84,7 +84,6 @@ uint8_t* HWKeyboard::Remap(uint8_t _layer)
 				continue;
 
 			if (remapBuffer[i] & (0x80 >> j))
-				
 				hidBuffer[index + 1] |= 1 << (bitIndex); // +1 for Report-ID
 		}
 		i++;
@@ -104,6 +103,16 @@ bool HWKeyboard::GetButtonStatus(uint8_t _customId)
 	uint8_t index = _customId / 8;
 	uint8_t bitIndex = _customId % 8;
 	return remapBuffer[index] & (0x80 >> bitIndex);
+}
+
+uint8_t HWKeyboard::GetKeyIndex(){
+	uint8_t index = 254;
+	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+	{
+		if(GetButtonStatus(i) == 1)
+			index = i;
+	}
+	return index;
 }
 
 bool HWKeyboard::IsKeyDown()

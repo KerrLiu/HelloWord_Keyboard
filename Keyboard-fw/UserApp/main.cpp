@@ -42,42 +42,30 @@ void Main()
 
 	// Keyboard Report Start
 	HAL_TIM_Base_Start_IT(&htim4);
-
-
-	/*---- This is a demo RGB effect ----*/
-	static uint8_t color_v = 1;
-	static bool color_flag = true;
-	while (true)
+	
+	/*---- This is RGB effect ----*/
+	while(true)
 	{
-		if (hwled.GetLedMode() != 0)
-		{
-			color_flag ? color_v++ : color_v--;
-			if (color_v > 254) color_flag = false;
-			else if (color_v < 1) color_flag = true;
-		}
-
 		switch (hwled.GetLedMode()) {
 			case 0 :
 				hwled.TurnLight();
 				break;
 			case 1:
-				hwled.RespiratoryEffect(HWLed::Color_t{color_v, 20, 100});
+				hwled.RespiratoryEffect();
 				break;
 			case 2:
-				hwled.OneButton(keyboard, color_v);
+				hwled.OneButton(keyboard.GetKeyIndex());
 				break;
 			case 3:
-				hwled.ButtonRange(keyboard, color_v);
+				hwled.ButtonRange(keyboard.GetKeyIndex());
 				break;
 			case 4:
+				hwled.TurnLight();
 				break;
 			case 5:
 				hwled.TurnLight();
 				break;
 		}
-
-		// Send RGB buffers to LEDs
-		hwled.SyncLights();
 	}
 }
 

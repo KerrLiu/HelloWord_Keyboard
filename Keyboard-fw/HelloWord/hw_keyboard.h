@@ -123,6 +123,7 @@ public:
     };
 
     bool isCapsLocked = false;
+	uint8_t GetKeyIndex();
 
 private:
     SPI_HandleTypeDef* spiHandle;
