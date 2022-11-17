@@ -1,0 +1,3 @@
+/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/HelloWord-Keyboard-fw.elf.dir
+/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/edit_cache.dir
+/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/rebuild_cache.dir

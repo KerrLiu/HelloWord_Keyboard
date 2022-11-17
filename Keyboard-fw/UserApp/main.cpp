@@ -44,28 +44,33 @@ void Main()
 	HAL_TIM_Base_Start_IT(&htim4);
 	
 	/*---- This is RGB effect ----*/
+	/* while(true) */
+	/* { */
+	/* 	switch (hwled.GetLedMode()) { */
+	/* 		case 0 : */
+	/* 			hwled.TurnLight(); */
+	/* 			break; */
+	/* 		case 1: */
+	/* 			hwled.RespiratoryEffect(); */
+	/* 			break; */
+	/* 		case 2: */
+	/* 			hwled.OneButton(keyboard.GetKeyIndex()); */
+	/* 			break; */
+	/* 		case 3: */
+	/* 			hwled.ButtonRange(keyboard.GetKeyIndex()); */
+	/* 			break; */
+	/* 		case 4: */
+	/* 			hwled.TurnLight(); */
+	/* 			break; */
+	/* 		case 5: */
+	/* 			hwled.TurnLight(); */
+	/* 			break; */
+	/* 	} */
+	/* } */
+
 	while(true)
 	{
-		switch (hwled.GetLedMode()) {
-			case 0 :
-				hwled.TurnLight();
-				break;
-			case 1:
-				hwled.RespiratoryEffect();
-				break;
-			case 2:
-				hwled.OneButton(keyboard.GetKeyIndex());
-				break;
-			case 3:
-				hwled.ButtonRange(keyboard.GetKeyIndex());
-				break;
-			case 4:
-				hwled.TurnLight();
-				break;
-			case 5:
-				hwled.TurnLight();
-				break;
-		}
+		hwled.Update(keyboard);
 	}
 }
 

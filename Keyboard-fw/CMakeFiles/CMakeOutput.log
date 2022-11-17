@@ -1,0 +1,302 @@
+The target system is: Generic - 1 - 
+The host system is: MINGW64_NT-10.0-19042 - 3.3.6-341.x86_64 - unknown
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /mingw64/bin/arm-none-eabi-gcc.exe 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.o"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /mingw64/bin/arm-none-eabi-g++.exe 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is GNU, found in "/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+arm-none-eabi-gcc.exe (GCC) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_5ec08/fast && /usr/bin/make  -f CMakeFiles/cmTC_5ec08.dir/build.make CMakeFiles/cmTC_5ec08.dir/build
+make[1]: Entering directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj
+/mingw64/bin/arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=D:\Msys64\mingw64\bin\arm-none-eabi-gcc.exe
+Target: arm-none-eabi
+Configured with: ../configure --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--stack,12582912' LDFLAGS='-pipe -Wl,--disable-dynamicbase'
+Thread model: single
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/'
+ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/cc1.exe -quiet -v -iprefix d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/ -D__USES_INITFINI__ D:/Msys64/usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5ec08.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o D:\Msys64\tmp\cc2k9YNd.s
+GNU C17 (GCC) version 12.2.0 (arm-none-eabi)
+	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include-fixed"
+ignoring nonexistent directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include-fixed
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include
+End of search list.
+GNU C17 (GCC) version 12.2.0 (arm-none-eabi)
+	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 7b6792cbd03d22e0bb1a97c31f9cfb80
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/'
+ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj D:\Msys64\tmp\cc2k9YNd.s
+GNU assembler version 2.39 (arm-none-eabi) using BFD version (GNU Binutils) 2.39
+COMPILER_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/;d:/msys64/mingw64/bin/../lib/gcc/;d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/;d:/msys64/mingw64/bin/../lib/gcc/;d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.'
+Linking C static library libcmTC_5ec08.a
+/usr/bin/cmake.exe -P CMakeFiles/cmTC_5ec08.dir/cmake_clean_target.cmake
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5ec08.dir/link.txt --verbose=1
+arm-none-eabi-ar qc libcmTC_5ec08.a CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj
+/mingw64/bin/arm-none-eabi-ranlib.exe libcmTC_5ec08.a
+make[1]: Leaving directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  end of search list found
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  implicit include dirs: []
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_5ec08/fast && /usr/bin/make  -f CMakeFiles/cmTC_5ec08.dir/build.make CMakeFiles/cmTC_5ec08.dir/build]
+  ignore line: [make[1]: Entering directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/mingw64/bin/arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=D:\Msys64\mingw64\bin\arm-none-eabi-gcc.exe]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: ../configure --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--stack,12582912' LDFLAGS='-pipe -Wl,--disable-dynamicbase']
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/']
+  ignore line: [ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/cc1.exe -quiet -v -iprefix d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/ -D__USES_INITFINI__ D:/Msys64/usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5ec08.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o D:\Msys64\tmp\cc2k9YNd.s]
+  ignore line: [GNU C17 (GCC) version 12.2.0 (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 12.2.0 (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 7b6792cbd03d22e0bb1a97c31f9cfb80]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/']
+  ignore line: [ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj D:\Msys64\tmp\cc2k9YNd.s]
+  ignore line: [GNU assembler version 2.39 (arm-none-eabi) using BFD version (GNU Binutils) 2.39]
+  ignore line: [COMPILER_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C static library libcmTC_5ec08.a]
+  ignore line: [/usr/bin/cmake.exe -P CMakeFiles/cmTC_5ec08.dir/cmake_clean_target.cmake]
+  ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5ec08.dir/link.txt --verbose=1]
+  ignore line: [arm-none-eabi-ar qc libcmTC_5ec08.a CMakeFiles/cmTC_5ec08.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/mingw64/bin/arm-none-eabi-ranlib.exe libcmTC_5ec08.a]
+  ignore line: [make[1]: Leaving directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp']
+  ignore line: []
+  ignore line: []
+  implicit libs: []
+  implicit objs: []
+  implicit dirs: []
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_df526/fast && /usr/bin/make  -f CMakeFiles/cmTC_df526.dir/build.make CMakeFiles/cmTC_df526.dir/build
+make[1]: Entering directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj
+/mingw64/bin/arm-none-eabi-g++.exe   -v -o CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=D:\Msys64\mingw64\bin\arm-none-eabi-g++.exe
+Target: arm-none-eabi
+Configured with: ../configure --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--stack,12582912' LDFLAGS='-pipe -Wl,--disable-dynamicbase'
+Thread model: single
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/'
+ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/cc1plus.exe -quiet -v -iprefix d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/ -D__USES_INITFINI__ D:/Msys64/usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_df526.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o D:\Msys64\tmp\ccknaCdJ.s
+GNU C++17 (GCC) version 12.2.0 (arm-none-eabi)
+	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include-fixed"
+ignoring nonexistent directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include-fixed
+ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include
+End of search list.
+GNU C++17 (GCC) version 12.2.0 (arm-none-eabi)
+	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: df90975a06dcd44fb10977cb9175aa9d
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/'
+ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj D:\Msys64\tmp\ccknaCdJ.s
+GNU assembler version 2.39 (arm-none-eabi) using BFD version (GNU Binutils) 2.39
+COMPILER_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/;d:/msys64/mingw64/bin/../lib/gcc/;d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/;d:/msys64/mingw64/bin/../lib/gcc/;d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX static library libcmTC_df526.a
+/usr/bin/cmake.exe -P CMakeFiles/cmTC_df526.dir/cmake_clean_target.cmake
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_df526.dir/link.txt --verbose=1
+arm-none-eabi-ar qc libcmTC_df526.a CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj
+/mingw64/bin/arm-none-eabi-ranlib.exe libcmTC_df526.a
+make[1]: Leaving directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+    add: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  end of search list found
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+  skipping relative include dir [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  implicit include dirs: []
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_df526/fast && /usr/bin/make  -f CMakeFiles/cmTC_df526.dir/build.make CMakeFiles/cmTC_df526.dir/build]
+  ignore line: [make[1]: Entering directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/mingw64/bin/arm-none-eabi-g++.exe   -v -o CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=D:\Msys64\mingw64\bin\arm-none-eabi-g++.exe]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: ../configure --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--stack,12582912' LDFLAGS='-pipe -Wl,--disable-dynamicbase']
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/']
+  ignore line: [ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/cc1plus.exe -quiet -v -iprefix d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/ -D__USES_INITFINI__ D:/Msys64/usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_df526.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o D:\Msys64\tmp\ccknaCdJ.s]
+  ignore line: [GNU C++17 (GCC) version 12.2.0 (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/sys-include"]
+  ignore line: [ignoring duplicate directory "d:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/arm-none-eabi]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/c++/12.2.0/backward]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/include-fixed]
+  ignore line: [ d:\msys64\mingw64\bin\../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (GCC) version 12.2.0 (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: df90975a06dcd44fb10977cb9175aa9d]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/']
+  ignore line: [ d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj D:\Msys64\tmp\ccknaCdJ.s]
+  ignore line: [GNU assembler version 2.39 (arm-none-eabi) using BFD version (GNU Binutils) 2.39]
+  ignore line: [COMPILER_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/]
+  ignore line: [d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX static library libcmTC_df526.a]
+  ignore line: [/usr/bin/cmake.exe -P CMakeFiles/cmTC_df526.dir/cmake_clean_target.cmake]
+  ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_df526.dir/link.txt --verbose=1]
+  ignore line: [arm-none-eabi-ar qc libcmTC_df526.a CMakeFiles/cmTC_df526.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/mingw64/bin/arm-none-eabi-ranlib.exe libcmTC_df526.a]
+  ignore line: [make[1]: Leaving directory '/e/Documents/Workspace/HelloWord/Git/HelloWord_Keyboard/Keyboard-fw/CMakeFiles/CMakeTmp']
+  ignore line: []
+  ignore line: []
+  implicit libs: []
+  implicit objs: []
+  implicit dirs: []
+  implicit fwks: []
+
+

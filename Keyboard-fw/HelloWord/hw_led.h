@@ -30,9 +30,12 @@ class HWLed {
 
 		float GetBrightness() { return brightness; }
 		uint8_t GetLedMode() { return ledMode; }
+		float GetRgbBrightnessFactor(uint8_t _index);
+		void DecBrightnessFactor(uint8_t _index);
 
 		void SetBrightness(float _brightness) { brightness = _brightness; }
 		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
+		void SetRgbBrightnessFactor(uint8_t _index, float _value);
 
 
 		// Lamp efficiency code
@@ -40,6 +43,7 @@ class HWLed {
 		void TurnLight();
 		void OneButton(uint8_t _index);
 		void ButtonRange(uint8_t _index);
+		void Update(HWKeyboard _keyboard);
 
 		volatile bool isRgbTxBusy{};
 
@@ -147,6 +151,7 @@ class HWLed {
 		/*--------RGB Color Values--------*/
 		uint8_t color_v = 1;
 		bool color_flag = true;
+		float rgbBrightnessFactor[LED_KEY_NUMBER] = {0};
 		uint16_t angleCount = 0;	
 		float PI = 3.14159265;
 		float HALF_PI = PI / 2;
