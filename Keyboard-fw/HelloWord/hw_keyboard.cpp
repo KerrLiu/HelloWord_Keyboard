@@ -106,13 +106,12 @@ bool HWKeyboard::GetButtonStatus(uint8_t _customId)
 }
 
 uint8_t HWKeyboard::GetKeyIndex(){
-	uint8_t index = 254;
 	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
 	{
-		if(GetButtonStatus(i) == 1)
-			index = i;
+		if(GetButtonStatus(i))
+			return i;
 	}
-	return index;
+	return 254;
 }
 
 bool HWKeyboard::IsKeyDown()

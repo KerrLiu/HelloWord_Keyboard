@@ -25,25 +25,25 @@ void HWLed::SyncLights()
 	isRgbTxBusy = true;
 	HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
 }
-
 // -----------------------Lamp efficiency code----------------------
 void HWLed::RespiratoryEffect()
 {
-	uint8_t color_v = 1;
-	bool color_flag = true;
-	while(true)
+	while(ledMode == 1)
 	{
-		if(ledMode != 1){
-			break;
+		angleCount += 4;
+		if (angleCount > 3600) {
+			angleCount = 0;
 		}
 		for (uint8_t i = 0; i < LED_NUMBER; i++)
 		{
-			SetRgbBufferByID(i, Color_t{color_v, 20, 100}, brightness);
+			SetRgbBufferByID(i, Color_t{HALF_FF * sin((angleCount + ANGLE_GAP * 0 + i) * RADIAN_1 + HALF_PI) + HALF_FF, 
+					HALF_FF * sin((angleCount + ANGLE_GAP * 1 + i) * RADIAN_1 + HALF_PI) + HALF_FF, 
+					HALF_FF * sin((angleCount + ANGLE_GAP * 2 + i) * RADIAN_1 + HALF_PI) + HALF_FF}, brightness);
 		}
+		SyncLights();
 		color_flag ? color_v ++ : color_v --;
 		if (color_v > 254) color_flag = false;
 		else if (color_v < 1) color_flag = true;
-		SyncLights();
 	}
 }
 
@@ -56,46 +56,14 @@ void HWLed::TurnLight()
 	SyncLights();
 }
 
-void HWLed::SingleLight()
-{
-	uint8_t color_v = 1;
-	bool color_flag = true;
-	uint8_t index = 0;
-	while(true)
-	{
-		if (ledMode != 4){
-			break;
-		}
-		for (uint8_t i = 0; i < 10; i++)
-		{
-			float brightness_step = (brightness - 0) / 10;
-			SetRgbBufferByID(index - i, Color_t{color_v - (i * (color_v / 10)), 20 - (2 * i), 100 - (10 * i)}, brightness - (brightness_step * i));
-		}
-		SyncLights();
-
-		index++;
-		if (index > LED_NUMBER) index = 0;
-
-		for (int i = 0; i < 50000; i++)
-			for (int j = 0; j < 8; j++)  // ToDo: tune this for different chips
-				__NOP();
-
-		color_flag ? color_v ++ : color_v --;
-		if (color_v > 254) color_flag = false;
-		else if (color_v < 1) color_flag = true;
-	}
-}
-
 void HWLed::OneButton(uint8_t _index)
 {
 	if (_index == 254) return;
-
-	uint8_t color_v = 1;
-	bool color_flag = true;
+	color_v = 1;
 	while(color_v > 0)
 	{
-		SetRgbBufferByID(keyLEDMap[_index], Color_t{color_v, 20, 100}, brightness);
-		color_flag ? color_v += 3 : color_v -= 3;
+		SetRgbBufferByID(_index, Color_t{color_v, 20, 100}, brightness);
+		color_flag ? color_v += 5 : color_v -= 5;
 		if (color_v > 254) color_flag = false;
 		SyncLights();
 	}
@@ -104,8 +72,7 @@ void HWLed::OneButton(uint8_t _index)
 
 void HWLed::ButtonRange(uint8_t _index){
 	if (_index == 254) return;
-	uint8_t color_v = 1;
-	bool color_flag = true;
+	color_v = 1;
 	while(color_v > 0)
 	{
 		uint8_t index;

@@ -60,7 +60,7 @@ void Main()
 				hwled.ButtonRange(keyboard.GetKeyIndex());
 				break;
 			case 4:
-				hwled.SingleLight();
+				hwled.TurnLight();
 				break;
 			case 5:
 				hwled.TurnLight();
@@ -74,7 +74,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	bool is_Send = true;
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	keyboard.ApplyDebounceFilter(20 * key_speed_level); // DebounceFilter Default value is 100
+	keyboard.ApplyDebounceFilter(20 * key_speed_level + 80); // DebounceFilter Default value is 100
 	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
@@ -108,6 +108,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
 	}
 	memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
+
 	/* uint8_t voidHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0}; */
 	/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, HWKeyboard::KEY_REPORT_SIZE); */
 }
@@ -116,7 +117,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	extern "C"
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 {
-	hwled.isRgbTxBusy = false;
+		hwled.isRgbTxBusy = false;
 }
 
 	extern "C"
