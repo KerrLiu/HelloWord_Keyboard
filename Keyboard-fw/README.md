@@ -30,7 +30,21 @@ int main (int argc, char * argv[]){
 |Lighting Effect|in progress|
 |Communication To Dynamic|in progress|
 
-# Participants
-|Name|Email|
+## Single Task By Lighting Effect
+|Lighting Effect|Finished condition|
 |---|---|
-|Kerr|[KerrForLiu](KerrForLiu@gmail.com)|
+|TurnLight|complete|
+|Breathing lamp By SinRgb|complete|
+|One Button By SinRgb|complete|
+|Button Range By SinRgb|complete|
+|Gluttonous Snake By SinRgb|in progress|
+
+
+
+# Participants
+|Name|Code|Email/Git|
+|---|---|---|
+|Kerr|main|[KerrForLiu](KerrForLiu@gmail.com)|
+|Mr. mysterious|Sin Rgb|[krakenCN](https://github.com/krakenCN)|
+|Gralerfics|keyNearMap|[Gralerfics](https://github.com/Gralerfics)|
+|俊杰|HID SendReport Status|null|
