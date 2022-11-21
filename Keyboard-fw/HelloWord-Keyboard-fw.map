@@ -1207,14 +1207,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .data          0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .text._ZN5HWLed17RespiratoryEffectEv
-                0x0000000000000000      0x134 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .text._ZN5HWLed9OneButtonEh
-                0x0000000000000000       0x80 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .text._ZN5HWLed11ButtonRangeEh
-                0x0000000000000000       0x9c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .rodata._ZN5HWLed10keyNearMapE
-                0x0000000000000000      0x1ec CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .text          0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
@@ -1564,7 +1556,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
                 0x0000000008007000                g_pfnVectors
                 0x000000000800710c                . = ALIGN (0x4)
 
-.text           0x0000000008007110     0x7a40
+.text           0x0000000008007110     0x794c
                 0x0000000008007110                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008007110       0x74 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_sin.o)
@@ -2013,430 +2005,438 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
  .text._ZN10HWKeyboard13ScanKeyStatesEv
                 0x000000000800c944       0x84 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
                 0x000000000800c944                HWKeyboard::ScanKeyStates()
+ .text._ZN10HWKeyboard8_DelayUsEm
+                0x000000000800c9c8       0x18 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800c9c8                HWKeyboard::_DelayUs(unsigned long)
  .text._ZN10HWKeyboard19ApplyDebounceFilterEm
-                0x000000000800c9c8       0x56 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800c9c8                HWKeyboard::ApplyDebounceFilter(unsigned long)
+                0x000000000800c9e0       0x56 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800c9e0                HWKeyboard::ApplyDebounceFilter(unsigned long)
  .text._ZN10HWKeyboard5RemapEh
-                0x000000000800ca1e      0x114 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800ca1e                HWKeyboard::Remap(unsigned char)
+                0x000000000800ca36      0x114 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800ca36                HWKeyboard::Remap(unsigned char)
  .text._ZN10HWKeyboard9FnPressedEv
-                0x000000000800cb32        0xa CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800cb32                HWKeyboard::FnPressed()
+                0x000000000800cb4a        0xa CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800cb4a                HWKeyboard::FnPressed()
  .text._ZN10HWKeyboard15GetButtonStatusEh
-                0x000000000800cb3c       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800cb3c                HWKeyboard::GetButtonStatus(unsigned char)
+                0x000000000800cb54       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800cb54                HWKeyboard::GetButtonStatus(unsigned char)
  .text._ZN10HWKeyboard18GetHidReportBufferEh
-                0x000000000800cb58       0x26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800cb58                HWKeyboard::GetHidReportBuffer(unsigned char)
+                0x000000000800cb70       0x26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800cb70                HWKeyboard::GetHidReportBuffer(unsigned char)
  .text._ZN10HWKeyboard10KeyPressedENS_9KeyCode_tE
-                0x000000000800cb7e       0x4c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                0x000000000800cb7e                HWKeyboard::KeyPressed(HWKeyboard::KeyCode_t)
+                0x000000000800cb96       0x4c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x000000000800cb96                HWKeyboard::KeyPressed(HWKeyboard::KeyCode_t)
  .text._ZN5HWLed16SetRgbBufferByIDEhNS_7Color_tEf
-                0x000000000800cbca       0xc6 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800cbca                HWLed::SetRgbBufferByID(unsigned char, HWLed::Color_t, float)
+                0x000000000800cbe2       0xc6 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800cbe2                HWLed::SetRgbBufferByID(unsigned char, HWLed::Color_t, float)
  .text._ZN5HWLed10SyncLightsEv
-                0x000000000800cc90       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800cc90                HWLed::SyncLights()
+                0x000000000800cca8       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800cca8                HWLed::SyncLights()
  .text._ZN5HWLed22GetRgbBrightnessFactorEh
-                0x000000000800ccc8        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800ccc8                HWLed::GetRgbBrightnessFactor(unsigned char)
+                0x000000000800cce0        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800cce0                HWLed::GetRgbBrightnessFactor(unsigned char)
  .text._ZN5HWLed22SetRgbBrightnessFactorEhf
-                0x000000000800ccd4       0x2a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800ccd4                HWLed::SetRgbBrightnessFactor(unsigned char, float)
- *fill*         0x000000000800ccfe        0x2 
+                0x000000000800ccec       0x2a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800ccec                HWLed::SetRgbBrightnessFactor(unsigned char, float)
+ *fill*         0x000000000800cd16        0x2 
  .text._ZN5HWLed19DecBrightnessFactorEh
-                0x000000000800cd00       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800cd00                HWLed::DecBrightnessFactor(unsigned char)
+                0x000000000800cd18       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800cd18                HWLed::DecBrightnessFactor(unsigned char)
+ .text._ZN5HWLed19SetSinRgbBufferByIDEhf
+                0x000000000800cd60       0xce CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800cd60                HWLed::SetSinRgbBufferByID(unsigned char, float)
  .text._ZN5HWLed9TurnLightEv
-                0x000000000800cd48       0x36 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800cd48                HWLed::TurnLight()
- *fill*         0x000000000800cd7e        0x2 
+                0x000000000800ce2e       0x36 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800ce2e                HWLed::TurnLight()
  .text._ZN5HWLed6UpdateE10HWKeyboard
-                0x000000000800cd80      0x314 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800cd80                HWLed::Update(HWKeyboard)
+                0x000000000800ce64      0x128 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800ce64                HWLed::Update(HWKeyboard)
  .text.USBD_CUSTOM_HID_GetFSCfgDesc
-                0x000000000800d094        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800cf8c        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_GetHSCfgDesc
-                0x000000000800d0a0        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800cf98        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc
-                0x000000000800d0ac        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800cfa4        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_DataIn
-                0x000000000800d0b8        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800cfb0        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_EP0_RxReady
-                0x000000000800d0c4       0x22 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- *fill*         0x000000000800d0e6        0x2 
+                0x000000000800cfbc       0x22 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ *fill*         0x000000000800cfde        0x2 
  .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc
-                0x000000000800d0e8        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800cfe0        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_DataOut
-                0x000000000800d0f4       0x1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- *fill*         0x000000000800d112        0x2 
+                0x000000000800cfec       0x1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ *fill*         0x000000000800d00a        0x2 
  .text.USBD_CUSTOM_HID_Setup
-                0x000000000800d114      0x128 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800d00c      0x128 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_DeInit
-                0x000000000800d23c       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800d134       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_Init
-                0x000000000800d274       0x52 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800d16c       0x52 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .text.USBD_CUSTOM_HID_SendReport
-                0x000000000800d2c6       0x30 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
-                0x000000000800d2c6                USBD_CUSTOM_HID_SendReport
+                0x000000000800d1be       0x30 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800d1be                USBD_CUSTOM_HID_SendReport
  .text.USBD_CUSTOM_HID_RegisterInterface
-                0x000000000800d2f6        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
-                0x000000000800d2f6                USBD_CUSTOM_HID_RegisterInterface
+                0x000000000800d1ee        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x000000000800d1ee                USBD_CUSTOM_HID_RegisterInterface
  .text.USBD_Init
-                0x000000000800d304       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d304                USBD_Init
+                0x000000000800d1fc       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d1fc                USBD_Init
  .text.USBD_RegisterClass
-                0x000000000800d332        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d332                USBD_RegisterClass
+                0x000000000800d22a        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d22a                USBD_RegisterClass
  .text.USBD_Start
-                0x000000000800d340        0xa CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d340                USBD_Start
+                0x000000000800d238        0xa CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d238                USBD_Start
  .text.USBD_SetClassConfig
-                0x000000000800d34a       0x18 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d34a                USBD_SetClassConfig
+                0x000000000800d242       0x18 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d242                USBD_SetClassConfig
  .text.USBD_ClrClassConfig
-                0x000000000800d362        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d362                USBD_ClrClassConfig
+                0x000000000800d25a        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d25a                USBD_ClrClassConfig
  .text.USBD_LL_SetupStage
-                0x000000000800d370       0x5a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d370                USBD_LL_SetupStage
+                0x000000000800d268       0x5a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d268                USBD_LL_SetupStage
  .text.USBD_LL_DataOutStage
-                0x000000000800d3ca       0x8c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d3ca                USBD_LL_DataOutStage
+                0x000000000800d2c2       0x8c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d2c2                USBD_LL_DataOutStage
  .text.USBD_LL_DataInStage
-                0x000000000800d456       0xd0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d456                USBD_LL_DataInStage
+                0x000000000800d34e       0xd0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d34e                USBD_LL_DataInStage
  .text.USBD_LL_Reset
-                0x000000000800d526       0x50 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d526                USBD_LL_Reset
+                0x000000000800d41e       0x50 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d41e                USBD_LL_Reset
  .text.USBD_LL_SetSpeed
-                0x000000000800d576        0x6 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d576                USBD_LL_SetSpeed
+                0x000000000800d46e        0x6 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d46e                USBD_LL_SetSpeed
  .text.USBD_LL_Suspend
-                0x000000000800d57c       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d57c                USBD_LL_Suspend
+                0x000000000800d474       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d474                USBD_LL_Suspend
  .text.USBD_LL_Resume
-                0x000000000800d58e       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d58e                USBD_LL_Resume
+                0x000000000800d486       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d486                USBD_LL_Resume
  .text.USBD_LL_SOF
-                0x000000000800d5a4       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x000000000800d5a4                USBD_LL_SOF
+                0x000000000800d49c       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000800d49c                USBD_LL_SOF
  .text.USBD_GetLen
-                0x000000000800d5c0       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d4b8       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetFeature
-                0x000000000800d5d4       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d4cc       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_ParseSetupRequest
-                0x000000000800d5e8       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800d5e8                USBD_ParseSetupRequest
+                0x000000000800d4e0       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d4e0                USBD_ParseSetupRequest
  .text.USBD_CtlError
-                0x000000000800d610       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800d610                USBD_CtlError
+                0x000000000800d508       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d508                USBD_CtlError
  .text.USBD_GetDescriptor
-                0x000000000800d624      0x186 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d51c      0x186 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetAddress
-                0x000000000800d7aa       0x4e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d6a2       0x4e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetConfig
-                0x000000000800d7f8       0xb0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d6f0       0xb0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_GetConfig
-                0x000000000800d8a8       0x3e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d7a0       0x3e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_GetStatus
-                0x000000000800d8e6       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d7de       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_ClrFeature
-                0x000000000800d91e       0x26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d816       0x26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_StdDevReq
-                0x000000000800d944       0x68 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800d944                USBD_StdDevReq
+                0x000000000800d83c       0x68 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d83c                USBD_StdDevReq
  .text.USBD_StdItfReq
-                0x000000000800d9ac       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800d9ac                USBD_StdItfReq
+                0x000000000800d8a4       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d8a4                USBD_StdItfReq
  .text.USBD_StdEPReq
-                0x000000000800da0c      0x1e2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800da0c                USBD_StdEPReq
+                0x000000000800d904      0x1e2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800d904                USBD_StdEPReq
  .text.USBD_GetString
-                0x000000000800dbee       0x3a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x000000000800dbee                USBD_GetString
+                0x000000000800dae6       0x3a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000800dae6                USBD_GetString
  .text.USBD_CtlSendData
-                0x000000000800dc28       0x1a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc28                USBD_CtlSendData
+                0x000000000800db20       0x1a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db20                USBD_CtlSendData
  .text.USBD_CtlContinueSendData
-                0x000000000800dc42       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc42                USBD_CtlContinueSendData
+                0x000000000800db3a       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db3a                USBD_CtlContinueSendData
  .text.USBD_CtlPrepareRx
-                0x000000000800dc52       0x1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc52                USBD_CtlPrepareRx
+                0x000000000800db4a       0x1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db4a                USBD_CtlPrepareRx
  .text.USBD_CtlContinueRx
-                0x000000000800dc70       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc70                USBD_CtlContinueRx
+                0x000000000800db68       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db68                USBD_CtlContinueRx
  .text.USBD_CtlSendStatus
-                0x000000000800dc80       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc80                USBD_CtlSendStatus
+                0x000000000800db78       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db78                USBD_CtlSendStatus
  .text.USBD_CtlReceiveStatus
-                0x000000000800dc96       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x000000000800dc96                USBD_CtlReceiveStatus
+                0x000000000800db8e       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000800db8e                USBD_CtlReceiveStatus
  .text.MX_USB_DEVICE_Init
-                0x000000000800dcac       0x54 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
-                0x000000000800dcac                MX_USB_DEVICE_Init
+                0x000000000800dba4       0x54 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+                0x000000000800dba4                MX_USB_DEVICE_Init
  .text.CUSTOM_HID_Init_FS
-                0x000000000800dd00        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x000000000800dbf8        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .text.CUSTOM_HID_DeInit_FS
-                0x000000000800dd04        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x000000000800dbfc        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .text.CUSTOM_HID_OutEvent_FS
-                0x000000000800dd08        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x000000000800dc00        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .text.USBD_FS_DeviceDescriptor
-                0x000000000800dd0c        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800dd0c                USBD_FS_DeviceDescriptor
+                0x000000000800dc04        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dc04                USBD_FS_DeviceDescriptor
  .text.USBD_FS_LangIDStrDescriptor
-                0x000000000800dd18        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800dd18                USBD_FS_LangIDStrDescriptor
+                0x000000000800dc10        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dc10                USBD_FS_LangIDStrDescriptor
  .text.IntToUnicode
-                0x000000000800dd24       0x46 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800dd6a        0x2 
+                0x000000000800dc1c       0x46 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800dc62        0x2 
  .text.Get_SerialNum
-                0x000000000800dd6c       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dc64       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .text.USBD_FS_SerialStrDescriptor
-                0x000000000800dda4       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800dda4                USBD_FS_SerialStrDescriptor
+                0x000000000800dc9c       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dc9c                USBD_FS_SerialStrDescriptor
  .text.USBD_FS_ProductStrDescriptor
-                0x000000000800ddb8       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800ddb8                USBD_FS_ProductStrDescriptor
+                0x000000000800dcb0       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dcb0                USBD_FS_ProductStrDescriptor
  .text.USBD_FS_ManufacturerStrDescriptor
-                0x000000000800dddc       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800dddc                USBD_FS_ManufacturerStrDescriptor
+                0x000000000800dcd4       0x1c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dcd4                USBD_FS_ManufacturerStrDescriptor
  .text.USBD_FS_ConfigStrDescriptor
-                0x000000000800ddf8       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800ddf8                USBD_FS_ConfigStrDescriptor
+                0x000000000800dcf0       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dcf0                USBD_FS_ConfigStrDescriptor
  .text.USBD_FS_InterfaceStrDescriptor
-                0x000000000800de1c       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800de1c                USBD_FS_InterfaceStrDescriptor
+                0x000000000800dd14       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800dd14                USBD_FS_InterfaceStrDescriptor
  .text.USBD_Get_USB_Status
-                0x000000000800de40       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dd38       0x14 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .text.HAL_PCD_MspInit
-                0x000000000800de54       0x40 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800de54                HAL_PCD_MspInit
+                0x000000000800dd4c       0x40 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dd4c                HAL_PCD_MspInit
  .text.HAL_PCD_SetupStageCallback
-                0x000000000800de94       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800de94                HAL_PCD_SetupStageCallback
+                0x000000000800dd8c       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dd8c                HAL_PCD_SetupStageCallback
  .text.HAL_PCD_DataOutStageCallback
-                0x000000000800dea4       0x18 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dea4                HAL_PCD_DataOutStageCallback
+                0x000000000800dd9c       0x18 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dd9c                HAL_PCD_DataOutStageCallback
  .text.HAL_PCD_DataInStageCallback
-                0x000000000800debc       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800debc                HAL_PCD_DataInStageCallback
+                0x000000000800ddb4       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800ddb4                HAL_PCD_DataInStageCallback
  .text.HAL_PCD_SOFCallback
-                0x000000000800ded2        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800ded2                HAL_PCD_SOFCallback
+                0x000000000800ddca        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800ddca                HAL_PCD_SOFCallback
  .text.HAL_PCD_ResetCallback
-                0x000000000800dede       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dede                HAL_PCD_ResetCallback
- *fill*         0x000000000800df02        0x2 
+                0x000000000800ddd6       0x24 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800ddd6                HAL_PCD_ResetCallback
+ *fill*         0x000000000800ddfa        0x2 
  .text.HAL_PCD_SuspendCallback
-                0x000000000800df04       0x20 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800df04                HAL_PCD_SuspendCallback
+                0x000000000800ddfc       0x20 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800ddfc                HAL_PCD_SuspendCallback
  .text.HAL_PCD_ResumeCallback
-                0x000000000800df24        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800df24                HAL_PCD_ResumeCallback
+                0x000000000800de1c        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800de1c                HAL_PCD_ResumeCallback
  .text.USBD_LL_Init
-                0x000000000800df30       0x74 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800df30                USBD_LL_Init
+                0x000000000800de28       0x74 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800de28                USBD_LL_Init
  .text.USBD_LL_Start
-                0x000000000800dfa4       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dfa4                USBD_LL_Start
+                0x000000000800de9c       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800de9c                USBD_LL_Start
  .text.USBD_LL_OpenEP
-                0x000000000800dfb4       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dfb4                USBD_LL_OpenEP
+                0x000000000800deac       0x16 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800deac                USBD_LL_OpenEP
  .text.USBD_LL_CloseEP
-                0x000000000800dfca       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dfca                USBD_LL_CloseEP
+                0x000000000800dec2       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dec2                USBD_LL_CloseEP
  .text.USBD_LL_StallEP
-                0x000000000800dfda       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dfda                USBD_LL_StallEP
+                0x000000000800ded2       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800ded2                USBD_LL_StallEP
  .text.USBD_LL_ClearStallEP
-                0x000000000800dfea       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dfea                USBD_LL_ClearStallEP
+                0x000000000800dee2       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800dee2                USBD_LL_ClearStallEP
  .text.USBD_LL_IsStallEP
-                0x000000000800dffa       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800dffa                USBD_LL_IsStallEP
+                0x000000000800def2       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800def2                USBD_LL_IsStallEP
  .text.USBD_LL_SetUSBAddress
-                0x000000000800e028       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e028                USBD_LL_SetUSBAddress
+                0x000000000800df20       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df20                USBD_LL_SetUSBAddress
  .text.USBD_LL_Transmit
-                0x000000000800e038       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e038                USBD_LL_Transmit
+                0x000000000800df30       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df30                USBD_LL_Transmit
  .text.USBD_LL_PrepareReceive
-                0x000000000800e048       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e048                USBD_LL_PrepareReceive
+                0x000000000800df40       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df40                USBD_LL_PrepareReceive
  .text.USBD_static_malloc
-                0x000000000800e058        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e058                USBD_static_malloc
+                0x000000000800df50        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df50                USBD_static_malloc
  .text.USBD_static_free
-                0x000000000800e060        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e060                USBD_static_free
+                0x000000000800df58        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df58                USBD_static_free
  .text.HAL_PCDEx_SetConnectionState
-                0x000000000800e062        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
-                0x000000000800e062                HAL_PCDEx_SetConnectionState
+                0x000000000800df5a        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000800df5a                HAL_PCDEx_SetConnectionState
  .text._ZN10HWKeyboardC2EP19__SPI_HandleTypeDef
-                0x000000000800e064      0x7b0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800e064                HWKeyboard::HWKeyboard(__SPI_HandleTypeDef*)
-                0x000000000800e064                HWKeyboard::HWKeyboard(__SPI_HandleTypeDef*)
+                0x000000000800df5c      0x7b0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800df5c                HWKeyboard::HWKeyboard(__SPI_HandleTypeDef*)
+                0x000000000800df5c                HWKeyboard::HWKeyboard(__SPI_HandleTypeDef*)
  .text._ZN5HWLedC2EP19__SPI_HandleTypeDef
-                0x000000000800e814       0x80 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800e814                HWLed::HWLed(__SPI_HandleTypeDef*)
-                0x000000000800e814                HWLed::HWLed(__SPI_HandleTypeDef*)
+                0x000000000800e70c       0x80 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e70c                HWLed::HWLed(__SPI_HandleTypeDef*)
+                0x000000000800e70c                HWLed::HWLed(__SPI_HandleTypeDef*)
  .text._Z41__static_initialization_and_destruction_0ii
-                0x000000000800e894       0x34 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .text.Main     0x000000000800e8c8       0x34 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800e8c8                Main
+                0x000000000800e78c       0x34 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .text.Main     0x000000000800e7c0       0x34 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e7c0                Main
  .text.OnTimerCallback
-                0x000000000800e8fc      0x1c0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800e8fc                OnTimerCallback
+                0x000000000800e7f4      0x1d4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e7f4                OnTimerCallback
  .text.HAL_SPI_TxCpltCallback
-                0x000000000800eabc        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800eabc                HAL_SPI_TxCpltCallback
+                0x000000000800e9c8        0xc CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e9c8                HAL_SPI_TxCpltCallback
  .text.HID_RxCpltCallback
-                0x000000000800eac8        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800eac8                HID_RxCpltCallback
+                0x000000000800e9d4        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e9d4                HID_RxCpltCallback
  .text._GLOBAL__sub_I_keyboard
-                0x000000000800eaca        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800e9d6        0xe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
  .text.Reset_Handler
-                0x000000000800ead8       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x000000000800ead8                Reset_Handler
+                0x000000000800e9e4       0x48 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x000000000800e9e4                Reset_Handler
  .text.Default_Handler
-                0x000000000800eb20        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x000000000800eb20                RTC_Alarm_IRQHandler
-                0x000000000800eb20                EXTI2_IRQHandler
-                0x000000000800eb20                TIM1_CC_IRQHandler
-                0x000000000800eb20                PVD_IRQHandler
-                0x000000000800eb20                EXTI3_IRQHandler
-                0x000000000800eb20                EXTI0_IRQHandler
-                0x000000000800eb20                I2C2_EV_IRQHandler
-                0x000000000800eb20                ADC1_2_IRQHandler
-                0x000000000800eb20                TAMPER_IRQHandler
-                0x000000000800eb20                DMA1_Channel4_IRQHandler
-                0x000000000800eb20                USART3_IRQHandler
-                0x000000000800eb20                RTC_IRQHandler
-                0x000000000800eb20                DMA1_Channel7_IRQHandler
-                0x000000000800eb20                CAN1_RX1_IRQHandler
-                0x000000000800eb20                I2C1_EV_IRQHandler
-                0x000000000800eb20                DMA1_Channel6_IRQHandler
-                0x000000000800eb20                TIM3_IRQHandler
-                0x000000000800eb20                RCC_IRQHandler
-                0x000000000800eb20                TIM1_TRG_COM_IRQHandler
-                0x000000000800eb20                DMA1_Channel1_IRQHandler
-                0x000000000800eb20                Default_Handler
-                0x000000000800eb20                EXTI15_10_IRQHandler
-                0x000000000800eb20                EXTI9_5_IRQHandler
-                0x000000000800eb20                EXTI4_IRQHandler
-                0x000000000800eb20                USB_HP_CAN1_TX_IRQHandler
-                0x000000000800eb20                DMA1_Channel3_IRQHandler
-                0x000000000800eb20                TIM1_UP_IRQHandler
-                0x000000000800eb20                WWDG_IRQHandler
-                0x000000000800eb20                TIM2_IRQHandler
-                0x000000000800eb20                TIM1_BRK_IRQHandler
-                0x000000000800eb20                EXTI1_IRQHandler
-                0x000000000800eb20                USART2_IRQHandler
-                0x000000000800eb20                I2C2_ER_IRQHandler
-                0x000000000800eb20                CAN1_SCE_IRQHandler
-                0x000000000800eb20                FLASH_IRQHandler
-                0x000000000800eb20                USART1_IRQHandler
-                0x000000000800eb20                I2C1_ER_IRQHandler
-                0x000000000800eb20                USBWakeUp_IRQHandler
- *fill*         0x000000000800eb22        0x2 
- .text.startup  0x000000000800eb24       0x14 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x000000000800ea2c        0x2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x000000000800ea2c                RTC_Alarm_IRQHandler
+                0x000000000800ea2c                EXTI2_IRQHandler
+                0x000000000800ea2c                TIM1_CC_IRQHandler
+                0x000000000800ea2c                PVD_IRQHandler
+                0x000000000800ea2c                EXTI3_IRQHandler
+                0x000000000800ea2c                EXTI0_IRQHandler
+                0x000000000800ea2c                I2C2_EV_IRQHandler
+                0x000000000800ea2c                ADC1_2_IRQHandler
+                0x000000000800ea2c                TAMPER_IRQHandler
+                0x000000000800ea2c                DMA1_Channel4_IRQHandler
+                0x000000000800ea2c                USART3_IRQHandler
+                0x000000000800ea2c                RTC_IRQHandler
+                0x000000000800ea2c                DMA1_Channel7_IRQHandler
+                0x000000000800ea2c                CAN1_RX1_IRQHandler
+                0x000000000800ea2c                I2C1_EV_IRQHandler
+                0x000000000800ea2c                DMA1_Channel6_IRQHandler
+                0x000000000800ea2c                TIM3_IRQHandler
+                0x000000000800ea2c                RCC_IRQHandler
+                0x000000000800ea2c                TIM1_TRG_COM_IRQHandler
+                0x000000000800ea2c                DMA1_Channel1_IRQHandler
+                0x000000000800ea2c                Default_Handler
+                0x000000000800ea2c                EXTI15_10_IRQHandler
+                0x000000000800ea2c                EXTI9_5_IRQHandler
+                0x000000000800ea2c                EXTI4_IRQHandler
+                0x000000000800ea2c                USB_HP_CAN1_TX_IRQHandler
+                0x000000000800ea2c                DMA1_Channel3_IRQHandler
+                0x000000000800ea2c                TIM1_UP_IRQHandler
+                0x000000000800ea2c                WWDG_IRQHandler
+                0x000000000800ea2c                TIM2_IRQHandler
+                0x000000000800ea2c                TIM1_BRK_IRQHandler
+                0x000000000800ea2c                EXTI1_IRQHandler
+                0x000000000800ea2c                USART2_IRQHandler
+                0x000000000800ea2c                I2C2_ER_IRQHandler
+                0x000000000800ea2c                CAN1_SCE_IRQHandler
+                0x000000000800ea2c                FLASH_IRQHandler
+                0x000000000800ea2c                USART1_IRQHandler
+                0x000000000800ea2c                I2C1_ER_IRQHandler
+                0x000000000800ea2c                USBWakeUp_IRQHandler
+ *fill*         0x000000000800ea2e        0x2 
+ .text.startup  0x000000000800ea30       0x14 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
  *(.glue_7)
- .glue_7        0x000000000800eb38        0x0 linker stubs
+ .glue_7        0x000000000800ea44        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000000000800eb38        0x0 linker stubs
+ .glue_7t       0x000000000800ea44        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x000000000800eb38        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x000000000800ea44        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x000000000800eb38        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
-                0x000000000800eb38                _init
- .init          0x000000000800eb3c        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
+ .init          0x000000000800ea44        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
+                0x000000000800ea44                _init
+ .init          0x000000000800ea48        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x000000000800eb44        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
-                0x000000000800eb44                _fini
- .fini          0x000000000800eb48        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
-                0x000000000800eb50                . = ALIGN (0x4)
-                0x000000000800eb50                _etext = .
+ .fini          0x000000000800ea50        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crti.o
+                0x000000000800ea50                _fini
+ .fini          0x000000000800ea54        0x8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.o
+                0x000000000800ea5c                . = ALIGN (0x4)
+                0x000000000800ea5c                _etext = .
 
-.vfp11_veneer   0x000000000800eb50        0x0
- .vfp11_veneer  0x000000000800eb50        0x0 linker stubs
+.vfp11_veneer   0x000000000800ea5c        0x0
+ .vfp11_veneer  0x000000000800ea5c        0x0 linker stubs
 
-.v4_bx          0x000000000800eb50        0x0
- .v4_bx         0x000000000800eb50        0x0 linker stubs
+.v4_bx          0x000000000800ea5c        0x0
+ .v4_bx         0x000000000800ea5c        0x0 linker stubs
 
-.iplt           0x000000000800eb50        0x0
- .iplt          0x000000000800eb50        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x000000000800ea5c        0x0
+ .iplt          0x000000000800ea5c        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x000000000800eb50      0x4b8
-                0x000000000800eb50                . = ALIGN (0x4)
+.rodata         0x000000000800ea5c      0x6a4
+                0x000000000800ea5c                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800eb50      0x398 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-ef_rem_pio2.o)
- .rodata        0x000000000800eee8       0x38 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_rem_pio2.o)
- .rodata        0x000000000800ef20        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
-                0x000000000800ef20                _global_impure_ptr
+ .rodata        0x000000000800ea5c      0x398 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-ef_rem_pio2.o)
+ .rodata        0x000000000800edf4       0x38 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_rem_pio2.o)
+ .rodata        0x000000000800ee2c        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-impure.o)
+                0x000000000800ee2c                _global_impure_ptr
  *(.rodata*)
  .rodata.APBPrescTable
-                0x000000000800ef24        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
-                0x000000000800ef24                APBPrescTable
+                0x000000000800ee30        0x8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
+                0x000000000800ee30                APBPrescTable
  .rodata.AHBPrescTable
-                0x000000000800ef2c       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
-                0x000000000800ef2c                AHBPrescTable
+                0x000000000800ee38       0x10 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/system_stm32f1xx.c.obj
+                0x000000000800ee38                AHBPrescTable
  .rodata.HAL_RCC_GetSysClockFreq.str1.4
-                0x000000000800ef3c       0x11 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
- *fill*         0x000000000800ef4d        0x3 
+                0x000000000800ee48       0x11 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+ *fill*         0x000000000800ee59        0x3 
+ .rodata._ZN5HWLed10keyNearMapE
+                0x000000000800ee5c      0x1ec CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800ee5c                HWLed::keyNearMap
  .rodata._ZN5HWLed9keyLEDMapE
-                0x000000000800ef50       0x68 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                0x000000000800ef50                HWLed::keyLEDMap
+                0x000000000800f048       0x68 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x000000000800f048                HWLed::keyLEDMap
  .rodata.USBD_FS_ProductStrDescriptor.str1.4
-                0x000000000800efb8       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800efd1        0x3 
+                0x000000000800f0b0       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800f0c9        0x3 
  .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4
-                0x000000000800efd4        0x5 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800efd9        0x3 
+                0x000000000800f0cc        0x5 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800f0d1        0x3 
  .rodata.USBD_FS_ConfigStrDescriptor.str1.4
-                0x000000000800efdc       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- *fill*         0x000000000800efee        0x2 
+                0x000000000800f0d4       0x12 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ *fill*         0x000000000800f0e6        0x2 
  .rodata.USBD_FS_InterfaceStrDescriptor.str1.4
-                0x000000000800eff0       0x15 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
-                0x000000000800f008                . = ALIGN (0x4)
- *fill*         0x000000000800f005        0x3 
+                0x000000000800f0e8       0x15 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000800f100                . = ALIGN (0x4)
+ *fill*         0x000000000800f0fd        0x3 
 
-.rel.dyn        0x000000000800f008        0x0
- .rel.iplt      0x000000000800f008        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x000000000800f100        0x0
+ .rel.iplt      0x000000000800f100        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x000000000800f008        0x0
-                0x000000000800f008                __exidx_start = .
+.ARM            0x000000000800f100        0x0
+                0x000000000800f100                __exidx_start = .
  *(.ARM.exidx*)
-                0x000000000800f008                __exidx_end = .
+                0x000000000800f100                __exidx_end = .
 
-.preinit_array  0x000000000800f008        0x0
-                0x000000000800f008                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000000800f100        0x0
+                0x000000000800f100                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000000800f008                PROVIDE (__preinit_array_end = .)
+                0x000000000800f100                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000000800f008        0xc
-                0x000000000800f008                PROVIDE (__init_array_start = .)
+.init_array     0x000000000800f100        0xc
+                0x000000000800f100                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x000000000800f008        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x000000000800f100        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x000000000800f00c        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
- .init_array    0x000000000800f010        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x000000000800f014                PROVIDE (__init_array_end = .)
+ .init_array    0x000000000800f104        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+ .init_array    0x000000000800f108        0x4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000800f10c                PROVIDE (__init_array_end = .)
 
-.fini_array     0x000000000800f014        0x4
-                0x000000000800f014                PROVIDE (__fini_array_start = .)
+.fini_array     0x000000000800f10c        0x4
+                0x000000000800f10c                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x000000000800f014        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
-                0x000000000800f018                PROVIDE (__fini_array_end = .)
-                0x000000000800f018                _sidata = LOADADDR (.data)
+ .fini_array    0x000000000800f10c        0x4 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
+                0x000000000800f110                PROVIDE (__fini_array_end = .)
+                0x000000000800f110                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x5d4 load address 0x000000000800f018
+.data           0x0000000020000000      0x5d4 load address 0x000000000800f110
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2499,11 +2499,11 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
  *fill*         0x00000000200005d1        0x3 
                 0x00000000200005d4                _edata = .
 
-.igot.plt       0x00000000200005d4        0x0 load address 0x000000000800f5ec
+.igot.plt       0x00000000200005d4        0x0 load address 0x000000000800f6e4
  .igot.plt      0x00000000200005d4        0x0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtbegin.o
                 0x00000000200005d4                . = ALIGN (0x4)
 
-.bss            0x00000000200005d4     0x1998 load address 0x000000000800f5ec
+.bss            0x00000000200005d4     0x19cc load address 0x000000000800f6e4
                 0x00000000200005d4                _sbss = .
                 0x00000000200005d4                __bss_start__ = _sbss
  *(.bss)
@@ -2557,26 +2557,29 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp/crtn.
                 0x0000000020000ff5        0x1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
                 0x0000000020000ff5                isKeyDownCombination
  *fill*         0x0000000020000ff6        0x2 
- .bss.hwled     0x0000000020000ff8      0xb70 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x0000000020000ff8                hwled
- .bss.keyboard  0x0000000020001b68      0x404 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                0x0000000020001b68                keyboard
+ .bss.nullHidBuffer
+                0x0000000020000ff8       0x32 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x0000000020000ff8                nullHidBuffer
+ *fill*         0x000000002000102a        0x2 
+ .bss.hwled     0x000000002000102c      0xb70 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000002000102c                hwled
+ .bss.keyboard  0x0000000020001b9c      0x404 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x0000000020001b9c                keyboard
  *(COMMON)
-                0x0000000020001f6c                . = ALIGN (0x4)
-                0x0000000020001f6c                _ebss = .
-                0x0000000020001f6c                __bss_end__ = _ebss
+                0x0000000020001fa0                . = ALIGN (0x4)
+                0x0000000020001fa0                _ebss = .
+                0x0000000020001fa0                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020001f6c      0xa04 load address 0x000000000800f5ec
-                0x0000000020001f70                . = ALIGN (0x8)
- *fill*         0x0000000020001f6c        0x4 
-                0x0000000020001f70                PROVIDE (end = .)
+                0x0000000020001fa0      0xa00 load address 0x000000000800f6e4
+                0x0000000020001fa0                . = ALIGN (0x8)
+                0x0000000020001fa0                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020002170                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020001f70      0x200 
-                0x0000000020002970                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020002170      0x800 
-                0x0000000020002970                . = ALIGN (0x8)
+                0x00000000200021a0                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020001fa0      0x200 
+                0x00000000200029a0                . = (. + _Min_Stack_Size)
+ *fill*         0x00000000200021a0      0x800 
+                0x00000000200029a0                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2716,7 +2719,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-
 LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x21fa7
+.debug_info     0x0000000000000000    0x21be8
  .debug_info    0x0000000000000000      0x32b CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_info    0x000000000000032b      0x3d8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_info    0x0000000000000703      0x433 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -2739,27 +2742,27 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_info    0x000000000000e5fe     0x19b6 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_info    0x000000000000ffb4     0x1b89 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .debug_info    0x0000000000011b3d     0x1baf CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
- .debug_info    0x00000000000136ec     0x11aa CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
- .debug_info    0x0000000000014896     0x354e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .debug_info    0x0000000000017de4      0xd26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- .debug_info    0x0000000000018b0a      0xda2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_info    0x00000000000198ac     0x1053 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_info    0x000000000001a8ff      0x7b1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_info    0x000000000001b0b0      0x6a4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
- .debug_info    0x000000000001b754      0x1e0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
- .debug_info    0x000000000001b934      0x5b3 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- .debug_info    0x000000000001bee7     0x1c1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_info    0x000000000001db05     0x415f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_info    0x0000000000021c64       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_info    0x0000000000021c92       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_info    0x0000000000021cce       0xc0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x0000000000021d8e       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_info    0x0000000000021dca       0xaf d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_info    0x0000000000021e79       0xbc d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_info    0x0000000000021f35       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
- .debug_info    0x0000000000021f6e       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_info    0x00000000000136ec     0x1252 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+ .debug_info    0x000000000001493e     0x30a9 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+ .debug_info    0x00000000000179e7      0xd26 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ .debug_info    0x000000000001870d      0xda2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_info    0x00000000000194af     0x1053 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_info    0x000000000001a502      0x7b1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_info    0x000000000001acb3      0x6a4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_info    0x000000000001b357      0x1e0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+ .debug_info    0x000000000001b537      0x5b3 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_info    0x000000000001baea     0x1c1e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_info    0x000000000001d708     0x419d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_info    0x00000000000218a5       0x2e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_info    0x00000000000218d3       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_info    0x000000000002190f       0xc0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x00000000000219cf       0x3c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_info    0x0000000000021a0b       0xaf d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_info    0x0000000000021aba       0xbc d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_info    0x0000000000021b76       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+ .debug_info    0x0000000000021baf       0x39 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
-.debug_abbrev   0x0000000000000000     0x4ea9
+.debug_abbrev   0x0000000000000000     0x4ecb
  .debug_abbrev  0x0000000000000000      0x119 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_abbrev  0x0000000000000119      0x166 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_abbrev  0x000000000000027f      0x1c7 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -2782,27 +2785,27 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_abbrev  0x00000000000026b1      0x267 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_abbrev  0x0000000000002918      0x298 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .debug_abbrev  0x0000000000002bb0      0x22b CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
- .debug_abbrev  0x0000000000002ddb      0x392 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
- .debug_abbrev  0x000000000000316d      0x49c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .debug_abbrev  0x0000000000003609      0x2be CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- .debug_abbrev  0x00000000000038c7      0x289 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_abbrev  0x0000000000003b50      0x2eb CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_abbrev  0x0000000000003e3b      0x1a8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_abbrev  0x0000000000003fe3      0x1a4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
- .debug_abbrev  0x0000000000004187      0x140 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
- .debug_abbrev  0x00000000000042c7      0x221 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- .debug_abbrev  0x00000000000044e8      0x32e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_abbrev  0x0000000000004816      0x591 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_abbrev  0x0000000000004da7       0x1d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_abbrev  0x0000000000004dc4       0x1f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_abbrev  0x0000000000004de3       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x0000000000004e04       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_abbrev  0x0000000000004e25       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_abbrev  0x0000000000004e46       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_abbrev  0x0000000000004e67       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
- .debug_abbrev  0x0000000000004e88       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_abbrev  0x0000000000002ddb      0x3b4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+ .debug_abbrev  0x000000000000318f      0x49c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+ .debug_abbrev  0x000000000000362b      0x2be CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ .debug_abbrev  0x00000000000038e9      0x289 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_abbrev  0x0000000000003b72      0x2eb CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_abbrev  0x0000000000003e5d      0x1a8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_abbrev  0x0000000000004005      0x1a4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_abbrev  0x00000000000041a9      0x140 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+ .debug_abbrev  0x00000000000042e9      0x221 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_abbrev  0x000000000000450a      0x32e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_abbrev  0x0000000000004838      0x591 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_abbrev  0x0000000000004dc9       0x1d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_abbrev  0x0000000000004de6       0x1f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_abbrev  0x0000000000004e05       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x0000000000004e26       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_abbrev  0x0000000000004e47       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_abbrev  0x0000000000004e68       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_abbrev  0x0000000000004e89       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+ .debug_abbrev  0x0000000000004eaa       0x21 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
-.debug_aranges  0x0000000000000000     0x1698
+.debug_aranges  0x0000000000000000     0x1690
  .debug_aranges
                 0x0000000000000000       0x20 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_aranges
@@ -2848,46 +2851,46 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_aranges
                 0x0000000000000f90       0xf0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
  .debug_aranges
-                0x0000000000001080       0x78 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x0000000000001080       0x80 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
  .debug_aranges
-                0x00000000000010f8       0x68 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x0000000000001100       0x58 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .debug_aranges
-                0x0000000000001160       0x78 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x0000000000001158       0x78 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .debug_aranges
-                0x00000000000011d8       0xb8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x00000000000011d0       0xb8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
  .debug_aranges
-                0x0000000000001290       0x88 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0000000000001288       0x88 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .debug_aranges
-                0x0000000000001318       0x50 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0000000000001310       0x50 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
  .debug_aranges
-                0x0000000000001368       0x20 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+                0x0000000000001360       0x20 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
  .debug_aranges
-                0x0000000000001388       0x30 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x0000000000001380       0x30 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_aranges
-                0x00000000000013b8       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x00000000000013b0       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_aranges
-                0x0000000000001418      0x118 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x0000000000001410      0x118 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .debug_aranges
-                0x0000000000001530       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x0000000000001528       0x60 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
  .debug_aranges
-                0x0000000000001590       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x0000000000001588       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
  .debug_aranges
-                0x00000000000015b8       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+                0x00000000000015b0       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
  .debug_aranges
-                0x00000000000015d8       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                0x00000000000015d0       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
  .debug_aranges
-                0x00000000000015f8       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+                0x00000000000015f0       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
  .debug_aranges
-                0x0000000000001618       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+                0x0000000000001610       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
  .debug_aranges
-                0x0000000000001638       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+                0x0000000000001630       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
  .debug_aranges
-                0x0000000000001658       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+                0x0000000000001650       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
  .debug_aranges
-                0x0000000000001678       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+                0x0000000000001670       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
 .debug_rnglists
-                0x0000000000000000     0x1283
+                0x0000000000000000     0x1292
  .debug_rnglists
                 0x0000000000000000       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_rnglists
@@ -2933,31 +2936,31 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_rnglists
                 0x0000000000000c46      0x237 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
  .debug_rnglists
-                0x0000000000000e7d       0x7b CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x0000000000000e7d       0x8d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
  .debug_rnglists
-                0x0000000000000ef8       0x66 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x0000000000000f0a       0x63 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .debug_rnglists
-                0x0000000000000f5e       0x56 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x0000000000000f6d       0x56 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .debug_rnglists
-                0x0000000000000fb4       0x87 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x0000000000000fc3       0x87 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
  .debug_rnglists
-                0x000000000000103b       0x64 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000000104a       0x64 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .debug_rnglists
-                0x000000000000109f       0x37 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x00000000000010ae       0x37 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
  .debug_rnglists
-                0x00000000000010d6       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+                0x00000000000010e5       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
  .debug_rnglists
-                0x00000000000010e9       0x1f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x00000000000010f8       0x1f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_rnglists
-                0x0000000000001108       0x43 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x0000000000001117       0x43 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_rnglists
-                0x000000000000114b       0xcd CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000000115a       0xcd CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .debug_rnglists
-                0x0000000000001218       0x52 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x0000000000001227       0x52 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
  .debug_rnglists
-                0x000000000000126a       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x0000000000001279       0x19 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
 
-.debug_line     0x0000000000000000    0x18070
+.debug_line     0x0000000000000000    0x17c3a
  .debug_line    0x0000000000000000      0x20f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_line    0x000000000000020f      0x29a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_line    0x00000000000004a9      0x48c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -2980,27 +2983,27 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_line    0x000000000000d63c     0x1c49 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_line    0x000000000000f285     0x2137 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .debug_line    0x00000000000113bc     0x1b08 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
- .debug_line    0x0000000000012ec4      0x846 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
- .debug_line    0x000000000001370a      0xca8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .debug_line    0x00000000000143b2      0x6b0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- .debug_line    0x0000000000014a62      0x757 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_line    0x00000000000151b9      0xb3f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_line    0x0000000000015cf8      0x2ce CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_line    0x0000000000015fc6      0x2fe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
- .debug_line    0x00000000000162c4      0x280 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
- .debug_line    0x0000000000016544      0x390 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- .debug_line    0x00000000000168d4      0x8af CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_line    0x0000000000017183      0x975 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_line    0x0000000000017af8       0x79 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_line    0x0000000000017b71       0xbd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_line    0x0000000000017c2e      0x16f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x0000000000017d9d       0x76 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_line    0x0000000000017e13      0x103 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_line    0x0000000000017f16       0x9a d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_line    0x0000000000017fb0       0x62 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
- .debug_line    0x0000000000018012       0x5e d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_line    0x0000000000012ec4      0x882 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+ .debug_line    0x0000000000013746      0x82e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+ .debug_line    0x0000000000013f74      0x6b0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ .debug_line    0x0000000000014624      0x757 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_line    0x0000000000014d7b      0xb3f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_line    0x00000000000158ba      0x2ce CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_line    0x0000000000015b88      0x2fe CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_line    0x0000000000015e86      0x280 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+ .debug_line    0x0000000000016106      0x390 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_line    0x0000000000016496      0x8af CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_line    0x0000000000016d45      0x97d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_line    0x00000000000176c2       0x79 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_line    0x000000000001773b       0xbd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_line    0x00000000000177f8      0x16f d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000000000017967       0x76 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line    0x00000000000179dd      0x103 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_line    0x0000000000017ae0       0x9a d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_line    0x0000000000017b7a       0x62 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+ .debug_line    0x0000000000017bdc       0x5e d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
 
-.debug_str      0x0000000000000000     0x7bd9
+.debug_str      0x0000000000000000     0x7bcc
  .debug_str     0x0000000000000000      0x500 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
                                         0x542 (size before relaxing)
  .debug_str     0x0000000000000500       0xe2 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
@@ -3045,43 +3048,43 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
                                         0xce6 (size before relaxing)
  .debug_str     0x0000000000004c48      0x15e CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
                                         0x753 (size before relaxing)
- .debug_str     0x0000000000004da6      0x896 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
-                                        0xe2d (size before relaxing)
- .debug_str     0x000000000000563c      0xf53 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
-                                       0x1d2d (size before relaxing)
- .debug_str     0x000000000000658f      0x724 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ .debug_str     0x0000000000004da6      0x8bb CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                                        0xe5a (size before relaxing)
+ .debug_str     0x0000000000005661      0xf13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                                       0x1d0b (size before relaxing)
+ .debug_str     0x0000000000006574      0x724 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
                                         0x9c8 (size before relaxing)
- .debug_str     0x0000000000006cb3      0x2ce CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_str     0x0000000000006c98      0x2ce CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
                                         0x889 (size before relaxing)
- .debug_str     0x0000000000006f81      0x15c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_str     0x0000000000006f66      0x15c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
                                         0x7a3 (size before relaxing)
- .debug_str     0x00000000000070dd       0xa8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_str     0x00000000000070c2       0xa8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
                                         0x6d0 (size before relaxing)
- .debug_str     0x0000000000007185       0x8c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_str     0x000000000000716a       0x8c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
                                         0x6ce (size before relaxing)
- .debug_str     0x0000000000007211       0xca CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+ .debug_str     0x00000000000071f6       0xca CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
                                         0x2f9 (size before relaxing)
- .debug_str     0x00000000000072db      0x1b1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_str     0x00000000000072c0      0x1b1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
                                         0x4a9 (size before relaxing)
- .debug_str     0x000000000000748c       0xb9 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_str     0x0000000000007471       0xb9 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
                                        0x11fe (size before relaxing)
- .debug_str     0x0000000000007545      0x35f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
-                                       0x26f4 (size before relaxing)
- .debug_str     0x00000000000078a4       0x7c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_str     0x000000000000752a      0x36d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                                       0x26e6 (size before relaxing)
+ .debug_str     0x0000000000007897       0x7c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/startup/startup_stm32f103xb.s.obj
                                          0xc0 (size before relaxing)
- .debug_str     0x0000000000007920       0xb2 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_str     0x0000000000007913       0xb2 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
                                          0xcb (size before relaxing)
- .debug_str     0x00000000000079d2       0xd2 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_str     0x00000000000079c5       0xd2 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
                                         0x16f (size before relaxing)
- .debug_str     0x0000000000007aa4        0xd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_str     0x0000000000007a97        0xd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
                                          0xce (size before relaxing)
- .debug_str     0x0000000000007ab1       0x6d d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_str     0x0000000000007aa4       0x6d d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
                                         0x155 (size before relaxing)
- .debug_str     0x0000000000007b1e       0x97 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_str     0x0000000000007b11       0x97 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
                                         0x16a (size before relaxing)
- .debug_str     0x0000000000007bb5       0x17 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+ .debug_str     0x0000000000007ba8       0x17 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
                                          0xcc (size before relaxing)
- .debug_str     0x0000000000007bcc        0xd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_str     0x0000000000007bbf        0xd d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
                                          0xd0 (size before relaxing)
 
 .comment        0x0000000000000000       0x12
@@ -3120,7 +3123,7 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .comment       0x0000000000000012       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .comment       0x0000000000000012       0x13 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
 
-.debug_frame    0x0000000000000000     0x3dd8
+.debug_frame    0x0000000000000000     0x3d80
  .debug_frame   0x0000000000000000       0x2c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/dma.c.obj
  .debug_frame   0x000000000000002c       0x38 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/gpio.c.obj
  .debug_frame   0x0000000000000064       0x58 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/main.c.obj
@@ -3143,43 +3146,43 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_frame   0x0000000000001f5c      0x40c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
  .debug_frame   0x0000000000002368      0x5c0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
  .debug_frame   0x0000000000002928      0x1f0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
- .debug_frame   0x0000000000002b18       0xf4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
- .debug_frame   0x0000000000002c0c      0x17c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
- .debug_frame   0x0000000000002d88      0x11c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
- .debug_frame   0x0000000000002ea4      0x1c4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_frame   0x0000000000003068      0x178 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_frame   0x00000000000031e0       0xb8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_frame   0x0000000000003298       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
- .debug_frame   0x00000000000032c0       0x40 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
- .debug_frame   0x0000000000003300       0xe0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
- .debug_frame   0x00000000000033e0      0x2ec CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
- .debug_frame   0x00000000000036cc       0xf4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
- .debug_frame   0x00000000000037c0       0x38 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_sin.o)
- .debug_frame   0x00000000000037f8       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-ef_rem_pio2.o)
- .debug_frame   0x0000000000003844       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_cos.o)
- .debug_frame   0x0000000000003878       0x50 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_rem_pio2.o)
- .debug_frame   0x00000000000038c8       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_sin.o)
- .debug_frame   0x00000000000038fc       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_fabs.o)
- .debug_frame   0x000000000000391c       0x30 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_floor.o)
- .debug_frame   0x000000000000394c       0x28 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_scalbn.o)
- .debug_frame   0x0000000000003974       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
- .debug_frame   0x0000000000003998       0xac d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x0000000000003a44       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x0000000000003a68       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_frame   0x0000000000003ab4       0xc8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_frame   0x0000000000003b7c       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
- .debug_frame   0x0000000000003ba0       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
- .debug_frame   0x0000000000003bc4       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-atexit.o)
- .debug_frame   0x0000000000003be4       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-fini.o)
- .debug_frame   0x0000000000003c18       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-init.o)
- .debug_frame   0x0000000000003c44       0x28 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memcmp.o)
- .debug_frame   0x0000000000003c6c       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memset.o)
- .debug_frame   0x0000000000003c98       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__atexit.o)
- .debug_frame   0x0000000000003ccc       0x5c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x0000000000003d28       0xb0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-lock.o)
+ .debug_frame   0x0000000000002b18      0x104 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+ .debug_frame   0x0000000000002c1c      0x114 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+ .debug_frame   0x0000000000002d30      0x11c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+ .debug_frame   0x0000000000002e4c      0x1c4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_frame   0x0000000000003010      0x178 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_frame   0x0000000000003188       0xb8 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_frame   0x0000000000003240       0x28 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usb_device.c.obj
+ .debug_frame   0x0000000000003268       0x40 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+ .debug_frame   0x00000000000032a8       0xe0 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+ .debug_frame   0x0000000000003388      0x2ec CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+ .debug_frame   0x0000000000003674       0xf4 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+ .debug_frame   0x0000000000003768       0x38 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_sin.o)
+ .debug_frame   0x00000000000037a0       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-ef_rem_pio2.o)
+ .debug_frame   0x00000000000037ec       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_cos.o)
+ .debug_frame   0x0000000000003820       0x50 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_rem_pio2.o)
+ .debug_frame   0x0000000000003870       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-kf_sin.o)
+ .debug_frame   0x00000000000038a4       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_fabs.o)
+ .debug_frame   0x00000000000038c4       0x30 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_floor.o)
+ .debug_frame   0x00000000000038f4       0x28 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-sf_scalbn.o)
+ .debug_frame   0x000000000000391c       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_mulsf3.o)
+ .debug_frame   0x0000000000003940       0xac d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000000000039ec       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x0000000000003a10       0x4c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x0000000000003a5c       0xc8 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_frame   0x0000000000003b24       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixsfsi.o)
+ .debug_frame   0x0000000000003b48       0x24 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_frame   0x0000000000003b6c       0x20 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-atexit.o)
+ .debug_frame   0x0000000000003b8c       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-fini.o)
+ .debug_frame   0x0000000000003bc0       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-init.o)
+ .debug_frame   0x0000000000003bec       0x28 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x0000000000003c14       0x2c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-memset.o)
+ .debug_frame   0x0000000000003c40       0x34 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__atexit.o)
+ .debug_frame   0x0000000000003c74       0x5c d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x0000000000003cd0       0xb0 d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a(lib_a-lock.o)
 
 .debug_loclists
-                0x0000000000000000     0xc622
+                0x0000000000000000     0xc579
  .debug_loclists
                 0x0000000000000000       0x71 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Core/Src/spi.c.obj
  .debug_loclists
@@ -3217,25 +3220,25 @@ LOAD d:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v7-m/nofp\libgc
  .debug_loclists
                 0x000000000000877e     0x115c CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c.obj
  .debug_loclists
-                0x00000000000098da      0x454 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
+                0x00000000000098da      0x47f CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_keyboard.cpp.obj
  .debug_loclists
-                0x0000000000009d2e      0x33d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
+                0x0000000000009d59      0x26a CMakeFiles/HelloWord-Keyboard-fw.elf.dir/HelloWord/hw_led.cpp.obj
  .debug_loclists
-                0x000000000000a06b      0x575 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
+                0x0000000000009fc3      0x575 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c.obj
  .debug_loclists
-                0x000000000000a5e0      0x5e1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x000000000000a538      0x5e1 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
  .debug_loclists
-                0x000000000000abc1      0xced CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x000000000000ab19      0xced CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .debug_loclists
-                0x000000000000b8ae      0x198 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x000000000000b806      0x198 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
  .debug_loclists
-                0x000000000000ba46       0x23 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
+                0x000000000000b99e       0x23 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_custom_hid_if.c.obj
  .debug_loclists
-                0x000000000000ba69      0x22d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+                0x000000000000b9c1      0x22d CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
  .debug_loclists
-                0x000000000000bc96      0x718 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
+                0x000000000000bbee      0x718 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
  .debug_loclists
-                0x000000000000c3ae      0x274 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
+                0x000000000000c306      0x273 CMakeFiles/HelloWord-Keyboard-fw.elf.dir/UserApp/main.cpp.obj
 
 .debug_line_str
                 0x0000000000000000      0x15c

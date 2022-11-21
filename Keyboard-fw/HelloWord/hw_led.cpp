@@ -37,7 +37,13 @@ void HWLed::SetRgbBrightnessFactor(uint8_t _index, float _value)
 }
 
 void HWLed::DecBrightnessFactor(uint8_t _index){
-	if (rgbBrightnessFactor[_index] > 0) rgbBrightnessFactor[_index] -= 0.02;
+	if (rgbBrightnessFactor[_index] > 0) rgbBrightnessFactor[_index] -= 0.01;
+}
+
+void HWLed::SetSinRgbBufferByID(uint8_t _index, float _brightness){
+	SetRgbBufferByID(_index, Color_t{(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 0 + _index) * RADIAN_1 + HALF_PI) + HALF_FF), 
+			(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + _index) * RADIAN_1 + HALF_PI) + HALF_FF), 
+			(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + _index) * RADIAN_1 + HALF_PI) + HALF_FF)}, _brightness);
 }
 // -----------------------Lamp efficiency code----------------------
 
@@ -55,49 +61,28 @@ void HWLed::Update(HWKeyboard _keyboard)
 
 		for (uint8_t i = 0; i < LED_KEY_NUMBER; i++){
 			if(ledMode == 1){
-				SetRgbBufferByID(i, Color_t{(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 0 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-						(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-						(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + i) * RADIAN_1 + HALF_PI) + HALF_FF)}, brightness);
-			}else if (ledMode == 2){
+				SetSinRgbBufferByID(i, brightness);
+			}else if (ledMode == 2 || ledMode == 3){
 				if(_keyboard.GetButtonStatus(i)){
 					if (ledMode == 2){
 						SetRgbBrightnessFactor(i, brightness);
+					}else if (ledMode == 3){
+						for(uint8_t j = 0; j < 6; j++){
+							uint8_t _index = keyNearMap[i][j];
+							if (_index != 127) SetRgbBrightnessFactor(_index, brightness);
+							/* SetRgbBrightnessFactor(keyLEDMap[keyNearMap[keyLEDMap[i]][j]], brightness); */
+						}
 					}
 				}
-				SetRgbBufferByID(keyLEDMap[i], Color_t{(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 0 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-						(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-						(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + i) * RADIAN_1 + HALF_PI) + HALF_FF)}, GetRgbBrightnessFactor(i));
+				SetSinRgbBufferByID(keyLEDMap[i], GetRgbBrightnessFactor(i));
 				DecBrightnessFactor(i);
 			}
 		}
 		for (uint8_t i = LED_KEY_NUMBER; i < LED_NUMBER; i++)
 		{
-			SetRgbBufferByID(i, Color_t{(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 0 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-					(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-					(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + i) * RADIAN_1 + HALF_PI) + HALF_FF)}, brightness);
+			SetSinRgbBufferByID(i, brightness);
 		}
 		SyncLights();
-	}
-}
-
-void HWLed::RespiratoryEffect()
-{
-	while(ledMode == 1)
-	{
-		angleCount += 4;
-		if (angleCount > 3600) {
-			angleCount = 0;
-		}
-		for (uint8_t i = 0; i < LED_NUMBER; i++)
-		{
-			SetRgbBufferByID(i, Color_t{(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 0 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-					(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + i) * RADIAN_1 + HALF_PI) + HALF_FF), 
-					(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + i) * RADIAN_1 + HALF_PI) + HALF_FF)}, brightness);
-		}
-		SyncLights();
-		color_flag ? color_v ++ : color_v --;
-		if (color_v > 254) color_flag = false;
-		else if (color_v < 1) color_flag = true;
 	}
 }
 
@@ -109,38 +94,4 @@ void HWLed::TurnLight()
 	}
 	SyncLights();
 }
-
-void HWLed::OneButton(uint8_t _index)
-{
-	if (_index == 254) return;
-	color_v = 1;
-	while(color_v > 0)
-	{
-		SetRgbBufferByID(keyLEDMap[_index], Color_t{color_v, 20, 100}, brightness);
-		color_flag ? color_v += 5 : color_v -= 5;
-		if (color_v > 254) color_flag = false;
-		SyncLights();
-	}
-	TurnLight();
-}
-
-void HWLed::ButtonRange(uint8_t _index){
-	if (_index == 254) return;
-	color_v = 1;
-	while(color_v > 0)
-	{
-		uint8_t index;
-		for(uint8_t i = 0; i < 6; i++)
-		{
-			index = keyNearMap[_index][i];
-			if(index != 127)
-				SetRgbBufferByID(index, Color_t{color_v, 20, 100}, brightness);
-		}
-		color_flag ? color_v += 5 : color_v -= 5;
-		if (color_v > 254) color_flag = false;
-		SyncLights();
-	}
-	TurnLight();
-}
-// -----------------------------------------------------------------
 

@@ -34,6 +34,11 @@ uint8_t* HWKeyboard::ScanKeyStates()
 	return scanBuffer;
 }
 
+void HWKeyboard::_DelayUs(uint32_t _delayUs)
+{
+	DelayUs(_delayUs);
+}
+
 void HWKeyboard::ApplyDebounceFilter(uint32_t _filterTimeUs)
 {
 	memcpy(debounceBuffer, spiBuffer, IO_NUMBER / 8 + 1);
@@ -48,7 +53,6 @@ void HWKeyboard::ApplyDebounceFilter(uint32_t _filterTimeUs)
 		spiBuffer[i] |= mask;
 	}
 }
-
 
 uint8_t* HWKeyboard::Remap(uint8_t _layer)
 {

@@ -8,10 +8,12 @@
 /* KeyboardConfig_t config; */
 HWKeyboard keyboard(&hspi1);
 HWLed hwled(&hspi2);;
+uint8_t nullHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0};
+/* nullHidBuffer[0] = 1; */
 /* EEPROM eeprom; */
 
 bool isKeyDownCombination = false;
-uint8_t key_speed_level = 5;
+uint8_t key_speed_level = 2;
 uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
 
 
@@ -43,31 +45,6 @@ void Main()
 	// Keyboard Report Start
 	HAL_TIM_Base_Start_IT(&htim4);
 	
-	/*---- This is RGB effect ----*/
-	/* while(true) */
-	/* { */
-	/* 	switch (hwled.GetLedMode()) { */
-	/* 		case 0 : */
-	/* 			hwled.TurnLight(); */
-	/* 			break; */
-	/* 		case 1: */
-	/* 			hwled.RespiratoryEffect(); */
-	/* 			break; */
-	/* 		case 2: */
-	/* 			hwled.OneButton(keyboard.GetKeyIndex()); */
-	/* 			break; */
-	/* 		case 3: */
-	/* 			hwled.ButtonRange(keyboard.GetKeyIndex()); */
-	/* 			break; */
-	/* 		case 4: */
-	/* 			hwled.TurnLight(); */
-	/* 			break; */
-	/* 		case 5: */
-	/* 			hwled.TurnLight(); */
-	/* 			break; */
-	/* 	} */
-	/* } */
-
 	while(true)
 	{
 		hwled.Update(keyboard);
@@ -79,7 +56,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	bool is_Send = true;
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	keyboard.ApplyDebounceFilter(20 * key_speed_level + 80); // DebounceFilter Default value is 100
+	keyboard.ApplyDebounceFilter(100 * key_speed_level); // DebounceFilter Default value is 100
 	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
@@ -99,7 +76,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		}else if (keyboard.KeyPressed(HWKeyboard::LEFT_ARROW)) {
 			is_Send = false;
 			key_speed_level += 1;
-			key_speed_level = MIN(6, key_speed_level);	
+			key_speed_level = MIN(5, key_speed_level);	
 		}else if (keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW)) {
 			is_Send = false;
 			key_speed_level -= 1;
@@ -111,6 +88,8 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(1) + 1, HWKeyboard::KEY_REPORT_SIZE - 1) != 0) {
 		// Report HID key states
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
+		keyboard._DelayUs(100);
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, nullHidBuffer, HWKeyboard::KEY_REPORT_SIZE);
 	}
 	memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(1), HWKeyboard::KEY_REPORT_SIZE);
 
