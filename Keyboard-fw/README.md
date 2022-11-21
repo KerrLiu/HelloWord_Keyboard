@@ -17,6 +17,27 @@ int main (int argc, char * argv[]){
 }
 ```
 
+# Key Combination
+|Keys|Effect|Finished condition|
+|---|---|---|
+|`Fn` + `Space`|Chang Led Mode|complete|
+|`Fn` + `Up`|Increase brightness|complete|
+|`Fn` + `Down`|Decrease brightness|complete|
+|`Fn` + `Left`|Lifting filter interval|complete|
+|`Fn` + `Right`|Reduce filter interval|complete|
+|`Fn` + `F1`|Open Computer|in progress|
+|`Fn` + `F2`|Go DeskTop|in progress|
+|`Fn` + `F3`|Open Email|in progress|
+|`Fn` + `F4`|Open Music Player|in progress|
+|`Fn` + `F5`|Prev|in progress|
+|`Fn` + `F6`|Next|in progress|
+|`Fn` + `F7`|Play/Pause|in progress|
+|`Fn` + `F8`|Stop|in progress|
+|`Fn` + `F9`|Volume up|in progress|
+|`Fn` + `F10`|Volume down|in progress|
+|`Fn` + `F11`|Mute|in progress|
+|`Fn` + `F12`|Open Calc|in progress|
+
 # Task plan
 |Task|Finished condition|
 |---|---|
@@ -38,8 +59,6 @@ int main (int argc, char * argv[]){
 |One Button By SinRgb|complete|
 |Button Range By SinRgb|complete|
 |Gluttonous Snake By SinRgb|in progress|
-
-
 
 # Participants
 |Name|Code|Email/Git|
