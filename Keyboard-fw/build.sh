@@ -15,7 +15,12 @@ function clean(){
 	rm CMakeCache.txt
 	echo "Delete Makefile.txt"
 	rm Makefile
+	echo "Delete bin file"
+	rm HelloWord-Keyboard-fw.bin
+	echo "Delete hex file"
+	rm HelloWord-Keyboard-fw.hex
 }
+
 [ "$1_1" = "clean_1" ] && clean && exit
 
 cmake ./CMakeLists.txt

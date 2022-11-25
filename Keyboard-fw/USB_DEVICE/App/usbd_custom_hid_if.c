@@ -96,42 +96,42 @@
 #define RAWHID_RX_SIZE 64
 /** Usb HID report descriptor. */
 __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DESC_SIZE] __ALIGN_END =
-    {
-        0x05, 0x01,         //   Usage Page (Generic Desktop),
-        0x09, 0x06,         //   Usage (Keyboard),
-        0xA1, 0x01,         //   Collection (Application),
-        0x85, 0x01,                    //     REPORT_ID (1)
-        // bitmap of modifiers
-        0x75, 0x01,         //   Report Size (1),
-        0x95, 0x08,         //   Report Count (8),
-        0x05, 0x07,       //   Usage Page (Key Codes),
-        0x19, 0xE0,       //   Usage Minimum (224),
-        0x29, 0xE7,       //   Usage Maximum (231),
-        0x15, 0x00,       //   Logical Minimum (0),
-        0x25, 0x01,       //   Logical Maximum (1),
-        0x81, 0x02,       //   Input (Data, Variable, Absolute), ;Modifier byte
-        // bitmap of keys
-        0x95, 0x78,       //   Report Count (120),
-        0x75, 0x01,       //   Report Size (1),
-        0x15, 0x00,       //   Logical Minimum (0),
-        0x25, 0x01,       //   Logical Maximum(1),
-        0x05, 0x07,       //   Usage Page (Key Codes),
-        0x19, 0x00,       //   Usage Minimum (0),
-        0x29, 0x77,       //   Usage Maximum (),
-        0x81, 0x02,       //   Input (Data, Variable, Absolute),
+{
+	0x05, 0x01,         //   Usage Page (Generic Desktop),
+	0x09, 0x06,         //   Usage (Keyboard),
+	0xA1, 0x01,         //   Collection (Application),
+	0x85, 0x01,                    //     REPORT_ID (1)
+								   // bitmap of modifiers
+	0x75, 0x01,         //   Report Size (1),
+	0x95, 0x08,         //   Report Count (8),
+	0x05, 0x07,       //   Usage Page (Key Codes),
+	0x19, 0xE0,       //   Usage Minimum (224),
+	0x29, 0xE7,       //   Usage Maximum (231),
+	0x15, 0x00,       //   Logical Minimum (0),
+	0x25, 0x01,       //   Logical Maximum (1),
+	0x81, 0x02,       //   Input (Data, Variable, Absolute), ;Modifier byte
+					  // bitmap of keys
+	0x95, 0x78,       //   Report Count (120),
+	0x75, 0x01,       //   Report Size (1),
+	0x15, 0x00,       //   Logical Minimum (0),
+	0x25, 0x01,       //   Logical Maximum(1),
+	0x05, 0x07,       //   Usage Page (Key Codes),
+	0x19, 0x00,       //   Usage Minimum (0),
+	0x29, 0x77,       //   Usage Maximum (),
+	0x81, 0x02,       //   Input (Data, Variable, Absolute),
 #if 1
-        // LED output report
-        0x95, 0x05,       //   Report Count (5),
-        0x75, 0x01,       //   Report Size (1),
-        0x05, 0x08,       //   Usage Page (LEDs),
-        0x19, 0x01,       //   Usage Minimum (1),
-        0x29, 0x05,       //   Usage Maximum (5),
-        0x91, 0x02,       //   Output (Data, Variable, Absolute),
-        0x95, 0x01,       //   Report Count (1),
-        0x75, 0x03,       //   Report Size (3),
-        0x91, 0x03,       //   Output (Constant),
+	// LED output report
+	0x95, 0x05,       //   Report Count (5),
+	0x75, 0x01,       //   Report Size (1),
+	0x05, 0x08,       //   Usage Page (LEDs),
+	0x19, 0x01,       //   Usage Minimum (1),
+	0x29, 0x05,       //   Usage Maximum (5),
+	0x91, 0x02,       //   Output (Data, Variable, Absolute),
+	0x95, 0x01,       //   Report Count (1),
+	0x75, 0x03,       //   Report Size (3),
+	0x91, 0x03,       //   Output (Constant),
 #endif
-        0xC0  ,                 //   End Collection
+	0xC0  ,                 //   End Collection
 
 #if 1
         //	RAW HID
@@ -139,7 +139,7 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
 	0x0A, LSB(RAWHID_USAGE), MSB(RAWHID_USAGE),
 
 	0xA1, 0x01,				// Collection 0x01
-    0x85, 0x02,             // REPORT_ID (3)
+    0x85, 0x02,             // REPORT_ID (2) Edit
 	0x75, 0x08,				// report size = 8 bits
 	0x15, 0x00,				// logical minimum = 0
 	0x26, 0xFF, 0x00,		// logical maximum = 255
@@ -151,9 +151,22 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
 	0x95, 32,				// report count RX
 	0x09, 0x02,				// usage
 	0x91, 0x02,				// Output (array)
-	0xC0					// end collection
+	0xC0,					// end collection
 #endif
-    };
+
+ 0x05, 0x0C, // Usage Page (Consumer Devices)
+ 0x09, 0x01, // Usage (Consumer Control)
+ 0xA1, 0x01, // Collection (Application)
+ 0x85, 0x03, // Report ID(3)
+ 0x15, 0x00, // Logical Minimum (0)
+ 0x26, 0x3C, 0x02, // Logical Maximum (572)
+ 0x19, 0x00, // Usage Minimum (Undefined)
+ 0x2A, 0x3C, 0x02, // Usage Maximum (AC Format)
+ 0x75, 0x10, // Report Size (16)
+ 0x95, 0x01, // Report Count (1)
+ 0x81, 0x00, // Input (Data,Ary,Abs)
+ 0xC0 // End Collection
+};
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
 
