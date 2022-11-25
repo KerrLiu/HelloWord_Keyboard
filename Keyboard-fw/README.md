@@ -43,33 +43,33 @@ int main (int argc, char * argv[]){
 ## Layout1
 
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐<br>
-│Esc│F1&nbsp│F2&nbsp│F3&nbsp│F4&nbsp│F5&nbsp│F6&nbsp│F7&nbsp│F8&nbsp│F9&nbsp│F10│F11│F12│&nbsp&nbsp&nbsp│&nbsp&nbsp&nbsp│PA&nbsp│<br>
+│Esc│F1&nbsp;│F2&nbsp;│F3&nbsp;│F4&nbsp;│F5&nbsp;│F6&nbsp;│F7&nbsp;│F8&nbsp;│F9&nbsp;│F10│F11│F12│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│PA&nbsp;│<br>
 ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┴───┼───┤<br>
-│&nbsp`&nbsp│&nbsp1&nbsp│&nbsp2&nbsp│&nbsp3&nbsp│&nbsp4&nbsp│&nbsp5&nbsp│&nbsp6&nbsp│&nbsp7&nbsp│&nbsp8&nbsp│&nbsp9&nbsp│&nbsp0&nbsp│&nbsp-&nbsp│&nbsp=&nbsp│&nbspBacksp│Ins│<br>
+│&nbsp;`&nbsp;│&nbsp;1&nbsp;│&nbsp;2&nbsp;│&nbsp;3&nbsp;│&nbsp;4&nbsp;│&nbsp;5&nbsp;│&nbsp;6&nbsp;│&nbsp;7&nbsp;│&nbsp;8&nbsp;│&nbsp;9&nbsp;│&nbsp;0&nbsp;│&nbsp;-&nbsp;│&nbsp;=&nbsp;│&nbsp;Backsp│Ins│<br>
 ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┼───┤<br>
-│&nbspTab&nbsp│&nbspQ&nbsp│&nbspW&nbsp│&nbspE&nbsp│&nbspR&nbsp│&nbspT&nbsp│&nbspY&nbsp│&nbspU&nbsp│&nbspI&nbsp│&nbspO&nbsp│&nbspP&nbsp│&nbsp[&nbsp│&nbsp]&nbsp│&nbsp&nbsp|\&nbsp│Del│<br>
+│&nbsp;Tab&nbsp;│&nbsp;Q&nbsp;│&nbsp;W&nbsp;│&nbsp;E&nbsp;│&nbsp;R&nbsp;│&nbsp;T&nbsp;│&nbsp;Y&nbsp;│&nbsp;U&nbsp;│&nbsp;I&nbsp;│&nbsp;O&nbsp;│&nbsp;P&nbsp;│&nbsp;[&nbsp;│&nbsp;]&nbsp;│&nbsp;&nbsp;|\&nbsp;│Del│<br>
 ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┴───┤<br>
-│&nbspCaps&nbsp│&nbspA&nbsp│&nbspS&nbsp│&nbspD&nbsp│&nbspF&nbsp│&nbspG&nbsp│&nbspH&nbsp│&nbspJ&nbsp│&nbspK&nbsp│&nbspL&nbsp│&nbsp;&nbsp│&nbsp'&nbsp│&nbsp&nbsp&nbspEnt&nbsp&nbsp│Hom│<br>
+│&nbsp;Caps&nbsp;│&nbsp;A&nbsp;│&nbsp;S&nbsp;│&nbsp;D&nbsp;│&nbsp;F&nbsp;│&nbsp;G&nbsp;│&nbsp;H&nbsp;│&nbsp;J&nbsp;│&nbsp;K&nbsp;│&nbsp;L&nbsp;│&nbsp;;&nbsp;│&nbsp;'&nbsp;│&nbsp;&nbsp;&nbsp;Ent&nbsp;&nbsp;│Hom│<br>
 ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤<br>
-│Shft│&nbsp\&nbsp│&nbspZ&nbsp│&nbspX&nbsp│&nbspC&nbsp│&nbspV&nbsp│&nbspB&nbsp│&nbspN&nbsp│&nbspM&nbsp│&nbsp,&nbsp│&nbsp.&nbsp│&nbsp/&nbsp│&nbspShift│&nbsp↑&nbsp│End│<br>
+│Shft│&nbsp;\&nbsp;│&nbsp;Z&nbsp;│&nbsp;X&nbsp;│&nbsp;C&nbsp;│&nbsp;V&nbsp;│&nbsp;B&nbsp;│&nbsp;N&nbsp;│&nbsp;M&nbsp;│&nbsp;,&nbsp;│&nbsp;.&nbsp;│&nbsp;/&nbsp;│&nbsp;Shift│&nbsp;↑&nbsp;│End│<br>
 ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼───┤<br>
-│Ctrl│GUI&nbsp│Alt&nbsp│&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp│Alt│GUI│Ctl│&nbsp←&nbsp│&nbsp↓&nbsp│&nbsp→&nbsp│<br>
+│Ctrl│GUI&nbsp;│Alt&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│Alt│GUI│Ctl│&nbsp;←&nbsp;│&nbsp;↓&nbsp;│&nbsp;→&nbsp;│<br>
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┘<br>
 
 ## Layout2(FN+)
 
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐<br>
-│Esc│F1&nbsp│F2&nbsp│F3&nbsp│F4&nbsp│F5&nbsp│F6&nbsp│F7&nbsp│F8&nbsp│F9&nbsp│F10│F11│F12│&nbsp&nbsp&nbsp│&nbsp&nbsp&nbsp│PA&nbsp│<br>
+│Esc│F1&nbsp;│F2&nbsp;│F3&nbsp;│F4&nbsp;│F5&nbsp;│F6&nbsp;│F7&nbsp;│F8&nbsp;│F9&nbsp;│F10│F11│F12│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│PA&nbsp;│<br>
 ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┴───┼───┤<br>
-│&nbsp`&nbsp│&nbsp1&nbsp│&nbsp2&nbsp│&nbsp3&nbsp│&nbsp4&nbsp│&nbsp5&nbsp│&nbsp6&nbsp│&nbsp7&nbsp│&nbsp8&nbsp│&nbsp9&nbsp│&nbsp0&nbsp│&nbsp-&nbsp│&nbsp=&nbsp│&nbspBacksp│Ins│<br>
+│&nbsp;`&nbsp;│&nbsp;1&nbsp;│&nbsp;2&nbsp;│&nbsp;3&nbsp;│&nbsp;4&nbsp;│&nbsp;5&nbsp;│&nbsp;6&nbsp;│&nbsp;7&nbsp;│&nbsp;8&nbsp;│&nbsp;9&nbsp;│&nbsp;0&nbsp;│&nbsp;-&nbsp;│&nbsp;=&nbsp;│&nbsp;Backsp│Ins│<br>
 ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┼───┤<br>
-│&nbspTab&nbsp│&nbspQ&nbsp│&nbspW&nbsp│&nbspE&nbsp│&nbspR&nbsp│&nbspT&nbsp│&nbspY&nbsp│&nbspU&nbsp│&nbspI&nbsp│&nbspO&nbsp│&nbspP&nbsp│&nbsp[&nbsp│&nbsp]&nbsp│&nbsp&nbsp|\&nbsp│Del│<br>
+│&nbsp;Tab&nbsp;│&nbsp;Q&nbsp;│&nbsp;W&nbsp;│&nbsp;E&nbsp;│&nbsp;R&nbsp;│&nbsp;T&nbsp;│&nbsp;Y&nbsp;│&nbsp;U&nbsp;│&nbsp;I&nbsp;│&nbsp;O&nbsp;│&nbsp;P&nbsp;│&nbsp;[&nbsp;│&nbsp;]&nbsp;│&nbsp;&nbsp;|\&nbsp;│Del│<br>
 ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┴───┤<br>
-│&nbspCaps&nbsp│&nbspA&nbsp│&nbspS&nbsp│&nbspD&nbsp│&nbspF&nbsp│&nbspG&nbsp│&nbspH&nbsp│&nbspJ&nbsp│&nbspK&nbsp│&nbspL&nbsp│&nbsp;&nbsp│&nbsp'&nbsp│&nbsp&nbsp&nbspEnt&nbsp&nbsp│PKU│<br>
+│&nbsp;Caps&nbsp;│&nbsp;A&nbsp;│&nbsp;S&nbsp;│&nbsp;D&nbsp;│&nbsp;F&nbsp;│&nbsp;G&nbsp;│&nbsp;H&nbsp;│&nbsp;J&nbsp;│&nbsp;K&nbsp;│&nbsp;L&nbsp;│&nbsp;;&nbsp;│&nbsp;'&nbsp;│&nbsp;&nbsp;&nbsp;Ent&nbsp;&nbsp;│PKU│<br>
 ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤<br>
-│Shft│&nbsp\&nbsp│&nbspZ&nbsp│&nbspX&nbsp│&nbspC&nbsp│&nbspV&nbsp│&nbspB&nbsp│&nbspN&nbsp│&nbspM&nbsp│&nbsp,&nbsp│&nbsp.&nbsp│&nbsp/&nbsp│&nbspShift│&nbsp↑&nbsp│PKD│<br>
+│Shft│&nbsp;\&nbsp;│&nbsp;Z&nbsp;│&nbsp;X&nbsp;│&nbsp;C&nbsp;│&nbsp;V&nbsp;│&nbsp;B&nbsp;│&nbsp;N&nbsp;│&nbsp;M&nbsp;│&nbsp;,&nbsp;│&nbsp;.&nbsp;│&nbsp;/&nbsp;│&nbsp;Shift│&nbsp;↑&nbsp;│PKD│<br>
 ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼───┤<br>
-│Ctrl│GUI&nbsp│Alt&nbsp│&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp│Alt│GUI│Ctl│&nbsp←&nbsp│&nbsp↓&nbsp│&nbsp→&nbsp│<br>
+│Ctrl│GUI&nbsp;│Alt&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│Alt│GUI│Ctl│&nbsp;←&nbsp;│&nbsp;↓&nbsp;│&nbsp;→&nbsp;│<br>
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┘<br>
 
 # Task plan
