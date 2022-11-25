@@ -43,33 +43,33 @@ int main (int argc, char * argv[]){
 ## Layout1
 
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐<br>
-│Esc│F1 │F2 │F3 │F4 │F5 │F6 │F7 │F8 │F9 │F10│F11│F12│   │   │PA │<br>
+│Esc│F1&nbsp│F2&nbsp│F3&nbsp│F4&nbsp│F5&nbsp│F6&nbsp│F7&nbsp│F8&nbsp│F9&nbsp│F10│F11│F12│&nbsp&nbsp&nbsp│&nbsp&nbsp&nbsp│PA&nbsp│<br>
 ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┴───┼───┤<br>
-│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│Ins│<br>
+│&nbsp`&nbsp│&nbsp1&nbsp│&nbsp2&nbsp│&nbsp3&nbsp│&nbsp4&nbsp│&nbsp5&nbsp│&nbsp6&nbsp│&nbsp7&nbsp│&nbsp8&nbsp│&nbsp9&nbsp│&nbsp0&nbsp│&nbsp-&nbsp│&nbsp=&nbsp│&nbspBacksp│Ins│<br>
 ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┼───┤<br>
-│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │Del│<br>
+│&nbspTab&nbsp│&nbspQ&nbsp│&nbspW&nbsp│&nbspE&nbsp│&nbspR&nbsp│&nbspT&nbsp│&nbspY&nbsp│&nbspU&nbsp│&nbspI&nbsp│&nbspO&nbsp│&nbspP&nbsp│&nbsp[&nbsp│&nbsp]&nbsp│&nbsp&nbsp|\&nbsp│Del│<br>
 ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┴───┤<br>
-│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │Hom│<br>
+│&nbspCaps&nbsp│&nbspA&nbsp│&nbspS&nbsp│&nbspD&nbsp│&nbspF&nbsp│&nbspG&nbsp│&nbspH&nbsp│&nbspJ&nbsp│&nbspK&nbsp│&nbspL&nbsp│&nbsp;&nbsp│&nbsp'&nbsp│&nbsp&nbsp&nbspEnt&nbsp&nbsp│Hom│<br>
 ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤<br>
-│Shft│ \ │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │End│<br>
+│Shft│&nbsp\&nbsp│&nbspZ&nbsp│&nbspX&nbsp│&nbspC&nbsp│&nbspV&nbsp│&nbspB&nbsp│&nbspN&nbsp│&nbspM&nbsp│&nbsp,&nbsp│&nbsp.&nbsp│&nbsp/&nbsp│&nbspShift│&nbsp↑&nbsp│End│<br>
 ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼───┤<br>
-│Ctrl│GUI │Alt │                        │Alt│GUI│Ctl│ ← │ ↓ │ → │<br>
+│Ctrl│GUI&nbsp│Alt&nbsp│&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp│Alt│GUI│Ctl│&nbsp←&nbsp│&nbsp↓&nbsp│&nbsp→&nbsp│<br>
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┘<br>
 
 ## Layout2(FN+)
 
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐<br>
-│Esc│F1 │F2 │F3 │F4 │F5 │F6 │F7 │F8 │F9 │F10│F11│F12│   │   │PA │<br>
+│Esc│F1&nbsp│F2&nbsp│F3&nbsp│F4&nbsp│F5&nbsp│F6&nbsp│F7&nbsp│F8&nbsp│F9&nbsp│F10│F11│F12│&nbsp&nbsp&nbsp│&nbsp&nbsp&nbsp│PA&nbsp│<br>
 ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┴───┼───┤<br>
-│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│Ins│<br>
+│&nbsp`&nbsp│&nbsp1&nbsp│&nbsp2&nbsp│&nbsp3&nbsp│&nbsp4&nbsp│&nbsp5&nbsp│&nbsp6&nbsp│&nbsp7&nbsp│&nbsp8&nbsp│&nbsp9&nbsp│&nbsp0&nbsp│&nbsp-&nbsp│&nbsp=&nbsp│&nbspBacksp│Ins│<br>
 ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┼───┤<br>
-│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │Del│<br>
+│&nbspTab&nbsp│&nbspQ&nbsp│&nbspW&nbsp│&nbspE&nbsp│&nbspR&nbsp│&nbspT&nbsp│&nbspY&nbsp│&nbspU&nbsp│&nbspI&nbsp│&nbspO&nbsp│&nbspP&nbsp│&nbsp[&nbsp│&nbsp]&nbsp│&nbsp&nbsp|\&nbsp│Del│<br>
 ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┴───┤<br>
-│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │PKU│<br>
+│&nbspCaps&nbsp│&nbspA&nbsp│&nbspS&nbsp│&nbspD&nbsp│&nbspF&nbsp│&nbspG&nbsp│&nbspH&nbsp│&nbspJ&nbsp│&nbspK&nbsp│&nbspL&nbsp│&nbsp;&nbsp│&nbsp'&nbsp│&nbsp&nbsp&nbspEnt&nbsp&nbsp│PKU│<br>
 ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┼───┤<br>
-│Shft│ \ │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │PKD│<br>
+│Shft│&nbsp\&nbsp│&nbspZ&nbsp│&nbspX&nbsp│&nbspC&nbsp│&nbspV&nbsp│&nbspB&nbsp│&nbspN&nbsp│&nbspM&nbsp│&nbsp,&nbsp│&nbsp.&nbsp│&nbsp/&nbsp│&nbspShift│&nbsp↑&nbsp│PKD│<br>
 ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼───┤<br>
-│Ctrl│GUI │Alt │                        │Alt│GUI│Ctl│ ← │ ↓ │ → │<br>
+│Ctrl│GUI&nbsp│Alt&nbsp│&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp│Alt│GUI│Ctl│&nbsp←&nbsp│&nbsp↓&nbsp│&nbsp→&nbsp│<br>
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┘<br>
 
 # Task plan
