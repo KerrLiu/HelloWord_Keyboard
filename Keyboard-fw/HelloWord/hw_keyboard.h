@@ -67,6 +67,8 @@ public:
 	void _DelayUs(uint32_t _delayUs = 50);
     uint8_t* GetHidReportBuffer(uint8_t _reportId);
     uint8_t  GetTouchBarState(uint8_t _id = 0);
+	void SetHidReportBuffer(uint8_t _reportId, uint8_t _value);
+	void CleanHidReportBuffer(uint8_t _reportId);
 
 
     int16_t keyMap[5][IO_NUMBER] = {

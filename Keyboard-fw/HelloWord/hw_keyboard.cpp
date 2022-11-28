@@ -128,7 +128,6 @@ bool HWKeyboard::IsKeyDown()
 	return flag;
 }
 
-
 uint8_t* HWKeyboard::GetHidReportBuffer(uint8_t _reportId)
 {
 	switch (_reportId)
@@ -147,6 +146,17 @@ uint8_t* HWKeyboard::GetHidReportBuffer(uint8_t _reportId)
 	}
 }
 
+void HWKeyboard::SetHidReportBuffer(uint8_t _reportId, uint8_t _value)
+{
+	hidBuffer[0] = _reportId;
+	hidBuffer[1] = _value;
+}
+
+void HWKeyboard::CleanHidReportBuffer(uint8_t _reportId)
+{
+	memset(hidBuffer, 0, KEY_REPORT_SIZE);
+	hidBuffer[0] = _reportId;
+}
 
 bool HWKeyboard::KeyPressed(KeyCode_t _key)
 {
