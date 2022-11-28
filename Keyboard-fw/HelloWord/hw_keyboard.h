@@ -67,8 +67,8 @@ public:
 	void _DelayUs(uint32_t _delayUs = 50);
     uint8_t* GetHidReportBuffer(uint8_t _reportId);
     uint8_t  GetTouchBarState(uint8_t _id = 0);
-	void SetHidReportBuffer(uint8_t _reportId, uint8_t _value);
-	void CleanHidReportBuffer(uint8_t _reportId);
+	void SetHidReportBuffer(uint8_t _index, uint8_t _value);
+	void ResetHidReportBuffer(uint8_t _reportId);
 
 
     int16_t keyMap[5][IO_NUMBER] = {
@@ -87,7 +87,7 @@ public:
             LEFT_SHIFT,Z,X,C,V,B,N,M,COMMA,PERIOD,SLASH,RIGHT_SHIFT,UP_ARROW,END,
             LEFT_CTRL,LEFT_GUI,LEFT_ALT,SPACE,RIGHT_ALT,FN,RIGHT_CTRL,LEFT_ARROW,DOWN_ARROW,RIGHT_ARROW },
 
-        {ESC,F1,F2,F3,F4,F5,F6,F7,F8,VOLUME_UP,VOLUME_DOWN,MUTE,F12,PAUSE,
+        {ESC,F1,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,PAUSE,
             GRAVE_ACCENT,NUM_1,NUM_2,NUM_3,NUM_4,NUM_5,NUM_6,NUM_7,NUM_8,NUM_9,NUM_0,MINUS,EQUAL,BACKSPACE,INSERT,
             TAB,Q,W,E,R,T,Y,U,I,O,P,LEFT_U_BRACE,RIGHT_U_BRACE,BACKSLASH,DELETE,
             CAP_LOCK,A,S,D,F,G,H,J,K,L,SEMI_COLON,QUOTE,ENTER,PAGE_UP,

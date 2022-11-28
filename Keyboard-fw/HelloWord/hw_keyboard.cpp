@@ -146,13 +146,12 @@ uint8_t* HWKeyboard::GetHidReportBuffer(uint8_t _reportId)
 	}
 }
 
-void HWKeyboard::SetHidReportBuffer(uint8_t _reportId, uint8_t _value)
+void HWKeyboard::SetHidReportBuffer(uint8_t _index, uint8_t _value)
 {
-	hidBuffer[0] = _reportId;
-	hidBuffer[1] = _value;
+	hidBuffer[_index] = _value;
 }
 
-void HWKeyboard::CleanHidReportBuffer(uint8_t _reportId)
+void HWKeyboard::ResetHidReportBuffer(uint8_t _reportId)
 {
 	memset(hidBuffer, 0, KEY_REPORT_SIZE);
 	hidBuffer[0] = _reportId;
