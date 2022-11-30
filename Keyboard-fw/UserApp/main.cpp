@@ -12,7 +12,7 @@ HWLed hwled(&hspi2);;
 
 bool isKeyDownCombination = false;
 uint8_t key_speed_level = 2;
-uint8_t lastHidBuffer[HWKeyboard::KEY_REPORT_SIZE] = {0};
+uint8_t lastHidBuffer[KEY_REPORT_SIZE] = {0};
 uint8_t report_ID = 1;
 bool report_flag = false;
 
@@ -51,6 +51,11 @@ void Main()
 	}
 }
 
+/* void FnCombination() */
+/* { */
+
+/* } */
+
 /* Event Callbacks -----------------------------------------------------------*/
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
@@ -61,86 +66,86 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 
 	if (layer == 2 && !isKeyDownCombination){
-		if (keyboard.KeyPressed(HWKeyboard::SPACE)) {
+		if (keyboard.KeyPressed(SPACE)) {
 			is_Send = false;
 			uint8_t tmp = hwled.GetLedMode();
 			hwled.SetLedMode((tmp + 1) % 6);
-		}else if (keyboard.KeyPressed(HWKeyboard::UP_ARROW)) {
+		}else if (keyboard.KeyPressed(UP_ARROW)) {
 			is_Send = false;
 			float tmp = hwled.GetBrightness() + 0.25;
 			hwled.SetBrightness(MIN(1, tmp));
-		}else if (keyboard.KeyPressed(HWKeyboard::DOWN_ARROW)) {
+		}else if (keyboard.KeyPressed(DOWN_ARROW)) {
 			is_Send = false;
 			float tmp = hwled.GetBrightness() - 0.25;
 			hwled.SetBrightness(MAX(0.25, tmp));
-		}else if (keyboard.KeyPressed(HWKeyboard::LEFT_ARROW)) {
+		}else if (keyboard.KeyPressed(LEFT_ARROW)) {
 			is_Send = false;
 			key_speed_level += 1;
 			key_speed_level = MIN(5, key_speed_level);	
-		}else if (keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW)) {
+		}else if (keyboard.KeyPressed(RIGHT_ARROW)) {
 			is_Send = false;
 			key_speed_level -= 1;
 			key_speed_level = MAX(1, key_speed_level);	
-		}else if(keyboard.KeyPressed(HWKeyboard::F1)){
+		}else if(keyboard.KeyPressed(F1)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0x94);
 			keyboard.SetHidReportBuffer(2, 0x01);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F2)){
+		}else if(keyboard.KeyPressed(F2)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0x23);
 			keyboard.SetHidReportBuffer(2, 0x02);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F3)){
+		}else if(keyboard.KeyPressed(F3)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0x8A);
 			keyboard.SetHidReportBuffer(2, 0x01);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F4)){
+		}else if(keyboard.KeyPressed(F4)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0x83);
 			keyboard.SetHidReportBuffer(2, 0x01);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F5)){
+		}else if(keyboard.KeyPressed(F5)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xB6);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F6)){
+		}else if(keyboard.KeyPressed(F6)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xB5);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F7)){
+		}else if(keyboard.KeyPressed(F7)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xCD);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F8)){
+		}else if(keyboard.KeyPressed(F8)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xB7);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F9)){
+		}else if(keyboard.KeyPressed(F9)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xE9);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F10)){
+		}else if(keyboard.KeyPressed(F10)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xEA);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F11)){
+		}else if(keyboard.KeyPressed(F11)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0xE2);
 			report_flag = true;
-		}else if(keyboard.KeyPressed(HWKeyboard::F12)){
+		}else if(keyboard.KeyPressed(F12)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
 			keyboard.SetHidReportBuffer(1, 0x92);
@@ -157,22 +162,22 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		}
 		lastHidBuffer[0] = report_ID;
 	}
-	isKeyDownCombination = keyboard.KeyPressed(HWKeyboard::UP_ARROW) | keyboard.KeyPressed(HWKeyboard::DOWN_ARROW) | keyboard.KeyPressed(HWKeyboard::LEFT_ARROW) | keyboard.KeyPressed(HWKeyboard::RIGHT_ARROW) | keyboard.KeyPressed(HWKeyboard::SPACE) | keyboard.KeyPressed(HWKeyboard::F1) | keyboard.KeyPressed(HWKeyboard::F2) | keyboard.KeyPressed(HWKeyboard::F3) | keyboard.KeyPressed(HWKeyboard::F4) | keyboard.KeyPressed(HWKeyboard::F5) | keyboard.KeyPressed(HWKeyboard::F6) | keyboard.KeyPressed(HWKeyboard::F7) | keyboard.KeyPressed(HWKeyboard::F8) | keyboard.KeyPressed(HWKeyboard::F9) | keyboard.KeyPressed(HWKeyboard::F10) | keyboard.KeyPressed(HWKeyboard::F11) | keyboard.KeyPressed(HWKeyboard::F12);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(F1) | keyboard.KeyPressed(F2) | keyboard.KeyPressed(F3) | keyboard.KeyPressed(F4) | keyboard.KeyPressed(F5) | keyboard.KeyPressed(F6) | keyboard.KeyPressed(F7) | keyboard.KeyPressed(F8) | keyboard.KeyPressed(F9) | keyboard.KeyPressed(F10) | keyboard.KeyPressed(F11) | keyboard.KeyPressed(F12);
 
-	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(report_ID) + 1, HWKeyboard::KEY_REPORT_SIZE - 1) != 0) {
+	if (is_Send && memcmp(lastHidBuffer + 1, keyboard.GetHidReportBuffer(report_ID) + 1, KEY_REPORT_SIZE - 1) != 0) {
 		// Report HID key states
-		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(report_ID), HWKeyboard::KEY_REPORT_SIZE);
-		memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(report_ID), HWKeyboard::KEY_REPORT_SIZE);
+		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(report_ID), KEY_REPORT_SIZE);
+		memcpy(lastHidBuffer, keyboard.GetHidReportBuffer(report_ID), KEY_REPORT_SIZE);
 		report_ID++;
 		if (report_ID > 3) report_ID = 1;
 		lastHidBuffer[0] = report_ID;
 	}
 	
 	/* if (is_Send){ */
-	/* 	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(report_ID), HWKeyboard::KEY_REPORT_SIZE); */
+	/* 	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboard.GetHidReportBuffer(report_ID), KEY_REPORT_SIZE); */
 	/* } */
-	/* uint8_t voidHidBuffer[HWKeyboard::HID_REPORT_SIZE] = {0}; */
-	/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, HWKeyboard::KEY_REPORT_SIZE); */
+	/* uint8_t voidHidBuffer[HID_REPORT_SIZE] = {0}; */
+	/* USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, voidHidBuffer, KEY_REPORT_SIZE); */
 }
 
 

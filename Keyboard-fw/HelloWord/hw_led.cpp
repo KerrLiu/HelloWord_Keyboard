@@ -64,7 +64,7 @@ void HWLed::Update(HWKeyboard _keyboard)
 		if (color_v > 254) color_flag = false;
 		else if (color_v < 1) color_flag = true;
 
-		for (uint8_t i = 0; i < LED_KEY_NUMBER; i++){
+		for (uint8_t i = 0; i < KEY_NUMBER; i++){
 			if(ledMode == 1){
 				SetSinRgbBufferByID(i, brightness);
 			}else if (ledMode == 2 || ledMode == 3){
@@ -74,21 +74,21 @@ void HWLed::Update(HWKeyboard _keyboard)
 					}else if (ledMode == 3){
 						for(uint8_t j = 0; j < 6; j++){
 							uint8_t _index = keyNearMap[i][j];
-							if (_index != 127) SetRgbBrightnessFactor(_index, brightness);
+							if (_index != LED_VOID) SetRgbBrightnessFactor(_index, brightness);
 						}
 					}
 				}
 				SetSinRgbBufferByID(keyLEDMap[i], GetRgbBrightnessFactor(i));
 				DecBrightnessFactor(i, 0.01);
 			}else if (ledMode == 4){
-				if (i == (angleCount / 4) % LED_KEY_NUMBER)
+				if (i == (angleCount / 4) % KEY_NUMBER)
 					SetRgbBrightnessFactor(i, brightness);
 				SetSinRgbBufferByID(i, GetRgbBrightnessFactor(i));
 				DecBrightnessFactor(i, 0.02);
 				_keyboard._DelayUs(200);
 			}
 		}
-		for (uint8_t i = LED_KEY_NUMBER; i < LED_NUMBER; i++)
+		for (uint8_t i = KEY_NUMBER; i < LED_NUMBER; i++)
 		{
 			SetSinRgbBufferByID(i, brightness);
 		}

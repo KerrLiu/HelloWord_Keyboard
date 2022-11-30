@@ -99,7 +99,7 @@ uint8_t* HWKeyboard::Remap(uint8_t _layer)
 
 bool HWKeyboard::FnPressed()
 {
-	return remapBuffer[9] & 0x04;
+	return remapBuffer[FN_NUMBER] & FN_OFFSET;
 }
 
 bool HWKeyboard::GetButtonStatus(uint8_t _customId)
@@ -110,7 +110,7 @@ bool HWKeyboard::GetButtonStatus(uint8_t _customId)
 }
 
 uint8_t HWKeyboard::GetKeyIndex(){
-	for (uint8_t i = 0; i < HWKeyboard::KEY_NUMBER; i++)
+	for (uint8_t i = 0; i < KEY_NUMBER; i++)
 	{
 		if(GetButtonStatus(i))
 			return i;
@@ -193,7 +193,7 @@ void HWKeyboard::Press(KeyCode_t _key)
 }
 
 
-void HWKeyboard::Release(HWKeyboard::KeyCode_t _key)
+void HWKeyboard::Release(KeyCode_t _key)
 {
 	int index, bitIndex;
 
