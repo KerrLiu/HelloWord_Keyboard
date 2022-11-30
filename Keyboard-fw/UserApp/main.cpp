@@ -95,14 +95,16 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 		}else if(keyboard.KeyPressed(F2)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
-			keyboard.SetHidReportBuffer(1, 0x23);
-			keyboard.SetHidReportBuffer(2, 0x02);
+			/* keyboard.SetHidReportBuffer(1, 0x23); */
+			/* keyboard.SetHidReportBuffer(2, 0x02); */
+			keyboard.SetHidReportBuffer(1, 0x6F);
 			report_flag = true;
 		}else if(keyboard.KeyPressed(F3)){
 			report_ID = 3;
 			keyboard.ResetHidReportBuffer(report_ID);
-			keyboard.SetHidReportBuffer(1, 0x8A);
-			keyboard.SetHidReportBuffer(2, 0x01);
+			/* keyboard.SetHidReportBuffer(1, 0x8A); */
+			/* keyboard.SetHidReportBuffer(2, 0x01); */
+			keyboard.SetHidReportBuffer(1, 0x70);
 			report_flag = true;
 		}else if(keyboard.KeyPressed(F4)){
 			report_ID = 3;
