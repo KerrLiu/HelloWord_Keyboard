@@ -12,6 +12,9 @@ static const uint16_t HID_REPORT_SIZE = KEY_REPORT_SIZE + RAW_REPORT_SIZE;
 
 static const uint8_t LED_NUMBER = 104;
 static const uint8_t LED_VOID = 127;			// For light matrix
+static const uint8_t LED_Num = 82;				// NumLock led index
+static const uint8_t LED_Caps = 83;				// CapsLock led index
+static const uint8_t LED_Scr = 84;				// ScrollLock led index
 
 enum KeyCode_t : int16_t
 {

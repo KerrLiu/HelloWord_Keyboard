@@ -8,17 +8,17 @@
 
 function clean(){
 	echo "Delete CMakeFiles Dirtory"
-	rm -rf ./CMakeFiles/
+	[ -d ./CMakeFiles ] && rm -rf ./CMakeFiles/
 	echo "Delete elf file"
-	rm ./HelloWord-Keyboard-fw.elf
+	[ -f ./HelloWord-Keyboard-fw.elf ] && rm ./HelloWord-Keyboard-fw.elf
 	echo "Delete CMakeCache.txt"
-	rm CMakeCache.txt
+	[ -f ./CMakeCache.txt ] && rm CMakeCache.txt
 	echo "Delete Makefile.txt"
-	rm Makefile
+	[ -f Makefile ] && rm Makefile
 	echo "Delete bin file"
-	rm HelloWord-Keyboard-fw.bin
+	[ -f HelloWord-Keyboard-fw.bin ] && rm HelloWord-Keyboard-fw.bin
 	echo "Delete hex file"
-	rm HelloWord-Keyboard-fw.hex
+	[ -f HelloWord-Keyboard-fw.hex ] && rm HelloWord-Keyboard-fw.hex
 }
 
 [ "$1_1" = "clean_1" ] && clean && exit
