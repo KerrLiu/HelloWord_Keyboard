@@ -26,8 +26,8 @@ int main (int argc, char * argv[]){
 |`Fn` + `Left`|Lifting filter interval|complete|Yes|
 |`Fn` + `Right`|Reduce filter interval|complete|Yes|
 |`Fn` + `F1`|My Computer|complete|Yes|
-|`Fn` + `F2`|Home(www)|complete|Yes|
-|`Fn` + `F3`|Mail|complete|Yes|
+|`Fn` + `F2`|Brightness Up|complete|Yes|
+|`Fn` + `F3`|Brightness Down|complete|Yes|
 |`Fn` + `F4`|Media Select|complete|Yes|
 |`Fn` + `F5`|Prev|complete|Yes|
 |`Fn` + `F6`|Next|complete|Yes|
