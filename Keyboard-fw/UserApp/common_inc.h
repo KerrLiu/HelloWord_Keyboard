@@ -16,6 +16,7 @@ extern "C" {
 void Main();
 void OnUartCmd(uint8_t* _data, uint16_t _len);
 void OnTimerCallback();
+void UpdateKeyboard();
 
 #ifdef __cplusplus
 }

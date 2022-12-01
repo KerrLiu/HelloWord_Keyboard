@@ -55,7 +55,7 @@ void HWLed::Update(HWKeyboard _keyboard)
 			SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
 		}
 		SyncLights();
-		_keyboard._DelayUs(1000000);
+		/*_keyboard._DelayUs(1000000);*/
 	} else {
 		angleCount += 4;
 		if (angleCount > 3600) angleCount = 0;

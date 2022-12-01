@@ -19,9 +19,10 @@ function clean(){
 	[ -f HelloWord-Keyboard-fw.bin ] && rm HelloWord-Keyboard-fw.bin
 	echo "Delete hex file"
 	[ -f HelloWord-Keyboard-fw.hex ] && rm HelloWord-Keyboard-fw.hex
+	exit 0
 }
 
-[ "$1_1" = "clean_1" ] && clean && exit
+[ "$1" = "clean" ] && clean
 
 cmake ./CMakeLists.txt
 make

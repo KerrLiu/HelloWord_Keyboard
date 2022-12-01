@@ -78,17 +78,30 @@ uint8_t* HWKeyboard::Remap(uint8_t _layer)
 	{
 		for (j = 0; j < 8; j++)
 		{
-			index = (int16_t) (keyMap[_layer][8 * i + j] / 8 + 1); // +1 for modifier
-			bitIndex = (int16_t) (keyMap[_layer][8 * i + j] % 8);
-			if (bitIndex < 0)
-			{
-				index -= 1;
-				bitIndex += 8;
-			} else if (index > 100) // Restrictions here
-				continue;
+			/* index = (int16_t) (keyMap[_layer][8 * i + j] / 8 + 1); // +1 for modifier */
+			/* bitIndex = (int16_t) (keyMap[_layer][8 * i + j] % 8); */
+			/* if (bitIndex < 0) */
+			/* { */
+			/* 	index -= 1; */
+			/* 	bitIndex += 8; */
+			/* } else if (index > 100) // Restrictions here */
+			/* 	continue; */
 
-			if (remapBuffer[i] & (0x80 >> j))
+			/* if (remapBuffer[i] & (0x80 >> j)) */
+			/* 	hidBuffer[index + 1] |= 1 << (bitIndex); // +1 for Report-ID */
+
+			if (remapBuffer[i] & (0x80 >> j)){
+				index = (int16_t) (keyMap[_layer][8 * i + j] / 8 + 1); // +1 for modifier
+				bitIndex = (int16_t) (keyMap[_layer][8 * i + j] % 8);
+				if (bitIndex < 0)
+				{
+					index -= 1;
+					bitIndex += 8;
+				} else if (index > 100) // Fn Key down pass
+					continue;
+
 				hidBuffer[index + 1] |= 1 << (bitIndex); // +1 for Report-ID
+			}
 		}
 		i++;
 		j = 0;
@@ -157,7 +170,7 @@ void HWKeyboard::ResetHidReportBuffer(uint8_t _reportId)
 	hidBuffer[0] = _reportId;
 }
 
-bool HWKeyboard::KeyPressed(KeyCode_t _key)
+bool HWKeyboard::KeyPressed(int16_t _key)
 {
 	int index, bitIndex;
 
@@ -175,7 +188,7 @@ bool HWKeyboard::KeyPressed(KeyCode_t _key)
 }
 
 
-void HWKeyboard::Press(KeyCode_t _key)
+void HWKeyboard::Press(int16_t _key)
 {
 	int index, bitIndex;
 
@@ -193,7 +206,7 @@ void HWKeyboard::Press(KeyCode_t _key)
 }
 
 
-void HWKeyboard::Release(KeyCode_t _key)
+void HWKeyboard::Release(int16_t _key)
 {
 	int index, bitIndex;
 

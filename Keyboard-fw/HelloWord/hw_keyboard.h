@@ -26,9 +26,9 @@ public:
     bool IsKeyDown();
     bool GetButtonStatus(uint8_t _customId);
 	uint8_t GetKeyIndex();
-    bool KeyPressed(KeyCode_t _key);
-    void Press(KeyCode_t _key);
-    void Release(KeyCode_t _key);
+    bool KeyPressed(int16_t _key);
+    void Press(int16_t _key);
+    void Release(int16_t _key);
 	void _DelayUs(uint32_t _delayUs = 50);
     uint8_t* GetHidReportBuffer(uint8_t _reportId);
     uint8_t  GetTouchBarState(uint8_t _id = 0);
