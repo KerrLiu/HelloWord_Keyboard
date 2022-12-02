@@ -4,7 +4,6 @@
 #include "spi.h"
 #include "hw_config.h"
 
-
 class HWKeyboard
 {
 public:

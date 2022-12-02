@@ -1,0 +1,23 @@
+#ifndef HELLO_WORD_KEYBOARD_FW_HW_CONSUMER_H
+#define HELLO_WORD_KEYBOARD_FW_HW_CONSUMER_H
+
+enum Consumer_t : int16_t
+{
+	/*------------------------- HID Consumer report data -------------------------*/
+	BRIGHTNESS_UP = 0x006F, BRIGHTNESS_DOWN = 0x0070, SCAN_NEXT_TRACK = 0x00B5, SCAN_PREV_TRACK = 0x00B6,
+	SU_STOP = 0x00B7, PLAY_PAUSE = 0x00CD, SU_MUTE = 0x00E2, BASS_BOOST = 0x00E5,
+	LOUDNESS = 0x00E7, SU_VOLUME_UP = 0x00E9, SU_VOLUME_DOWN = 0x00EA, BASS_UP = 0x0152,
+	BASS_DOWN = 0x0153, TREBLE_UP = 0x0154, TREBLE_DOWN = 0x0155, MEDIA_SELECT = 0x0183,
+	MAIL = 0x018A, CALCULATOR = 0x0192, MY_COMPUTER = 0x0194,
+	WWW_SEARCH = 0x0221, WWW_HOME = 0x0223, WWW_BACK = 0x0224, WWW_FORWARD = 0x0225,
+	WWW_STOP = 0x0226, WWW_REFRESH = 0x0227, WWW_FAVORITES = 0x022A,
+	
+	/*------------------------- HID Custom data don't send -------------------------*/
+	KEYSET_LIGHTMODE = 0x6000,
+	KEYSET_BRIGHTNESS_UP = 0x6101,
+	KEYSET_BRIGHTNESS_DOWN = 0x6100,
+	KEYSET_SPEED_UP = 0x6201,
+	KEYSET_SPEED_DOWN = 0x6200
+	/*------------------------- HID Consumer report data -------------------------*/
+};
+#endif

@@ -16,10 +16,9 @@ enum Update_State : uint8_t
 	NORMAL = 0, SENDING, SENDED
 };
 
-int16_t zoneF[3][12] = {
-	{F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12},	// zone F 
-	{0x94, 0x6F, 0x70, 0x83, 0xB6, 0xB5, 0xCD, 0xB7, 0xE9, 0xEA, 0xE2, 0x92},	// HID Data[2]
-	{0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01}	// HID Data[1]
+int16_t combinationKeyMap[2][17] = {
+	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW},	// zone F 
+	{MY_COMPUTER, BRIGHTNESS_UP, BRIGHTNESS_DOWN, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_UP, SU_VOLUME_DOWN, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_UP, KEYSET_BRIGHTNESS_DOWN, KEYSET_SPEED_UP, KEYSET_SPEED_DOWN}
 };
 
 uint8_t isKeyboardUpdate = SENDED;
@@ -48,40 +47,50 @@ void SendReportConsumerHID(uint8_t* _HidBuffer)
 
 void FnCombinationFactory()
 {
-	uint8_t zoneF_index = 0;
+	uint8_t combinationKey_index = 0;
 	if(!isKeyDownCombination){
-		if(keyboard.KeyPressed(SPACE)){
-			uint8_t tmp = hwled.GetLedMode();
-			hwled.SetLedMode((tmp + 1) % 5);
-		}else if (keyboard.KeyPressed(UP_ARROW)) {
-			float tmp = hwled.GetBrightness() + 0.25;
-			hwled.SetBrightness(MIN(1, tmp));
-		}else if (keyboard.KeyPressed(DOWN_ARROW)) {
-			float tmp = hwled.GetBrightness() - 0.25;
-			hwled.SetBrightness(MAX(0.25, tmp));
-		}else if (keyboard.KeyPressed(LEFT_ARROW)) {
-			key_speed_level += 1;
-			key_speed_level = MIN(5, key_speed_level);	
-		}else if (keyboard.KeyPressed(RIGHT_ARROW)) {
-			key_speed_level -= 1;
-			key_speed_level = MAX(1, key_speed_level);	
-		}
-
-		for(uint8_t i = 0; i < 12; i++)
-		{
-			if(keyboard.KeyPressed((int16_t)zoneF[0][i]))
-			{
-				zoneF_index = i;
-				report_ID = 3;
-				report_flag = true;
-				keyboard.ResetHidReportBuffer(report_ID);
-				keyboard.SetHidReportBuffer(1, zoneF[1][i]);
-				keyboard.SetHidReportBuffer(2, zoneF[2][i]);
+		uint8_t low, high;
+		for(uint8_t i = 0; i < 17; i++){
+			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){
+				combinationKey_index = i;
+				low = (uint8_t)(combinationKeyMap[1][i] & 0xFF);
+				high = (uint8_t)(combinationKeyMap[1][i] >> 8);
+				if(high < 0x60){
+					report_ID = 3;
+					report_flag = true;
+					keyboard.ResetHidReportBuffer(report_ID);
+					keyboard.SetHidReportBuffer(1, low);
+					keyboard.SetHidReportBuffer(2, high);
+				}else{
+					switch(high){
+						case 0x60 :
+							hwled.SetLedMode((hwled.GetLedMode() + 1) % 5);
+							break;
+						case 0x61 :
+							if (low){
+								float tmp = hwled.GetBrightness() + 0.25;
+								hwled.SetBrightness(MIN(1, tmp));
+							}else{
+								float tmp = hwled.GetBrightness() - 0.25;
+								hwled.SetBrightness(MAX(0.25, tmp));
+							}
+							break;
+						case 0x62 :
+							if(low){
+								key_speed_level += 1;
+								key_speed_level = MIN(5, key_speed_level);
+							}else{
+								key_speed_level -= 1;
+								key_speed_level = MAX(1, key_speed_level);
+							}
+							break;
+					}
+				}
 				break;
 			}
 		}
 	}
-	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(zoneF[0][zoneF_index]);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
 }
 
 void UpdateKeyboardHID()
