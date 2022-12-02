@@ -40,7 +40,7 @@ enum Consumer_t : int16_t
 	MAIL = 0x018A, CALCULATOR = 0x0192, MY_COMPUTER = 0x0194,
 	WWW_SEARCH = 0x0221, WWW_HOME = 0x0223, WWW_BACK = 0x0224, WWW_FORWARD = 0x0225,
 	WWW_STOP = 0x0226, WWW_REFRESH = 0x0227, WWW_FAVORITES = 0x022A,
-	
+
 	/*------------------------- HID Custom data don't send -------------------------*/
 	KEYSET_LIGHTMODE = 0x6000,
 	KEYSET_BRIGHTNESS_UP = 0x6101,
