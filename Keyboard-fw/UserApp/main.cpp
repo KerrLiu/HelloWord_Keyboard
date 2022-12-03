@@ -3,6 +3,8 @@
 #include "HelloWord/hw_keyboard.h"
 #include "HelloWord/hw_led.h"
 
+#define LSB(_x) ((_x) & 0xFF)
+#define MSB(_x) ((_x) >> 8)
 
 /* Component Definitions -----------------------------------------------------*/
 /* KeyboardConfig_t config; */
@@ -17,13 +19,13 @@ enum Update_State : uint8_t
 };
 
 int16_t combinationKeyMap[2][17] = {
-	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW},	// zone F 
-	{MY_COMPUTER, BRIGHTNESS_UP, BRIGHTNESS_DOWN, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_UP, SU_VOLUME_DOWN, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_UP, KEYSET_BRIGHTNESS_DOWN, KEYSET_SPEED_UP, KEYSET_SPEED_DOWN}
+	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW},	// combinationKey
+	{MY_COMPUTER, BRIGHTNESS_UP, BRIGHTNESS_DOWN, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_UP, SU_VOLUME_DOWN, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_UP, KEYSET_BRIGHTNESS_DOWN, KEYSET_SPEED_UP, KEYSET_SPEED_DOWN}	// consumer code and custom code
 };
 
 uint8_t isKeyboardUpdate = SENDED;
 bool isKeyDownCombination = false;
-uint8_t key_speed_level = 1;
+uint8_t filter_level = 1;
 uint8_t lastHidBuffer[KEY_REPORT_SIZE] = {0};
 uint8_t report_ID = 1;
 uint8_t report_flag = false;
@@ -53,8 +55,8 @@ void FnCombinationFactory()
 		for(uint8_t i = 0; i < 17; i++){
 			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){
 				combinationKey_index = i;
-				low = (uint8_t)(combinationKeyMap[1][i] & 0xFF);
-				high = (uint8_t)(combinationKeyMap[1][i] >> 8);
+				low = LSB(combinationKeyMap[1][i]);
+				high = MSB(combinationKeyMap[1][i]);
 				if(high < 0x60){
 					report_ID = 3;
 					report_flag = true;
@@ -77,11 +79,11 @@ void FnCombinationFactory()
 							break;
 						case 0x62 :
 							if(low){
-								key_speed_level += 1;
-								key_speed_level = MIN(5, key_speed_level);
+								filter_level += 1;
+								filter_level = MIN(5, filter_level);
 							}else{
-								key_speed_level -= 1;
-								key_speed_level = MAX(1, key_speed_level);
+								filter_level -= 1;
+								filter_level = MAX(1, filter_level);
 							}
 							break;
 					}
@@ -131,15 +133,15 @@ void Main()
 	/* 			.keyMap={}, */
 	/* 			.light_mode=1, */
 	/* 			.led_brightness=0.2, */
-	/* 			.key_speed_level=5 */
+	/* 			.filter_level=5 */
 	/* 	}; */
 	/* 	memset(config.keyMap, -1, 128); */
 	/* 	eeprom.Push(0, config); */
 	/* } */
-	/* if (config.light_mode < 1 || config.key_speed_level < 1){ */
+	/* if (config.light_mode < 1 || config.filter_level < 1){ */
 	/* 	config.light_mode = 1; */
 	/* 	config.led_brightness = 0.25; */
-	/* 	config.key_speed_level = 5; */
+	/* 	config.filter_level = 5; */
 	/* 	eeprom.Push(0, config); */
 	/* } */
 
@@ -159,7 +161,7 @@ void Main()
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	keyboard.ApplyDebounceFilter(100 * key_speed_level); // DebounceFilter Default value is 100
+	keyboard.ApplyDebounceFilter(100 * filter_level); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED)
 	{
 		isKeyboardUpdate = NORMAL;

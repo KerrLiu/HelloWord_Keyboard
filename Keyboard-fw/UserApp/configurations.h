@@ -23,8 +23,8 @@ typedef struct KeyboardConfig_t
     uint64_t serialNum;
     int8_t keyMap[128];
     int8_t led_Mode = 1;
-	float led_brightness = 0.2;
-    int8_t key_speed_level = 5;
+	float led_brightness = 0.25;
+    int8_t filter_level = 5;
 } KeyboardConfig_t;
 
 extern KeyboardConfig_t config;
