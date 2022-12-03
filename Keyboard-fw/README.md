@@ -20,23 +20,47 @@ int main (int argc, char * argv[]){
 # Key Combination
 |Keys|Effect|Finished condition|Need optimization|
 |---|---|---|---|
-|`Fn` + `Space`|Chang Led Mode|complete|Yes|
-|`Fn` + `Up`|Increase brightness|complete|Yes|
-|`Fn` + `Down`|Decrease brightness|complete|Yes|
-|`Fn` + `Left`|Lifting filter interval|complete|Yes|
-|`Fn` + `Right`|Reduce filter interval|complete|Yes|
-|`Fn` + `F1`|My Computer|complete|Yes|
-|`Fn` + `F2`|Brightness Up|complete|Yes|
-|`Fn` + `F3`|Brightness Down|complete|Yes|
-|`Fn` + `F4`|Media Select|complete|Yes|
-|`Fn` + `F5`|Prev|complete|Yes|
-|`Fn` + `F6`|Next|complete|Yes|
-|`Fn` + `F7`|Play/Pause|complete|Yes|
-|`Fn` + `F8`|Stop|complete|Yes|
-|`Fn` + `F9`|Volume up|complete|Yes|
-|`Fn` + `F10`|Volume down|complete|Yes|
-|`Fn` + `F11`|Mute|complete|Yes|
-|`Fn` + `F12`|Calculator|complete|Yes|
+|`Fn` + `Space`|Chang Led Mode|complete|NO|
+|`Fn` + `Up`|Increase brightness|complete|NO|
+|`Fn` + `Down`|Decrease brightness|complete|NO|
+|`Fn` + `Left`|Lifting filter interval|complete|NO|
+|`Fn` + `Right`|Reduce filter interval|complete|NO|
+|`Fn` + `F1`|My Computer|complete|NO|
+|`Fn` + `F2`|Brightness Up|complete|NO|
+|`Fn` + `F3`|Brightness Down|complete|NO|
+|`Fn` + `F4`|Media Select|complete|NO|
+|`Fn` + `F5`|Prev|complete|NO|
+|`Fn` + `F6`|Next|complete|NO|
+|`Fn` + `F7`|Play/Pause|complete|NO|
+|`Fn` + `F8`|Stop|complete|NO|
+|`Fn` + `F9`|Volume up|complete|NO|
+|`Fn` + `F10`|Volume down|complete|NO|
+|`Fn` + `F11`|Mute|complete|NO|
+|`Fn` + `F12`|Calculator|complete|NO|
+
+## Consumer code and Custom code, you can add other Consumer code
+
+```c
+enum Consumer_t : int16_t
+{
+	/*------------------------- HID Consumer report data -------------------------*/
+	DISPLAY_BRIGHTNESS_INC = 0x006F, DISPLAY_BRIGHTNESS_DEC = 0x0070, SCAN_NEXT_TRACK = 0x00B5, SCAN_PREV_TRACK = 0x00B6,
+	SU_STOP = 0x00B7, PLAY_PAUSE = 0x00CD, SU_MUTE = 0x00E2, BASS_BOOST = 0x00E5,
+	LOUDNESS = 0x00E7, SU_VOLUME_INC = 0x00E9, SU_VOLUME_DEC = 0x00EA, BASS_INC = 0x0152,
+	BASS_DEC = 0x0153, TREBLE_UP = 0x0154, TREBLE_DOWN = 0x0155, MEDIA_SELECT = 0x0183,
+	MAIL = 0x018A, CALCULATOR = 0x0192, MY_COMPUTER = 0x0194,
+	WWW_SEARCH = 0x0221, WWW_HOME = 0x0223, WWW_BACK = 0x0224, WWW_FORWARD = 0x0225,
+	WWW_STOP = 0x0226, WWW_REFRESH = 0x0227, WWW_FAVORITES = 0x022A,
+
+	/*------------------------- HID Custom data don't send -------------------------*/
+	KEYSET_LIGHTMODE = 0x6000,
+	KEYSET_BRIGHTNESS_INC = 0x6101,
+	KEYSET_BRIGHTNESS_DEC = 0x6100,
+	KEYSET_FILTER_LEVEL_INC = 0x6201,
+	KEYSET_FILTER_LEVEL_DEC = 0x6200
+	/*------------------------- HID Consumer report data -------------------------*/
+};
+```
 
 # Keyboard Layout
 
