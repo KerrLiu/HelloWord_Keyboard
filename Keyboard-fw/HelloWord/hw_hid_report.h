@@ -46,7 +46,8 @@ enum Consumer_t : int16_t
 	KEYSET_BRIGHTNESS_INC = 0x6101,
 	KEYSET_BRIGHTNESS_DEC = 0x6100,
 	KEYSET_FILTER_LEVEL_INC = 0x6201,
-	KEYSET_FILTER_LEVEL_DEC = 0x6200
+	KEYSET_FILTER_LEVEL_DEC = 0x6200,
+	KEYSET_LAYOUT_WIN_MAC = 0x6300
 	/*------------------------- HID Consumer report data -------------------------*/
 };
 

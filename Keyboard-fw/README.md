@@ -25,6 +25,7 @@ int main (int argc, char * argv[]){
 |`Fn` + `Down`|Decrease brightness|complete|NO|
 |`Fn` + `Left`|Lifting filter interval|complete|NO|
 |`Fn` + `Right`|Reduce filter interval|complete|NO|
+|`Fn` + `Left_Gui`|Exchange win mac layout|complete|Yes|
 |`Fn` + `F1`|My Computer|complete|NO|
 |`Fn` + `F2`|Brightness Up|complete|NO|
 |`Fn` + `F3`|Brightness Down|complete|NO|
@@ -57,14 +58,15 @@ enum Consumer_t : int16_t
 	KEYSET_BRIGHTNESS_INC = 0x6101,
 	KEYSET_BRIGHTNESS_DEC = 0x6100,
 	KEYSET_FILTER_LEVEL_INC = 0x6201,
-	KEYSET_FILTER_LEVEL_DEC = 0x6200
+	KEYSET_FILTER_LEVEL_DEC = 0x6200,
+	KEYSET_LAYOUT_WIN_MAC = 0x6300
 	/*------------------------- HID Consumer report data -------------------------*/
 };
 ```
 
 # Keyboard Layout
 
-## Layout1
+## Layout1(Win)
 
 ```shell
 ┌───┬───┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┐
@@ -78,7 +80,7 @@ enum Consumer_t : int16_t
 ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
 │  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │End│
 ├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
-│Ctrl│GUI │Alt │                        │Alt│GUI│Ctl│ ← │ ↓ │ → │││
+│Ctrl│GUI │Alt │                        │Alt│FN │Ctl│ ← │ ↓ │ → │││
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
 ```
 
@@ -96,7 +98,25 @@ enum Consumer_t : int16_t
 ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
 │  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │PKD│
 ├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
-│Ctrl│GUI │Alt │                        │Alt│GUI│Ctl│ ← │ ↓ │ → │││
+│Ctrl│GUI │Alt │                        │Alt│FN │Ctl│ ← │ ↓ │ → │││
+└────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
+```
+
+## Layout3(Mac)
+
+```shell
+┌───┬───┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┐
+│Esc│   │F1 │F2 │F3 │F4 │ │F5 │F6 │F7 │F8 │ │F9 │F10│F11│F12│ │PA │
+├───┼───┼───┼───┼───┼───┼─┴─┬─┴─┬─┴─┬─┴─┬─┴─┼───┼───┼───┴───┤ ├───┤
+│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│ │Ins│
+├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
+│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │ │Del│
+├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
+│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │ │PKU│
+├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
+│  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │PKD│
+├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
+│Ctrl│Alt │GUI │                        │GUI│FN │Alt│ ← │ ↓ │ → │││
 └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
 ```
 

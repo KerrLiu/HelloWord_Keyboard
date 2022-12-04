@@ -18,14 +18,15 @@ enum Update_State : uint8_t
 	NORMAL = 0, SENDING, SENDED
 };
 
-int16_t combinationKeyMap[2][17] = {
-	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW},	// combinationKey
-	{MY_COMPUTER, DISPLAY_BRIGHTNESS_INC, DISPLAY_BRIGHTNESS_DEC, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_INC, SU_VOLUME_DEC, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_INC, KEYSET_BRIGHTNESS_DEC, KEYSET_FILTER_LEVEL_INC, KEYSET_FILTER_LEVEL_DEC}	// consumer code and custom code
+int16_t combinationKeyMap[2][18] = {
+	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, LEFT_GUI},	// combinationKey
+	{MY_COMPUTER, DISPLAY_BRIGHTNESS_INC, DISPLAY_BRIGHTNESS_DEC, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_INC, SU_VOLUME_DEC, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_INC, KEYSET_BRIGHTNESS_DEC, KEYSET_FILTER_LEVEL_INC, KEYSET_FILTER_LEVEL_DEC, KEYSET_LAYOUT_WIN_MAC}	// consumer code and custom code
 };
 
 uint8_t isKeyboardUpdate = SENDED;
 bool isKeyDownCombination = false;
 uint8_t filter_level = 1;
+uint8_t unFnLayout = 1;
 uint8_t lastHidBuffer[KEY_REPORT_SIZE] = {0};
 uint8_t report_ID = 1;
 uint8_t report_flag = false;
@@ -52,7 +53,7 @@ void FnCombinationFactory()
 	uint8_t combinationKey_index = 0;
 	if(!isKeyDownCombination){
 		uint8_t low, high;
-		for(uint8_t i = 0; i < 17; i++){
+		for(uint8_t i = 0; i < 18; i++){
 			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){
 				combinationKey_index = i;
 				low = LSB(combinationKeyMap[1][i]);
@@ -86,19 +87,24 @@ void FnCombinationFactory()
 								filter_level = MAX(1, filter_level);
 							}
 							break;
+						case 0x63 :
+							if(!low){
+								unFnLayout = unFnLayout == 1 ? 3 : 1;
+							}
+							break;
 					}
 				}
 				break;
 			}
 		}
 	}
-	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(LEFT_GUI) | keyboard.KeyPressed(F7) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
 }
 
 void UpdateKeyboardHID()
 {
 	isKeyboardUpdate = SENDING;
-	uint8_t layer = keyboard.FnPressed() ? 2 : 1;
+	uint8_t layer = keyboard.FnPressed() ? 2 : unFnLayout;
 	keyboard.Remap(layer);  // When Fn pressed use layer-2
 	if(layer == 2)
 	{
