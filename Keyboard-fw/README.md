@@ -148,4 +148,4 @@ enum Consumer_t : int16_t
 |Kerr|main|[KerrForLiu](KerrForLiu@gmail.com)|
 |Mr. mysterious|Sin Rgb|[krakenCN](https://github.com/krakenCN)|
 |Gralerfics|keyNearMap|[Gralerfics](https://github.com/Gralerfics)|
-|俊杰|HID SendReport Status|null|
+|俊杰|lastHidBuffer|null|
