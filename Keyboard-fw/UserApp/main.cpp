@@ -98,7 +98,7 @@ void FnCombinationFactory()
 			}
 		}
 	}
-	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(LEFT_GUI) | keyboard.KeyPressed(F7) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
 }
 
 void UpdateKeyboardHID()
