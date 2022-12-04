@@ -1,6 +1,7 @@
 # HelloWord_Keyboard
 HelloWord Keyboard Firmware Tools Upper PC
-This Project is form `peng-zhihui`[ `HelloWord Keyboard`](https://github.com/peng-zhihui/HelloWord-Keyboard)
+
+This Project is from `peng-zhihui`[ `HelloWord Keyboard`](https://github.com/peng-zhihui/HelloWord-Keyboard)
 # Code specification
 
 # Task plan
