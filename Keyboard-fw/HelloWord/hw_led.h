@@ -56,11 +56,11 @@ class HWLed {
 		// bool color_flag = true;
 		float rgbBrightnessFactor[KEY_NUMBER] = {0};
 		uint16_t angleCount = 0;
-		float PI = 3.14159265;
-		float HALF_PI = PI / 2;
-		float RADIAN_1 = PI / 180;
-		uint8_t ANGLE_GAP = 120;
-		uint8_t HALF_FF = 0xFF / 2;
+		const float PI = 3.14159265;
+		const float HALF_PI = PI / 2;
+		const float RADIAN_1 = PI / 180;
+		const uint8_t ANGLE_GAP = 120;
+		const uint8_t HALF_FF = 0xFF / 2;
 };
 
 

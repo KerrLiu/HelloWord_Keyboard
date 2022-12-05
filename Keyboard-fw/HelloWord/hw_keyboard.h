@@ -41,7 +41,7 @@ private:
     uint8_t debounceBuffer[IO_NUMBER / 8 + 1]{};
     uint8_t remapBuffer[IO_NUMBER / 8]{};
     uint8_t hidBuffer[HID_REPORT_SIZE]{};
-    uint8_t lastHidBuffer[HID_REPORT_SIZE]{};
+    /* uint8_t lastHidBuffer[HID_REPORT_SIZE]{}; */
 };
 
 
