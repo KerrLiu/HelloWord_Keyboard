@@ -51,18 +51,17 @@ void HWLed::Update(HWKeyboard _keyboard)
 {
 	if(ledMode == 0){
 		for (uint8_t i = 0; i < LED_NUMBER; i++)
-		{
 			SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
-		}
+
 		SyncLights();
-		/*_keyboard._DelayUs(1000000);*/
+		// _keyboard._DelayUs(1000000);
 	} else {
 		angleCount += 4;
 		if (angleCount > 3600) angleCount = 0;
 
-		color_flag ? color_v++ : color_v --;
-		if (color_v > 254) color_flag = false;
-		else if (color_v < 1) color_flag = true;
+		// color_flag ? color_v++ : color_v --;
+		// if (color_v > 254) color_flag = false;
+		// else if (color_v < 1) color_flag = true;
 
 		for (uint8_t i = 0; i < KEY_NUMBER; i++){
 			if(ledMode == 1){

@@ -52,7 +52,7 @@ static int16_t keyMap[5][IO_NUMBER] = {
 };
 
 /*----Key corresponds to Led subscript----*/
-static constexpr uint8_t keyLEDMap[LED_NUMBER] = {
+static const uint8_t keyLEDMap[LED_NUMBER] = {
 	13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
 	14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,  28,
 	43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29,
@@ -63,7 +63,7 @@ static constexpr uint8_t keyLEDMap[LED_NUMBER] = {
 	85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
 };
 
-static constexpr uint8_t keyNearMap[KEY_NUMBER][6] = {
+static const uint8_t keyNearMap[KEY_NUMBER][6] = {
 	{1, 14, 15, 127, 127, 127},			{2, 15, 16, 17, 127, 127},
 	{1, 3, 16, 17, 18, 127},			{2, 4, 17, 18, 19, 127},
 	{3, 5, 18, 19, 20, 127},			{4, 6, 20, 21, 127, 127},
@@ -107,7 +107,7 @@ static constexpr uint8_t keyNearMap[KEY_NUMBER][6] = {
 	{70, 79, 81, 127, 127, 127},		{70, 71, 80, 127, 127, 127}
 };
 
-static constexpr uint8_t colLEDMap[15][6] = {
+static const uint8_t colLEDMap[15][6] = {
 	{13, 14, 43, 44, 71, 72},
 	{12, 15, 42, 45, 70, 73},
 	{11, 16, 41, 46, 69, 74},
@@ -125,7 +125,7 @@ static constexpr uint8_t colLEDMap[15][6] = {
 	{127, 28, 29, 127, 127, 127}
 };
 
-static constexpr uint8_t rowLEDMap[6][15] = {
+static const uint8_t rowLEDMap[6][15] = {
 	{13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 127},
 	{14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28},
 	{43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29},

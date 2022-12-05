@@ -22,9 +22,7 @@ public:
     uint8_t* Remap(uint8_t _layer = 1);
     /* void SyncLights(); */
     bool FnPressed();
-    bool IsKeyDown();
     bool GetButtonStatus(uint8_t _customId);
-	uint8_t GetKeyIndex();
     bool KeyPressed(int16_t _key);
     void Press(int16_t _key);
     void Release(int16_t _key);

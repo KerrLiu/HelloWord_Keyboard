@@ -52,8 +52,8 @@ class HWLed {
 		uint8_t ledMode = 0;
 
 		/*--------RGB Color Values--------*/
-		uint8_t color_v = 1;
-		bool color_flag = true;
+		// uint8_t color_v = 1;
+		// bool color_flag = true;
 		float rgbBrightnessFactor[KEY_NUMBER] = {0};
 		uint16_t angleCount = 0;
 		float PI = 3.14159265;

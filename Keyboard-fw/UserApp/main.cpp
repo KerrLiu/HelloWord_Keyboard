@@ -15,10 +15,10 @@ HWLed hwled(&hspi2);;
 // UpdateKeyboardHID State
 enum Update_State : uint8_t
 {
-	NORMAL = 0, SENDING, SENDED
+	NORMAL = 0, SENDING, SENDPASS, SENDED
 };
 
-int16_t combinationKeyMap[2][18] = {
+const int16_t combinationKeyMap[2][18] = {
 	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, LEFT_GUI},	// combinationKey
 	{MY_COMPUTER, DISPLAY_BRIGHTNESS_INC, DISPLAY_BRIGHTNESS_DEC, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_INC, SU_VOLUME_DEC, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_INC, KEYSET_BRIGHTNESS_DEC, KEYSET_FILTER_LEVEL_INC, KEYSET_FILTER_LEVEL_DEC, KEYSET_LAYOUT_WIN_MAC}	// consumer code and custom code
 };
@@ -52,6 +52,7 @@ void FnCombinationFactory()
 {
 	uint8_t combinationKey_index = 0;
 	if(!isKeyDownCombination){
+
 		uint8_t low, high;
 		for(uint8_t i = 0; i < 18; i++){
 			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){
@@ -98,7 +99,7 @@ void FnCombinationFactory()
 			}
 		}
 	}
-	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(LEFT_GUI) | keyboard.KeyPressed(combinationKeyMap[0][combinationKey_index]);
 }
 
 void UpdateKeyboardHID()
