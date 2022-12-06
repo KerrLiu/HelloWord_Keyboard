@@ -27,7 +27,7 @@ uint8_t isKeyboardUpdate = SENDED;
 bool isKeyDownCombination = false;
 uint8_t filter_level = 1;
 uint8_t unFnLayout = 1;
-uint8_t lastHidBuffer[KEY_REPORT_SIZE] = {0};
+uint8_t lastHidBuffer[KEY_REPORT_SIZE];
 uint8_t report_ID = 1;
 uint8_t report_flag = false;
 
@@ -52,7 +52,6 @@ void FnCombinationFactory()
 {
 	uint8_t combinationKey_index = 0;
 	if(!isKeyDownCombination){
-
 		uint8_t low, high;
 		for(uint8_t i = 0; i < 18; i++){
 			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){

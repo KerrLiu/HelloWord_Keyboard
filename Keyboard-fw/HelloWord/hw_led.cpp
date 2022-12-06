@@ -71,8 +71,9 @@ void HWLed::Update(HWKeyboard _keyboard)
 					if (ledMode == 2){
 						SetRgbBrightnessFactor(i, brightness);
 					}else if (ledMode == 3){
+						uint8_t _index;
 						for(uint8_t j = 0; j < 6; j++){
-							uint8_t _index = keyNearMap[i][j];
+							_index = keyNearMap[i][j];
 							if (_index != LED_VOID) SetRgbBrightnessFactor(_index, brightness);
 						}
 					}
