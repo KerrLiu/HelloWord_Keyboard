@@ -24,18 +24,18 @@ class HWLed {
 			WS_LOW = 0xE0   // 0b11100000
 		};
 
-		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, float _brightness);
-		void SetSinRgbBufferByID(uint8_t _index, float _brightness);
+		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, uint8_t _brightness);
+		void SetSinRgbBufferByID(uint8_t _index, uint8_t _brightness);
 		void SyncLights();
 
-		float GetBrightness() { return brightness; }
+		uint8_t GetBrightness() { return brightness; }
 		uint8_t GetLedMode() { return ledMode; }
-		float GetRgbBrightnessFactor(uint8_t _index);
-		void DecBrightnessFactor(uint8_t _index, float _dec);
+		uint8_t GetRgbBrightnessFactor(uint8_t _index);
+		void DecBrightnessFactor(uint8_t _index, uint8_t _dec);
 
-		void SetBrightness(float _brightness) { brightness = _brightness; }
+		void SetBrightness(uint8_t _brightness) { brightness = _brightness; }
 		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
-		void SetRgbBrightnessFactor(uint8_t _index, float _value);
+		void SetRgbBrightnessFactor(uint8_t _index, uint8_t _value);
 
 
 		// Lamp efficiency code
@@ -48,13 +48,13 @@ class HWLed {
 		uint8_t rgbBuffer[LED_NUMBER][3][8]{};
 		uint8_t wsCommit[64] = {0};
 		uint8_t brightnessPreDiv = 2; // 1/4
-		float brightness = 0.25;
+		uint8_t brightness = 20;
 		uint8_t ledMode = 0;
 
 		/*--------RGB Color Values--------*/
 		// uint8_t color_v = 1;
 		// bool color_flag = true;
-		float rgbBrightnessFactor[KEY_NUMBER] = {0};
+		uint8_t rgbBrightnessFactor[KEY_NUMBER] = {0};
 		uint16_t angleCount = 0;
 		const float PI = 3.14159265;
 		const float HALF_PI = PI / 2;

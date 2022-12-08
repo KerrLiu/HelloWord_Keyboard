@@ -25,7 +25,7 @@ const int16_t combinationKeyMap[2][18] = {
 
 uint8_t isKeyboardUpdate = SENDED;
 bool isKeyDownCombination = false;
-uint8_t filter_level = 1;
+/* uint8_t filter_level = 1; */
 uint8_t unFnLayout = 1;
 uint8_t lastHidBuffer[KEY_REPORT_SIZE];
 uint8_t report_ID = 1;
@@ -71,22 +71,22 @@ void FnCombinationFactory()
 							break;
 						case 0x61 :
 							if (low){
-								float tmp = hwled.GetBrightness() + 0.25;
-								hwled.SetBrightness(MIN(1, tmp));
+								uint8_t tmp = hwled.GetBrightness() + 20;
+								hwled.SetBrightness(MIN(100, tmp));
 							}else{
-								float tmp = hwled.GetBrightness() - 0.25;
-								hwled.SetBrightness(MAX(0.25, tmp));
+								uint8_t tmp = hwled.GetBrightness() - 20;
+								hwled.SetBrightness(MAX(20, tmp));
 							}
 							break;
-						case 0x62 :
-							if(low){
-								filter_level += 1;
-								filter_level = MIN(5, filter_level);
-							}else{
-								filter_level -= 1;
-								filter_level = MAX(1, filter_level);
-							}
-							break;
+						// case 0x62 :
+						// 	if(low){
+						// 		filter_level += 1;
+						// 		filter_level = MIN(5, filter_level);
+						// 	}else{
+						// 		filter_level -= 1;
+						// 		filter_level = MAX(1, filter_level);
+						// 	}
+						// 	break;
 						case 0x63 :
 							if(!low){
 								unFnLayout = unFnLayout == 1 ? 3 : 1;
@@ -167,7 +167,8 @@ void Main()
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	keyboard.ApplyDebounceFilter(100 * filter_level); // DebounceFilter Default value is 100
+	// keyboard.ApplyDebounceFilter(100 * filter_level);
+	keyboard.ApplyDebounceFilter(100); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED)
 	{
 		isKeyboardUpdate = NORMAL;
