@@ -23,8 +23,8 @@ int main (int argc, char * argv[]){
 |`Fn` + `Space`|Chang Led Mode|complete|NO|
 |`Fn` + `Up`|Increase brightness|complete|NO|
 |`Fn` + `Down`|Decrease brightness|complete|NO|
-|`Fn` + `Left`|Lifting filter interval|complete|NO|
-|`Fn` + `Right`|Reduce filter interval|complete|NO|
+|`Fn` + `Left`|Lifting filter interval|complete|Delete|
+|`Fn` + `Right`|Reduce filter interval|complete|Delete|
 |`Fn` + `Left_Gui`|Exchange win mac layout|complete|Yes|
 |`Fn` + `F1`|My Computer|complete|NO|
 |`Fn` + `F2`|Brightness Up|complete|NO|
