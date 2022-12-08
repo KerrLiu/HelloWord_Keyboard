@@ -28,9 +28,9 @@ public:
     void Release(int16_t _key);
 	void _DelayUs(uint32_t _delayUs = 50);
     uint8_t* GetHidReportBuffer(uint8_t _reportId);
-    uint8_t  GetTouchBarState(uint8_t _id = 0);
+    uint8_t GetTouchBarState(uint8_t _id = 0);
 	void SetHidReportBuffer(uint8_t _index, uint8_t _value);
-	void ResetHidReportBuffer(uint8_t _reportId);
+	void ResetHidReportBuffer();
 
     bool isCapsLocked = false;
 

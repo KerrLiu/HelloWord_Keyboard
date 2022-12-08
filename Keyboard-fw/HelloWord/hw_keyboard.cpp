@@ -145,10 +145,10 @@ void HWKeyboard::SetHidReportBuffer(uint8_t _index, uint8_t _value)
 	hidBuffer[_index] = _value;
 }
 
-void HWKeyboard::ResetHidReportBuffer(uint8_t _reportId)
+void HWKeyboard::ResetHidReportBuffer()
 {
-	memset(hidBuffer, 0, KEY_REPORT_SIZE);
-	hidBuffer[0] = _reportId;
+	memset(hidBuffer, 0, HID_REPORT_SIZE);
+	// hidBuffer[0] = _reportId;
 }
 
 bool HWKeyboard::KeyPressed(int16_t _key)

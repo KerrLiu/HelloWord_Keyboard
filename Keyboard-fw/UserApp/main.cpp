@@ -45,7 +45,7 @@ void SendReportRawHID(uint8_t* _HidBuffer)
 void SendReportConsumerHID(uint8_t* _HidBuffer)
 {
 	USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, _HidBuffer, KEY_REPORT_SIZE);
-	keyboard.ResetHidReportBuffer(report_ID);
+	keyboard.ResetHidReportBuffer();
 }
 
 void FnCombinationFactory()
@@ -61,7 +61,7 @@ void FnCombinationFactory()
 				if(high < 0x60){
 					report_ID = 3;
 					report_flag = true;
-					keyboard.ResetHidReportBuffer(report_ID);
+					keyboard.ResetHidReportBuffer();
 					keyboard.SetHidReportBuffer(1, low);
 					keyboard.SetHidReportBuffer(2, high);
 				}else{
@@ -113,7 +113,7 @@ void UpdateKeyboardHID()
 	}else{
 		if(report_flag){
 			report_ID = 3;
-			keyboard.ResetHidReportBuffer(report_ID);
+			keyboard.ResetHidReportBuffer();
 			report_flag = false;
 		}else{
 			report_ID = 1;
@@ -171,9 +171,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	// keyboard.ApplyDebounceFilter(100 * filter_level);
 	keyboard.ApplyDebounceFilter(100); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED)
-	{
 		isKeyboardUpdate = NORMAL;
-	}
 
 	/*
 	   uint8_t layer = keyboard.FnPressed() ? 2 : 1;
