@@ -19,6 +19,8 @@ function clean(){
 	[ -f HelloWord-Keyboard-fw.bin ] && rm HelloWord-Keyboard-fw.bin
 	echo "Delete hex file"
 	[ -f HelloWord-Keyboard-fw.hex ] && rm HelloWord-Keyboard-fw.hex
+	echo "Delete map file"
+	[ -f HelloWord-Keyboard-fw.map ] && rm HelloWord-Keyboard-fw.map
 	exit 0
 }
 
