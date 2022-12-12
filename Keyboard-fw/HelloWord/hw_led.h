@@ -43,6 +43,10 @@ class HWLed {
 
 		volatile bool isRgbTxBusy{};
 
+		bool isNumLocked = false;
+		bool isCapsLocked = false;
+		bool isScrollLocked = false;
+
 	private:
 		SPI_HandleTypeDef* spiHandle;
 		uint8_t rgbBuffer[LED_NUMBER][3][8]{};

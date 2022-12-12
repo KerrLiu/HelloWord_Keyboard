@@ -157,9 +157,6 @@ void Main()
 
 	while(true)
 	{
-		if(isKeyboardUpdate == NORMAL)
-			UpdateKeyboardHID();
-
 		hwled.Update(keyboard);
 	}
 }
@@ -170,8 +167,10 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
 	// keyboard.ApplyDebounceFilter(100 * filter_level);
 	keyboard.ApplyDebounceFilter(100); // DebounceFilter Default value is 100
-	if(isKeyboardUpdate == SENDED)
+	if(isKeyboardUpdate == SENDED){
 		isKeyboardUpdate = NORMAL;
+		UpdateKeyboardHID();
+	}
 
 	/*
 	   uint8_t layer = keyboard.FnPressed() ? 2 : 1;
@@ -198,16 +197,19 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 	extern "C"
 void HID_RxCpltCallback(uint8_t* _data)
 {
+	hwled.isNumLocked = _data[1] & 0x01? true: false;
+	hwled.isCapsLocked = _data[1] & 0x02? true: false;
+	hwled.isScrollLocked = _data[1] & 0x04? true: false;
 
 }
 
-	extern "C"
-void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state)
-{
-	if (event_idx == 1)
-	{
-		keyboard.isCapsLocked = (state & 0b10) >> 1;
-		/* keyboard.isScrollLocked = (state & 0b100) >> 2; */
-		/* keyboard.ledCtrler->isCapsChanged = true; */
-	}
-}
+	/* extern "C" */
+/* void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state) */
+/* { */
+	/* if (event_idx == 1) */
+	/* { */
+	/* 	keyboard.isCapsLocked = (state & 0b10) >> 1; */
+	/* 	/1* keyboard.isScrollLocked = (state & 0b100) >> 2; *1/ */
+	/* 	/1* keyboard.ledCtrler->isCapsChanged = true; *1/ */
+	/* } */
+/* } */

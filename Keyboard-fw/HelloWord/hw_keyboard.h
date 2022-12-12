@@ -32,7 +32,7 @@ public:
 	void SetHidReportBuffer(uint8_t _index, uint8_t _value);
 	void ResetHidReportBuffer();
 
-    bool isCapsLocked = false;
+    /* bool isCapsLocked = false; */
 
 private:
     SPI_HandleTypeDef* spiHandle;

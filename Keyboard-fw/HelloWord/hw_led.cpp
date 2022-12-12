@@ -53,7 +53,6 @@ void HWLed::Update(HWKeyboard _keyboard)
 		for (uint8_t i = 0; i < LED_NUMBER; i++)
 			SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
 
-		SyncLights();
 		// _keyboard._DelayUs(1000000);
 	} else {
 		angleCount += 4;
@@ -92,7 +91,17 @@ void HWLed::Update(HWKeyboard _keyboard)
 		{
 			SetSinRgbBufferByID(i, brightness);
 		}
-		SyncLights();
 	}
+
+	if(isNumLocked)
+		SetRgbBufferByID(LED_Num, Color_t{200, 0, 0}, brightness);
+
+	if(isCapsLocked)
+		SetRgbBufferByID(LED_Caps, Color_t{0, 200, 0}, brightness);
+
+	if(isScrollLocked)
+		SetRgbBufferByID(LED_Caps, Color_t{0, 0, 200}, brightness);
+
+	SyncLights();
 }
 
