@@ -87,7 +87,7 @@ void HWLed::Update(HWKeyboard _keyboard)
 				_keyboard._DelayUs(200);
 			}
 		}
-		for (uint8_t i = KEY_NUMBER; i < LED_NUMBER; i++)
+		for (uint8_t i = KEY_NUMBER + 3; i < LED_NUMBER; i++)
 		{
 			SetSinRgbBufferByID(i, brightness);
 		}
