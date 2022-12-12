@@ -15,6 +15,8 @@ static const uint16_t RAW_REPORT_SIZE = 1 + 32;
 static const uint16_t HID_REPORT_SIZE = KEY_REPORT_SIZE + RAW_REPORT_SIZE;
 
 static const uint8_t LED_NUMBER = 117;
+static const uint8_t KEY_ROWS = 21 + 2;			// Key Rows + 2 border
+static const uint8_t KEY_COLS = 6 + 2;			// Key Cols + 2 border
 static const uint8_t LED_VOID = 127;			// For light matrix
 static const uint8_t LED_Num = 32;				// NumLock led index
 static const uint8_t LED_Caps = 53;				// CapsLock led index
@@ -53,6 +55,8 @@ int16_t keyMap[5][IO_NUMBER] = {
 };
 
 /*----Key corresponds to Led subscript----*/
+
+/*
 static constexpr uint8_t keyLEDMap[LED_NUMBER] = {
 	16, 15,  14,13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
 	17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
@@ -62,7 +66,20 @@ static constexpr uint8_t keyLEDMap[LED_NUMBER] = {
 	86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97,
 	98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116
 };
+*/
 
+static uint8_t LEDMAP[KEY_COLS][KEY_ROWS]{
+	{LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID},
+		{LED_VOID, 16, LED_VOID, 15, 14, 13, 12, LED_VOID, 11, 10, 9, 8, LED_VOID, 7, 6, 5, 4, LED_VOID, 3, 2, 1, 0, LED_VOID},
+		{LED_VOID, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, LED_VOID, 28, 29, LED_VOID, 30, LED_VOID, 31, 32, 33, 34 LED_VOID},
+		{LED_VOID, 52, LED_VOID, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, LED_VOID, 39, LED_VOID, 38, 37, 36, 35, LED_VOID},
+		{LED_VOID, 53, LED_VOID, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, LED_VOID, LED_VOID, 65, LED_VOID, 66, 67, 68, 69, LED_VOID},
+		{LED_VOID, 85, LED_VOID, LED_VOID, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, LED_VOID, 74, LED_VOID, 73, 72, 71, 70, LED_VOID, LED_VOID},
+		{LED_VOID, 86, 87, 88, LED_VOID, LED_VOID, LED_VOID, LED_VOID, 89, LED_VOID, LED_VOID, LED_VOID, 90, 91, 92, LED_VOID, 93, 94, 95, LED_VOID, 96, 97, LED_VOID},
+		{LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID, LED_VOID}
+};
+
+/*
 static constexpr uint8_t keyNearMap[KEY_NUMBER][6] = {
 	{0, 17, 18, 1, 127, 127},			{0,1,2,20,18,19},
 	{2,1,3,19,20,21},                   {3,2,4,20,21,22},
@@ -151,6 +168,6 @@ static constexpr uint8_t rowLEDMap[6][18] = {
 	{85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 127, 127},
 	{86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 127, 127, 127, 127, 127, 127},
 };
-
+*/
 
 #endif

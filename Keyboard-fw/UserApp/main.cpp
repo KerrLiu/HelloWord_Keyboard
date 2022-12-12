@@ -79,15 +79,15 @@ void FnCombinationFactory()
 								hwled.SetBrightness(MAX(20, tmp));
 							}
 							break;
-						// case 0x62 :
-						// 	if(low){
-						// 		filter_level += 1;
-						// 		filter_level = MIN(5, filter_level);
-						// 	}else{
-						// 		filter_level -= 1;
-						// 		filter_level = MAX(1, filter_level);
-						// 	}
-						// 	break;
+							// case 0x62 :
+							// 	if(low){
+							// 		filter_level += 1;
+							// 		filter_level = MIN(5, filter_level);
+							// 	}else{
+							// 		filter_level -= 1;
+							// 		filter_level = MAX(1, filter_level);
+							// 	}
+							// 	break;
 						case 0x63 :
 							if(!low){
 								unFnLayout = unFnLayout == 1 ? 3 : 1;
@@ -165,7 +165,7 @@ void Main()
 extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
-	// keyboard.ApplyDebounceFilter(100 * filter_level);
+							   // keyboard.ApplyDebounceFilter(100 * filter_level);
 	keyboard.ApplyDebounceFilter(100); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED){
 		isKeyboardUpdate = NORMAL;
@@ -203,13 +203,13 @@ void HID_RxCpltCallback(uint8_t* _data)
 
 }
 
-	/* extern "C" */
+/* extern "C" */
 /* void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state) */
 /* { */
-	/* if (event_idx == 1) */
-	/* { */
-	/* 	keyboard.isCapsLocked = (state & 0b10) >> 1; */
-	/* 	/1* keyboard.isScrollLocked = (state & 0b100) >> 2; *1/ */
-	/* 	/1* keyboard.ledCtrler->isCapsChanged = true; *1/ */
-	/* } */
+/* if (event_idx == 1) */
+/* { */
+/* 	keyboard.isCapsLocked = (state & 0b10) >> 1; */
+/* 	/1* keyboard.isScrollLocked = (state & 0b100) >> 2; *1/ */
+/* 	/1* keyboard.ledCtrler->isCapsChanged = true; *1/ */
+/* } */
 /* } */
