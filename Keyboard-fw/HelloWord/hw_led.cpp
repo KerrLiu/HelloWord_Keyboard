@@ -45,6 +45,7 @@ void HWLed::SetSinRgbBufferByID(uint8_t _index, uint8_t _brightness){
 			(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 1 + _index) * RADIAN_1 + HALF_PI) + HALF_FF), 
 			(uint8_t)(HALF_FF * sin((angleCount + ANGLE_GAP * 2 + _index) * RADIAN_1 + HALF_PI) + HALF_FF)}, _brightness);
 }
+
 // -----------------------Lamp efficiency code----------------------
 
 void HWLed::Update(HWKeyboard _keyboard){
@@ -112,9 +113,9 @@ void HWLed::Update(HWKeyboard _keyboard){
 		SetRgbBufferByID(LED_Caps, Color_t{0, 0, 0}, 0);
 
 	if(isScrollLocked)
-		SetRgbBufferByID(LED_Caps, Color_t{0, 0, 200}, brightness);
+		SetRgbBufferByID(LED_Scro, Color_t{0, 0, 200}, brightness);
 	else
-		SetRgbBufferByID(LED_Caps, Color_t{0, 0, 0}, 0);
+		SetRgbBufferByID(LED_Scro, Color_t{0, 0, 0}, 0);
 
 	SyncLights();
 }

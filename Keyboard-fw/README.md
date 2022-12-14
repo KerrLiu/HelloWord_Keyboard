@@ -25,7 +25,7 @@ int main (int argc, char * argv[]){
 |`Fn` + `Down`|Decrease brightness|complete|NO|
 |`Fn` + `Left`|Lifting filter interval|complete|Delete|
 |`Fn` + `Right`|Reduce filter interval|complete|Delete|
-|`Fn` + `Left_Gui`|Exchange win mac layout|complete|Yes|
+|`Fn` + `M`|Exchange win mac layout|complete|Yes|
 |`Fn` + `F1`|My Computer|complete|NO|
 |`Fn` + `F2`|Brightness Up|complete|NO|
 |`Fn` + `F3`|Brightness Down|complete|NO|

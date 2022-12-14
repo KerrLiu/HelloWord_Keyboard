@@ -20,7 +20,7 @@ static const uint8_t KEY_COLS = 6 + 2;			// Key Cols + 2 border
 static const uint8_t LED_VOID = 127;			// For light matrix
 static const uint8_t LED_Num = 82;				// NumLock led index
 static const uint8_t LED_Caps = 83;				// CapsLock led index
-static const uint8_t LED_Scr = 84;				// ScrollLock led index
+static const uint8_t LED_Scro = 84;				// ScrollLock led index
 
 static int16_t keyMap[5][IO_NUMBER] = {
 	{67,61,60,58,59,52,55,51,50,49,48,47,46,3,

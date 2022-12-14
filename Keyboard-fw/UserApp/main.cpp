@@ -19,7 +19,7 @@ enum Update_State : uint8_t
 };
 
 const int16_t combinationKeyMap[2][16] = {
-	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, LEFT_GUI},	// combinationKey
+	{F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, SPACE, UP_ARROW, DOWN_ARROW, M},	// combinationKey
 	{MY_COMPUTER, DISPLAY_BRIGHTNESS_INC, DISPLAY_BRIGHTNESS_DEC, MEDIA_SELECT, SCAN_PREV_TRACK, SCAN_NEXT_TRACK, PLAY_PAUSE, SU_STOP, SU_VOLUME_INC, SU_VOLUME_DEC, SU_MUTE, CALCULATOR, KEYSET_LIGHTMODE, KEYSET_BRIGHTNESS_INC, KEYSET_BRIGHTNESS_DEC, KEYSET_LAYOUT_WIN_MAC}	// consumer code and custom code
 };
 
@@ -99,7 +99,7 @@ void FnCombinationFactory()
 			}
 		}
 	}
-	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(combinationKey_index);
+	isKeyDownCombination = keyboard.KeyPressed(UP_ARROW) | keyboard.KeyPressed(DOWN_ARROW) | keyboard.KeyPressed(LEFT_ARROW) | keyboard.KeyPressed(RIGHT_ARROW) | keyboard.KeyPressed(SPACE) | keyboard.KeyPressed(M) | keyboard.KeyPressed(combinationKey_index);
 }
 
 void UpdateKeyboardHID()
@@ -166,7 +166,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 {
 	keyboard.ScanKeyStates();  // Around 40us use 4MHz SPI clk
 							   // keyboard.ApplyDebounceFilter(100 * filter_level);
-	keyboard.ApplyDebounceFilter(100); // DebounceFilter Default value is 100
+	keyboard.ApplyDebounceFilter(200); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED){
 		isKeyboardUpdate = NORMAL;
 		UpdateKeyboardHID();

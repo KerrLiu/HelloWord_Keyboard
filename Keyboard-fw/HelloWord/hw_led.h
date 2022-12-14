@@ -37,7 +37,6 @@ class HWLed {
 		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
 		void SetRgbBrightnessFactor(uint8_t _index, uint8_t _value);
 
-
 		// Lamp efficiency code
 		void Update(HWKeyboard _keyboard);
 
