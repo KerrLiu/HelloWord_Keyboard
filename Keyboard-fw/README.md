@@ -143,9 +143,9 @@ enum Consumer_t : int16_t
 |Gluttonous Snake By SinRgb|in progress|
 
 # Participants
-|Name|Code|Email/Git|
-|---|---|---|
-|Kerr|main|[KerrForLiu](KerrForLiu@gmail.com)|
-|Mr. mysterious|Sin Rgb|[krakenCN](https://github.com/krakenCN)|
-|Gralerfics|keyNearMap|[Gralerfics](https://github.com/Gralerfics)|
-|俊杰|lastHidBuffer|null|
+|Name|Code|Version used|Email/Git|
+|---|---|---|---|
+|Kerr|main|`V1.0` `V1.01`|[KerrForLiu](KerrForLiu@gmail.com)|
+|Mr. mysterious|Sin Rgb|`V1.0` `V1.01`|[krakenCN](https://github.com/krakenCN)|
+|Gralerfics|keyNearMap|`V1.0`|[Gralerfics](https://github.com/Gralerfics)|
+|俊杰|lastHidBuffer|`V1.0` `V1.01`|null|
