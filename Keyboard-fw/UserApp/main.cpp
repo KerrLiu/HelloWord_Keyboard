@@ -53,7 +53,7 @@ void FnCombinationFactory()
 	uint8_t combinationKey_index = RESERVED;
 	if(!isKeyDownCombination){
 		uint8_t low, high;
-		for(uint8_t i = 0; i < 16; i++){
+		for(uint8_t i = 0; i < sizeof(combinationKeyMap[0]) / sizeof(combinationKeyMap[0][0]); i++){
 			if(keyboard.KeyPressed((int16_t)combinationKeyMap[0][i])){
 				combinationKey_index = combinationKeyMap[0][i];
 				low = LSB(combinationKeyMap[1][i]);
@@ -157,6 +157,9 @@ void Main()
 
 	while(true)
 	{
+		if(isKeyboardUpdate == NORMAL)
+			UpdateKeyboardHID();
+
 		hwled.Update(keyboard);
 	}
 }
@@ -169,7 +172,7 @@ extern "C" void OnTimerCallback() // 1000Hz callback
 	keyboard.ApplyDebounceFilter(200); // DebounceFilter Default value is 100
 	if(isKeyboardUpdate == SENDED){
 		isKeyboardUpdate = NORMAL;
-		UpdateKeyboardHID();
+		/* UpdateKeyboardHID(); */
 	}
 
 	/*
@@ -197,10 +200,9 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 	extern "C"
 void HID_RxCpltCallback(uint8_t* _data)
 {
-	hwled.isNumLocked = _data[1] & 0x01? true: false;
-	hwled.isCapsLocked = _data[1] & 0x02? true: false;
-	hwled.isScrollLocked = _data[1] & 0x04? true: false;
-
+	hwled.isNumLocked = _data[1] & 0x01;
+	hwled.isCapsLocked = _data[1] & 0x02;
+	hwled.isScrollLocked = _data[1] & 0x04;
 }
 
 /* extern "C" */

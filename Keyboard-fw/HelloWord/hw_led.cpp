@@ -20,7 +20,7 @@ void HWLed::SyncLights()
 {
 	while (isRgbTxBusy);
 	isRgbTxBusy = true;
-	HAL_SPI_Transmit_DMA(&hspi2, (uint8_t*) rgbBuffer, LED_NUMBER * 3 * 8);
+	HAL_SPI_Transmit_DMA(&hspi2, (uint8_t*) rgbBuffer, LED_NUMBER * 24);
 	while (isRgbTxBusy);
 	isRgbTxBusy = true;
 	HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
@@ -60,45 +60,46 @@ void HWLed::Update(HWKeyboard _keyboard){
 		for(uint8_t i = 1; i < KEY_COLS - 1; i++){
 			for(uint8_t j = 1; j < KEY_ROWS - 1; j++){
 				index = LEDMAP[i][j];
-				if(index != LED_VOID){
-					if(ledMode == 1){
-						SetSinRgbBufferByID(index, brightness);
-					}else if(ledMode == 2 || ledMode == 3){
-						if(_keyboard.GetButtonStatus(keyindex)){
-							if(ledMode == 2){
-								SetRgbBrightnessFactor(index, brightness);
-							}else if(ledMode == 3){
-								SetRgbBrightnessFactor(index, brightness);
+				if(index == LED_VOID)
+					continue;
 
-								if(LEDMAP[i][j - 1] != LED_VOID)
-									SetRgbBrightnessFactor(LEDMAP[i][j - 1], brightness);
-
-								if(LEDMAP[i][j + 1] != LED_VOID)
-									SetRgbBrightnessFactor(LEDMAP[i][j + 1], brightness);
-
-								if(LEDMAP[i - 1][j] != LED_VOID)
-									SetRgbBrightnessFactor(LEDMAP[i - 1][j], brightness);
-
-								if(LEDMAP[i + 1][j] != LED_VOID)
-									SetRgbBrightnessFactor(LEDMAP[i + 1][j], brightness);
-							}
-						}
-						SetSinRgbBufferByID(index, GetRgbBrightnessFactor(index));
-						DecBrightnessFactor(index, 1);
-						keyindex++;
-					}else if(ledMode == 4){
-						if (index == (angleCount / 4) % KEY_NUMBER)
+				if(ledMode == 1){
+					SetSinRgbBufferByID(index, brightness);
+				}else if(ledMode == 2 || ledMode == 3){
+					if(_keyboard.GetButtonStatus(keyindex)){
+						if(ledMode == 2){
+							SetRgbBrightnessFactor(index, brightness);
+						}else if(ledMode == 3){
 							SetRgbBrightnessFactor(index, brightness);
 
-						SetSinRgbBufferByID(index, GetRgbBrightnessFactor(index));
-						DecBrightnessFactor(index, 2);
-						_keyboard._DelayUs(200);
+							if(LEDMAP[i][j - 1] != LED_VOID)
+								SetRgbBrightnessFactor(LEDMAP[i][j - 1], brightness);
+
+							if(LEDMAP[i][j + 1] != LED_VOID)
+								SetRgbBrightnessFactor(LEDMAP[i][j + 1], brightness);
+
+							if(LEDMAP[i - 1][j] != LED_VOID)
+								SetRgbBrightnessFactor(LEDMAP[i - 1][j], brightness);
+
+							if(LEDMAP[i + 1][j] != LED_VOID)
+								SetRgbBrightnessFactor(LEDMAP[i + 1][j], brightness);
+						}
 					}
+					SetSinRgbBufferByID(index, GetRgbBrightnessFactor(index));
+					DecBrightnessFactor(index, 1);
+					keyindex++;
+				}else if(ledMode == 4){
+					if (index == (angleCount / 4) % KEY_NUMBER)
+						SetRgbBrightnessFactor(index, brightness);
+
+					SetSinRgbBufferByID(index, GetRgbBrightnessFactor(index));
+					DecBrightnessFactor(index, 2);
+					_keyboard._DelayUs(200);
 				}
 			}
 		}
 
-		for(uint8_t i = KEY_NUMBER + 3; i < LED_NUMBER; i++){
+		for(uint8_t i = KEY_NUMBER; i < LED_NUMBER; i++){
 			SetSinRgbBufferByID(i, brightness);
 		}
 	}
