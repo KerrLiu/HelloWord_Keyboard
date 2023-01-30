@@ -69,6 +69,7 @@ void FnCombinationFactory()
 					switch(high){
 						case 0x60 :
 							hwled.SetLedMode((hwled.GetLedMode() + 1) % 5);
+							hwled.Init();
 							break;
 						case 0x61 :
 							if (low){
@@ -155,6 +156,7 @@ void Main()
 	// Keyboard Report Start
 	HAL_TIM_Base_Start_IT(&htim4);
 
+	hwled.Init();
 	while(true)
 	{
 		if(isKeyboardUpdate == NORMAL)

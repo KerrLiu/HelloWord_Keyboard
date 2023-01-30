@@ -12,7 +12,6 @@ class HWLed {
 			spiHandle(_spi)
 		{
 		// Init RGB buffer
-		/* TurnLight(); */
 		/* for (uint8_t i = 0; i < LED_NUMBER; i++) */
 		/* 	SetRgbBufferByID(i, Color_t{0, 0, 0}, 0); */
 		}
@@ -26,6 +25,7 @@ class HWLed {
 
 		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, uint8_t _brightness);
 		void SetSinRgbBufferByID(uint8_t _index, uint8_t _brightness);
+		void Init();
 		void SyncLights();
 
 		uint8_t GetBrightness() { return brightness; }

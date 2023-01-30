@@ -16,6 +16,12 @@ void HWLed::SetRgbBufferByID(uint8_t _keyId, HWLed::Color_t _color, uint8_t _bri
 	}
 }
 
+void HWLed::Init()
+{
+	for (uint8_t i = 0; i < LED_NUMBER; i++)
+		SetRgbBufferByID(i, Color_t{0, 0, 0}, 0);
+}
+
 void HWLed::SyncLights()
 {
 	while (isRgbTxBusy);
