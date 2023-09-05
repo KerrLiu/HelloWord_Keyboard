@@ -27,7 +27,7 @@
 
 
 /*------------------------ Begin Module Delay config ------------------------*/
-#define EEPROM_CONFIG_TIME 600000 * 1000  // 1 second equals 1000 milliseconds
+#define EEPROM_CONFIG_TIME 600 * 1000  // 1 second equals 1000 milliseconds
 #define LED_SLEEP_TIME 600 * 1000      // 1 second equals 1000 milliseconds
 /*------------------------ End Module Delay config ------------------------*/
 

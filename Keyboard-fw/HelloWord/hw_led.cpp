@@ -66,21 +66,21 @@ __attribute__((weak)) void HWLed::led_update_ports() {
   if(AnyLock){
     #if defined(LED_NUMS) && (LED_NUMS != NO_LED)
     if (AnyLock & 0x01) // Determine NumsLock
-      set_color(LED_NUMS, 200, 0, 0);
+      set_color(LED_NUMS, 255, 0, 0);
     else
       set_color(LED_NUMS, 0, 0, 0);
     #endif
 
     #if defined(LED_CAPS) && (LED_CAPS != NO_LED)
     if (AnyLock & 0x02) // Determine CapsLock
-      set_color(LED_CAPS, 0, 200, 0);
+      set_color(LED_CAPS, 0, 255, 0);
     else
       set_color(LED_CAPS, 0, 0, 0);
     #endif
 
     #if defined(LED_SCROLL) && (LED_SCROLL != NO_LED)
     if (AnyLock & 0x04) // Determine ScrollLock
-      set_color(LED_SCROLL, 0, 0, 200);
+      set_color(LED_SCROLL, 0, 0, 255);
     else
       set_color(LED_SCROLL, 0, 0, 0);
     #endif
