@@ -2,69 +2,44 @@
 #define HELLO_WORD_KEYBOARD_FW_HW_LED_H
 
 #include "spi.h"
-#include "hw_keyboard.h"
-#include "math.h"
-
+#include "hw_core.h"
+#include <cstdint>
+#include <stdlib.h>
 
 class HWLed {
-	public:
-		explicit HWLed(SPI_HandleTypeDef* _spi) :
-			spiHandle(_spi)
-		{
-		// Init RGB buffer
-		/* for (uint8_t i = 0; i < LED_NUMBER; i++) */
-		/* 	SetRgbBufferByID(i, Color_t{0, 0, 0}, 0); */
-		}
-		struct Color_t { uint8_t r, g, b; };
+public:
+  explicit HWLed(SPI_HandleTypeDef *_spi) : spiHandle(_spi) {
+    // explicit HWLed(SPI_HandleTypeDef *_spi) {
+    // Init RGB buffer
+    set_color_all(0, 0, 0);
+  }
 
-		enum SpiWs2812Byte_t : uint8_t {
-			// This should be tuned considering WS2812b clock timing
-			WS_HIGH = 0xFE, // 0b11111110
-			WS_LOW = 0xE0   // 0b11100000
-		};
+  volatile bool isRgbTxBusy{};
 
-		void SetRgbBufferByID(uint8_t _keyId, Color_t _color, uint8_t _brightness);
-		void SetSinRgbBufferByID(uint8_t _index, uint8_t _brightness);
-		void Init();
-		void SyncLights();
+  enum SpiWs2812Byte_t : uint8_t {
+    // This should be tuned considering WS2812b clock timing
+    WS_HIGH = 0xFE, // 0b11111110
+    WS_LOW = 0xE0   // 0b11100000
+  };
 
-		uint8_t GetBrightness() { return brightness; }
-		uint8_t GetLedMode() { return ledMode; }
-		uint8_t GetRgbBrightnessFactor(uint8_t _index);
-		void DecBrightnessFactor(uint8_t _index, uint8_t _dec);
+  void set_color(uint8_t index, uint8_t red, uint8_t green, uint8_t blue);
+  void set_color_all(uint8_t red, uint8_t green, uint8_t blue);
+  void init(void);
+  void flush(void);
 
-		void SetBrightness(uint8_t _brightness) { brightness = _brightness; }
-		void SetLedMode(uint8_t _ledMode) { ledMode = _ledMode; }
-		void SetRgbBrightnessFactor(uint8_t _index, uint8_t _value);
+#ifdef KEYBOARD_LOCK_STATE_ENABLE
+  // kb_lock_state_t g_kb_lock;
+  uint8_t AnyLock;
+  bool led_update_user();
+  bool led_update_kb();
+  void led_update_ports();
+#endif
 
-		// Lamp efficiency code
-		void Update(HWKeyboard _keyboard);
-
-		volatile bool isRgbTxBusy{};
-
-		bool isNumLocked = false;
-		bool isCapsLocked = false;
-		bool isScrollLocked = false;
-
-	private:
-		SPI_HandleTypeDef* spiHandle;
-		uint8_t rgbBuffer[LED_NUMBER][3][8]{};
-		uint8_t wsCommit[64] = {0};
-		uint8_t brightnessPreDiv = 2; // 1/4
-		uint8_t brightness = 20;
-		uint8_t ledMode = 0;
-
-		/*--------RGB Color Values--------*/
-		// uint8_t color_v = 1;
-		// bool color_flag = true;
-		uint8_t rgbBrightnessFactor[KEY_NUMBER] = {0};
-		uint16_t angleCount = 0;
-		const float PI = 3.14159265;
-		const float HALF_PI = PI / 2;
-		const float RADIAN_1 = PI / 180;
-		const uint8_t ANGLE_GAP = 120;
-		const uint8_t HALF_FF = 0xFF / 2;
+private:
+  SPI_HandleTypeDef *spiHandle;
+  uint8_t rgbBuffer[RGB_MATRIX_LED_COUNT][3][8]{};
+  uint8_t wsCommit[64] = {0};
+  const uint8_t brightnessPreDiv = 2; // 1/4
 };
-
 
 #endif

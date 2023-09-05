@@ -23,9 +23,9 @@ int main (int argc, char * argv[]){
 |`Fn` + `Space`|Chang Led Mode|complete|NO|
 |`Fn` + `Up`|Increase brightness|complete|NO|
 |`Fn` + `Down`|Decrease brightness|complete|NO|
-|`Fn` + `Left`|Lifting filter interval|complete|Delete|
-|`Fn` + `Right`|Reduce filter interval|complete|Delete|
-|`Fn` + `M`|Exchange win mac layout|complete|Yes|
+|`Fn` + `Win`|Exchange win mac layout|complete|Yes|
+|`Fn` + `Ins`|Save config to eeprom now|complete|Yes|
+|`Fn` + `Tab`|The Rgb led HUE value loop|complete|Yes|
 |`Fn` + `F1`|My Computer|complete|NO|
 |`Fn` + `F2`|Brightness Up|complete|NO|
 |`Fn` + `F3`|Brightness Down|complete|NO|
@@ -54,98 +54,54 @@ enum Consumer_t : int16_t
 	WWW_STOP = 0x0226, WWW_REFRESH = 0x0227, WWW_FAVORITES = 0x022A,
 
 	/*------------------------- HID Custom data don't send -------------------------*/
-	KEYSET_LIGHTMODE = 0x6000,
+    KEYSET_LIGHTMODE = 0x6000,
 	KEYSET_BRIGHTNESS_INC = 0x6101,
 	KEYSET_BRIGHTNESS_DEC = 0x6100,
 	KEYSET_FILTER_LEVEL_INC = 0x6201,
 	KEYSET_FILTER_LEVEL_DEC = 0x6200,
-	KEYSET_LAYOUT_WIN_MAC = 0x6300
+	KEYSET_LAYOUT_WIN_MAC = 0x6300,
+	KEYSET_CONFIG_SAVE = 0x6400,
+    KEYSET_HSV_HUE_LOOP = 0x6500,
 	/*------------------------- HID Consumer report data -------------------------*/
 };
-```
-
-# Keyboard Layout
-
-## Layout1(Win)
-
-```shell
-┌───┬───┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┐
-│Esc│   │F1 │F2 │F3 │F4 │ │F5 │F6 │F7 │F8 │ │F9 │F10│F11│F12│ │PS │
-├───┼───┼───┼───┼───┼───┼─┴─┬─┴─┬─┴─┬─┴─┬─┴─┼───┼───┼───┴───┤ ├───┤
-│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│ │Ins│
-├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
-│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │ │Del│
-├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │ │Hom│
-├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
-│  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │End│
-├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
-│Ctrl│GUI │Alt │                        │Alt│FN │Ctl│ ← │ ↓ │ → │││
-└────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
-```
-
-## Layout2(FN+)
-
-```shell
-┌───┬───┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┐
-│Esc│   │F1 │F2 │F3 │F4 │ │F5 │F6 │F7 │F8 │ │F9 │F10│F11│F12│ │PA │
-├───┼───┼───┼───┼───┼───┼─┴─┬─┴─┬─┴─┬─┴─┬─┴─┼───┼───┼───┴───┤ ├───┤
-│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│ │Ins│
-├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
-│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │ │Del│
-├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │ │PKU│
-├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
-│  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │PKD│
-├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
-│Ctrl│GUI │Alt │                        │Alt│FN │Ctl│ ← │ ↓ │ → │││
-└────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
-```
-
-## Layout3(Mac)
-
-```shell
-┌───┬───┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┬───┬───┬───┬─┬───┐
-│Esc│   │F1 │F2 │F3 │F4 │ │F5 │F6 │F7 │F8 │ │F9 │F10│F11│F12│ │PA │
-├───┼───┼───┼───┼───┼───┼─┴─┬─┴─┬─┴─┬─┴─┬─┴─┼───┼───┼───┴───┤ ├───┤
-│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Backsp│ │Ins│
-├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
-│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │  |\ │ │Del│
-├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-│ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │ ' │   Ent  │ │PKU│
-├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤ ├───┤
-│  Shft  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│ ↑ │ │PKD│
-├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬┴──┬───┼───┼─┴─┬┬┤
-│Ctrl│Alt │GUI │                        │GUI│FN │Alt│ ← │ ↓ │ → │││
-└────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┴───┴┴┘
 ```
 
 # Task plan
 |Task|Finished condition|
 |---|---|
-|HID Communication|in progress|
-|Flash IO|in progress|
-|Key Map|in progress|
-|Touch Bar|in progress|
-|Key Map On Host|in progress|
-|Touch Bar On Host|in progress|
-|LED Brightness|complete|
-|Lighting Effect|in progress|
-|Communication To Dynamic|in progress|
+|Shortcut keys|Need to modify|
+|Transplant QMK Firmware RGB_MATRIX|Need to modify|
+|Add Timer|Need to modify|
+|Delayed Save config|Need to modify|
+|EEPROM save config|Need to modify|
+|RAW HID|Developing|
+|HOST control config|Need to modify|
+|HOST save config|Need to modify|
+|Rewrite Keyboard Scan|Developing|
+|Touch Bar Slide|Developing|
+|Communication To Dynamic|Developing|
 
-## Single Task By Lighting Effect
-|Lighting Effect|Finished condition|
-|---|---|
-|TurnLight|complete|
-|Breathing lamp By SinRgb|complete|
-|One Button By SinRgb|complete|
-|Button Range By SinRgb|complete|
-|Gluttonous Snake By SinRgb|in progress|
+# How to Build
+1. Copy Layouts director all file replace HelloWord director file
+ - `hw_config.h`
+ - `hw_layout.h`
+ - `hw_layout.cpp`
+ - `rgb_matrix_kb.inc` or `rgb_matrix_user.inc`
+2. Run `build.sh` or `cmake`
 
-# Participants
-|Name|Code|Version used|Email/Git|
-|---|---|---|---|
-|Kerr|main|`V1.0` `V1.01`|[KerrForLiu](KerrForLiu@gmail.com)|
-|Mr. mysterious|Sin Rgb|`V1.0` `V1.01`|[krakenCN](https://github.com/krakenCN)|
-|Gralerfics|keyNearMap|`V1.0`|[Gralerfics](https://github.com/Gralerfics)|
-|俊杰|lastHidBuffer|`V1.0` `V1.01`|null|
+# How to add Layouts
+1. File must be created
+ - `hw_config.h`
+ - `hw_layout.h`
+ - `hw_layout.cpp`
+2. Optional Create File
+ - `rgb_matrix_kb.inc` or `rgb_matrix_user.inc`
+3. File Role
+ - `hw_config.h` file
+  The file contains necessary macro configurations
+ - `hw_layout.h` file need `include` `hw_core.h`
+  The file is Layouts Keymap
+ - `hw_layout.cpp` file need `include` `hw_layout.h`
+  The file is add some `extern` `var` and `rewrite` `method`
+
+

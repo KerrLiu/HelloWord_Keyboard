@@ -54,6 +54,7 @@ endif ()
 
 include_directories(
         ./
+        lib/lib8tion
         USB_DEVICE/App
         USB_DEVICE/Target
         Core/Inc
@@ -63,6 +64,10 @@ include_directories(
         Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc
         Drivers/CMSIS/Device/ST/STM32F1xx/Include
         Drivers/CMSIS/Include
+        HelloWord
+        HelloWord/rgb_matrix
+        HelloWord/rgb_matrix/animations
+        HelloWord/rgb_matrix/runners
         UserApp
 )
 
@@ -70,6 +75,8 @@ add_definitions(-DUSE_HAL_DRIVER -DSTM32F103xB)
 
 file(GLOB_RECURSE SOURCES
         startup/*.*
+        lib/lib8tion/*.*
+	# lib/arm_atsam/*.*
         Middlewares/*.*
         Drivers/*.*
         USB_DEVICE/*.*
@@ -80,7 +87,7 @@ file(GLOB_RECURSE SOURCES
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103CBTx_FLASH.ld)
 
-add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
+add_link_options(-Wl,--no-warn-rwx-segments,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
 add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
@@ -88,6 +95,7 @@ add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
+set(UF2_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.uf2)
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}

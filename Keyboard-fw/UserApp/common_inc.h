@@ -23,7 +23,8 @@ void OnTimerCallback();
 
 /*---------------------------- C++ Scope ---------------------------*/
 #include "HelloWord/Utils/Memory/random_flash_interface.h"
-
+#include "hw_core.h"
+#include "timer.h"
 
 #endif
 #endif

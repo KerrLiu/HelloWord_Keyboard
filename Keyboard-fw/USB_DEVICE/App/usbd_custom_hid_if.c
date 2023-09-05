@@ -32,7 +32,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state);
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -134,7 +134,7 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
 	0xC0  ,                 //   End Collection
 
 #if 1
-	//	RAW HID
+	// RAW HID
 	0x06, LSB(RAWHID_USAGE_PAGE), MSB(RAWHID_USAGE_PAGE),	// 30
 	0x0A, LSB(RAWHID_USAGE), MSB(RAWHID_USAGE),
 
@@ -153,7 +153,7 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
 	0x91, 0x02,				// Output (array)
 	0xC0,					// end collection
 #endif
-
+	// CONSUMER HID
 	0x05, 0x0C, // Usage Page (Consumer Devices)
 	0x09, 0x01, // Usage (Consumer Control)
 	0xA1, 0x01, // Collection (Application)
@@ -207,7 +207,7 @@ USBD_CUSTOM_HID_ItfTypeDef USBD_CustomHID_fops_FS =
 	CUSTOM_HID_ReportDesc_FS,
 	CUSTOM_HID_Init_FS,
 	CUSTOM_HID_DeInit_FS,
-	CUSTOM_HID_OutEvent_FS
+	CUSTOM_HID_OutEvent_FS,
 };
 
 /** @defgroup USBD_CUSTOM_HID_Private_Functions USBD_CUSTOM_HID_Private_Functions
@@ -248,7 +248,7 @@ static int8_t CUSTOM_HID_DeInit_FS(void)
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 {
 	/* USER CODE BEGIN 6 */
-
+	HID_OnEventOutCallback(event_idx, state);
 
 	return (USBD_OK);
 	/* USER CODE END 6 */
