@@ -1,19 +1,13 @@
 #include "eeconfig.h"
-#include "timer.h"
 
 extern EEPROM eeprom;
 extern KeyboardConfig_t config;
 
-uint32_t g_eeprom_timer;
-
-void eeprom_init(){
-  g_eeprom_timer = 0;
+void eep_config_init(){
+  eeprom.Pull(0, config);
 }
 
-void eeprom_read_to_cfg(){
-  
+void eep_config_update(){
+  eeprom.Push(0, config);
 }
-void eeprom_write(){}
-void eeprom_synctime(){}
-void eeprom_task(){}
 

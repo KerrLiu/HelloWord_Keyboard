@@ -11,10 +11,10 @@ KeyboardConfig_t config;
 extern rgb_config_t rgb_matrix_config;
 #endif
 
-inline uint8_t isKeyboardState = SENDED;
-inline bool isKeyDownComb = false;
-inline uint8_t report_ID = 1;
-inline bool report_flag = true;
+volatile uint8_t isKeyboardState = SENDED;
+volatile bool isKeyDownComb = false;
+volatile uint8_t report_ID = 1;
+volatile bool report_flag = true;
 
 void SendReportKeyboardHID(uint8_t *_HidBuffer) {
   if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, _HidBuffer, KEY_REPORT_SIZE) == USBD_BUSY){
@@ -28,16 +28,9 @@ void SendReportConsumerHID(uint8_t *_HidBuffer) {
   USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, _HidBuffer, KEY_REPORT_SIZE);
 }
 
-#ifdef LED_SLEEP_ENABLE
-uint32_t led_sleep_time = timer_read32();
-#endif
-
 #ifdef EEPROM_CONFIG
-
 EEPROM eeprom;
-
 uint32_t eeprom_time = timer_read32();
-
 #endif
 
 void KbSetCfg(uint8_t high, uint8_t low) {
@@ -145,11 +138,8 @@ void UpdateKeyboardHID() {
   if (keyboard.IsUpdateHidBuffer()) {
     SendReportKeyboardHID(keyboard.GetHidReportBuffer(report_ID));
     keyboard.UpdateLastHidBuffer();
-#ifdef LED_SLEEP_TIME
-    if(rgb_matrix_config.mode){
-      rgb_matrix_config.enable = 1;
-      led_sleep_time = timer_read32();
-    }
+#ifdef RGB_MATRIX_ENABLE
+    switch_events();
 #endif
   }
   isKeyboardState = SENDED;
@@ -170,12 +160,7 @@ void HelloWordInit(){
 }
 
 void SecondLoop(){
-#ifdef LED_SLEEP_ENABLE
-  if (rgb_matrix_config.enable && timer_elapsed32(led_sleep_time) > LED_SLEEP_TIME) {
-    rgb_matrix_config.enable = 0;
-    rgb_matrix_init();
-  }
-#endif
+
 }
 
 void MinuteLoop(){
@@ -193,10 +178,7 @@ void Main() {
 
   while (true) {
 #ifdef RGB_MATRIX_ENABLE
-#ifdef LED_SLEEP_ENABLE
-    if (rgb_matrix_config.enable)
-#endif
-      rgb_matrix_task();
+    rgb_matrix_task();
 #endif
 
     if (!(timer_read32() & 0x3FF)) 
@@ -206,7 +188,6 @@ void Main() {
       MinuteLoop();
 
     FnCombFactory();
-    switch_events();
   }
 }
 
@@ -235,22 +216,10 @@ extern "C" void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
 }
 
 // extern "C" void HID_RxCpltCallback(uint8_t *_data) {
-// #ifdef KEYBOARD_LOCK_STATE_ENABLE
-//   hwled.isNumLocked = _data[1] & 0x01;
-//   hwled.isCapsLocked = _data[1] & 0x02;
-//   hwled.isScrollLocked = _data[1] & 0x04;
-// #endif
 // }
 
 extern "C" void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state) {
-#ifdef KEYBOARD_LOCK_STATE_ENABLE
   if (event_idx == 1) {
-    hwled.AnyLock = state;
-    // hwled.g_kb_lock.NumLock = state & 0x01;
-    // hwled.g_kb_lock.CapsLock = state & 0x02;
-    // hwled.g_kb_lock.ScrollLock = state & 0x04;
-    // hwled.g_kb_lock.ComposeLock = state & 0x08;
-    // hwled.g_kb_lock.KanaLock = state & 0x10;
+    hwled.anylock = state;
   }
-#endif
 }

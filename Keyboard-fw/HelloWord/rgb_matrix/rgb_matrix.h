@@ -93,8 +93,8 @@ void rgb_matrix_task(void);
 // This runs after another backlight effect and replaces
 // colors already set
 void rgb_matrix_indicators(void);
-bool rgb_matrix_indicators_kb(void);
-bool rgb_matrix_indicators_user(void);
+bool rgb_matrix_indicators_kb(uint8_t anylock);
+bool rgb_matrix_indicators_user(uint8_t anylock);
 
 void rgb_matrix_indicators_advanced(effect_params_t *params);
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max);

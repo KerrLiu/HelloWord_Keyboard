@@ -76,6 +76,7 @@ uint8_t *HWKeyboard::Remap(uint8_t _layer) {
 
   int i = 0, j = 0;
   while (8 * i + j < IO_NUMBER - 6) // TouchBar Number is 6
+  // while (8 * i + j < IO_NUMBER)
   {
     for (j = 0; j < 8; j++) {
       /* index = (int16_t) (keyMap[_layer][8 * i + j] / 8 + 1); // +1 for

@@ -243,7 +243,6 @@ static void rgb_task_sync(void) {
     // eeconfig_flush_rgb_matrix(false);
     // next task
     if (timer_elapsed32(g_rgb_timer) >= RGB_MATRIX_LED_FLUSH_LIMIT) rgb_task_state = STARTING;
-    // rgb_task_state = STARTING;
 }
 
 static void rgb_task_start(void) {
@@ -263,10 +262,10 @@ static void rgb_task_start(void) {
 static void rgb_task_render(uint8_t effect) {
     bool rendering         = false;
     rgb_effect_params.init = (effect != rgb_last_effect) || (rgb_matrix_config.enable != rgb_last_enable);
-    // if (rgb_effect_params.flags != rgb_matrix_config.flags) {
-    //     rgb_effect_params.flags = rgb_matrix_config.flags;
-    //     rgb_matrix_set_color_all(0, 0, 0);
-    // }
+    if (rgb_effect_params.flags != rgb_matrix_config.flags) {
+        rgb_effect_params.flags = rgb_matrix_config.flags;
+        rgb_matrix_set_color_all(0, 0, 0);
+    }
 
     // each effect can opt to do calculations
     // and/or request PWM buffer updates.
@@ -343,9 +342,7 @@ void rgb_matrix_task(void) {
 #endif // RGB_MATRIX_TIMEOUT > 0
                              false;
 
-    // uint8_t effect = suspend_backlight || !rgb_matrix_config.enable ? 0 : rgb_matrix_config.mode;
-    // uint8_t effect = !rgb_matrix_config.enable ? 0 : rgb_matrix_config.mode;
-    uint8_t effect = rgb_matrix_config.mode;
+    uint8_t effect = suspend_backlight || !rgb_matrix_config.enable ? 0 : rgb_matrix_config.mode;
 
     switch (rgb_task_state) {
         case STARTING:
@@ -353,13 +350,10 @@ void rgb_matrix_task(void) {
             break;
         case RENDERING:
             rgb_task_render(effect);
-            // if (effect) {
-            //     rgb_matrix_indicators();
-            //     rgb_matrix_indicators_advanced(&rgb_effect_params);
-            // }
-            #ifdef KEYBOARD_LOCK_STATE_ENABLE
-            hwled.led_update_kb();
-            #endif
+            if (effect) {
+                rgb_matrix_indicators();
+                rgb_matrix_indicators_advanced(&rgb_effect_params);
+            }
             break;
         case FLUSHING:
             rgb_task_flush(effect);
@@ -371,14 +365,14 @@ void rgb_matrix_task(void) {
 }
 
 void rgb_matrix_indicators(void) {
-    rgb_matrix_indicators_kb();
+    rgb_matrix_indicators_kb(hwled.anylock);
 }
 
-__attribute__((weak)) bool rgb_matrix_indicators_kb(void) {
-    return rgb_matrix_indicators_user();
+__attribute__((weak)) bool rgb_matrix_indicators_kb(uint8_t anylock) {
+    return rgb_matrix_indicators_user(anylock);
 }
 
-__attribute__((weak)) bool rgb_matrix_indicators_user(void) {
+__attribute__((weak)) bool rgb_matrix_indicators_user(uint8_t anylock) {
     return true;
 }
 

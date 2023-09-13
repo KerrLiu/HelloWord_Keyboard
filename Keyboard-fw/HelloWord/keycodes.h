@@ -60,7 +60,7 @@ enum consumer_ranges
 	KEYSET_FILTER_LEVEL_DEC = 0x6200,
 	KEYSET_LAYOUT_WIN_MAC = 0x6300,
 	KEYSET_CONFIG_SAVE = 0x6400,
-  KEYSET_HSV_HUE_LOOP = 0x6500,
+ KEYSET_HSV_HUE_LOOP = 0x6500,
 	/*------------------------- HID Consumer report data -------------------------*/
 };
 

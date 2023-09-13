@@ -45,11 +45,6 @@ typedef struct PACKED
 
 extern KeyboardConfig_t config;
 
-#if defined(EEPROM_CONFIG)
-void eep_config_init();
-void eep_config_update();
-#endif
-
 void config_init();
 void config_set();
 void config_update();

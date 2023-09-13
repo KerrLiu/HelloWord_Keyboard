@@ -21,14 +21,11 @@
 #define RGB_MATRIX_ENABLE              // Don't need RGB led can delete it
 #define TOUCHBAR_ENABLE                // Don't need touch bar can delete it
 #define EEPROM_CONFIG                  // Don't need EEPROM can delete it
-#define LED_SLEEP_ENABLE               // Don't need EEPROM can delete it
-#define KEYBOARD_LOCK_STATE_ENABLE     // Don't need keyboard lock state can delete it
 /*---------------------------- End Module config ----------------------------*/
 
 
 /*------------------------ Begin Module Delay config ------------------------*/
 #define EEPROM_CONFIG_TIME 600 * 1000     // 1 second equals 1000 milliseconds
-#define LED_SLEEP_TIME 600 * 1000         // 1 second equals 1000 milliseconds
 /*------------------------ End Module Delay config ------------------------*/
 
 #define RGB_MATRIX_KEYREACTIVE_ENABLED    // KEYREACTIVE ENABLED
@@ -36,11 +33,12 @@
 
 /*------------------------- Begin Led Module config -------------------------*/
 #define LED_NUMS 32                        // NumLock led index or NO_LED
-#define LED_CAPS 53                       // CapsLock led index or NO_LED
+#define LED_CAPS 53                        // CapsLock led index or NO_LED
 #define LED_SCROLL 3                       // ScrollLock led index or NO_LED
 #define LED_COMPOSE NO_LED                 // ComposeLock led index or NO_LED
 #define LED_KANA NO_LED                    // KanaLock led index or NO_LED
 
+#define RGB_MATRIX_TIMEOUT 600 * 1000      // Not pressing the button to turn off the light after these times
 #define RGB_MATRIX_BRIGHTNESS_STEP 32
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS UINT8_MAX - 32
 #define RGB_MATRIX_DEFAULT_HUE 0

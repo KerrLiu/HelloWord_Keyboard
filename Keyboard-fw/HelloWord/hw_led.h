@@ -27,13 +27,13 @@ public:
   void init(void);
   void flush(void);
 
-#ifdef KEYBOARD_LOCK_STATE_ENABLE
+// #ifdef KEYBOARD_LOCK_STATE_ENABLE
   // kb_lock_state_t g_kb_lock;
-  uint8_t AnyLock;
-  bool led_update_user();
-  bool led_update_kb();
-  void led_update_ports();
-#endif
+  uint8_t anylock;
+  // bool led_update_user();
+  // bool led_update_kb();
+  // void led_update_ports();
+// #endif
 
 private:
   SPI_HandleTypeDef *spiHandle;

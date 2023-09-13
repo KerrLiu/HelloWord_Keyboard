@@ -40,29 +40,29 @@ void HWLed::flush(void) {
   HAL_SPI_Transmit_DMA(&hspi2, wsCommit, 64);
 }
 
-#ifdef KEYBOARD_LOCK_STATE_ENABLE
+// #ifdef KEYBOARD_LOCK_STATE_ENABLE
 /** \brief Lock LED update callback - keymap/user level
  *
  * \return True if led_update_kb() should run its own code, false otherwise.
  */
-__attribute__((weak)) bool HWLed::led_update_user() {
-  return true;
-}
+// __attribute__((weak)) bool HWLed::led_update_user() {
+//   return true;
+// }
 
 /** \brief Lock LED update callback - keyboard level
  *
  * \return Ignored for now.
  */
-__attribute__((weak)) bool HWLed::led_update_kb() {
-  bool res = led_update_user();
-  if (res) {
-      led_update_ports();
-  }
-  return res;
-}
+// __attribute__((weak)) bool HWLed::led_update_kb() {
+//   bool res = led_update_user();
+//   if (res) {
+//       led_update_ports();
+//   }
+//   return res;
+// }
 
 
-__attribute__((weak)) void HWLed::led_update_ports() {
+/*__attribute__((weak)) void HWLed::led_update_ports() {
   if(AnyLock){
     #if defined(LED_NUMS) && (LED_NUMS != NO_LED)
     if (AnyLock & 0x01) // Determine NumsLock
@@ -99,7 +99,7 @@ __attribute__((weak)) void HWLed::led_update_ports() {
       set_color(LED_KANA, 0, 0, 0);
     #endif
   }
-}
+}*/
 
 /*
 __attribute__((weak)) void HWLed::led_update_ports() {
@@ -141,4 +141,4 @@ __attribute__((weak)) void HWLed::led_update_ports() {
   }
 }*/
 
-#endif
+// #endif

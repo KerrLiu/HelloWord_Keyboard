@@ -1,21 +1,11 @@
 #include "configurations.h"
 
-#ifdef RGB_MATRIX_ENABLE
-extern rgb_config_t rgb_matrix_config;
+#ifdef EEPROM_CONFIG
+#include "HelloWord/eeconfig/eeconfig.h"
 #endif
 
-#ifdef EEPROM_CONFIG
-#include "HelloWord/Utils/Memory/random_flash_interface.h"
-
-extern EEPROM eeprom;
-
-void eep_config_init(){
-  eeprom.Pull(0, config);
-}
-void eep_config_update(){
-  eeprom.Push(0, config);
-}
-
+#ifdef RGB_MATRIX_ENABLE
+extern rgb_config_t rgb_matrix_config;
 #endif
 
 void config_init(){
@@ -30,7 +20,8 @@ if (config.configStatus != CONFIG_OK) {
                                .hsv = {RGB_MATRIX_DEFAULT_HUE,
                                        RGB_MATRIX_DEFAULT_SAT,
                                        RGB_MATRIX_DEFAULT_VAL},
-                               .speed = RGB_MATRIX_DEFAULT_SPD};
+                               .speed = RGB_MATRIX_DEFAULT_SPD,
+                               .flags = LED_FLAG_ALL};
 #endif
     // Use default settings
     config = KeyboardConfig_t{.configStatus = CONFIG_COMMIT,

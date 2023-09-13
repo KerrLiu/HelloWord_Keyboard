@@ -61,84 +61,43 @@ led_config_t g_led_config = {
    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
 };
 
-/*
-const uint8_t LEDMAP[MATRIX_COLS][MATRIX_ROWS]{
-    {NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
-     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
-     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED},
-    {NO_LED, 13, NO_LED, 12, 11, 10, 9, NO_LED, 8, 7,
-     6,        5,  NO_LED, 4,  3,  2,  1, NO_LED, 0, NO_LED},
-    {NO_LED, 14, 15,       16, 17, 18,       19, 20,       21, 22,
-     23,       24, NO_LED, 25, 26, NO_LED, 27, NO_LED, 28, NO_LED},
-    {NO_LED, 43, NO_LED, 42, 41, 40,       39, 38,       37, 36,
-     35,       34, 33,       32, 31, NO_LED, 30, NO_LED, 29, NO_LED},
-    {NO_LED, 44,       NO_LED, 45,       46, 47,      48,
-     49,       50,       51,       52,       53, 54,      55,
-     NO_LED, NO_LED, 56,       NO_LED, 57, NO_LED},
-    {NO_LED, 71, NO_LED, NO_LED, 70, 69,       68, 67, 66,      65, 64,
-     63,       62, 61,       NO_LED, 60, NO_LED, 59, 58, NO_LED},
-    {NO_LED, 72,       73,       74,       NO_LED, NO_LED, NO_LED,
-     NO_LED, 75,       NO_LED, NO_LED, NO_LED, 76,       77,
-     78,       NO_LED, 79,       80,       81,       NO_LED},
-    {NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
-     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED,
-     NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED}};*/
-#endif
-
-#ifdef KEYBOARD_LOCK_STATE_ENABLE
-
-bool HWLed::led_update_user() {
-  return true;
-}
-
-bool HWLed::led_update_kb() {
-  bool res = led_update_user();
-  if (res) {
-      led_update_ports();
-  }
-  return res;
-}
-
-/** 
- * You can override the display effect of the status indicator here
- * uint8_t AnyLock & 0x01 nums 0x02 caps 0x04 scroll 0x08 compare 0x10 kana
- */
-void HWLed::led_update_ports(){
-  if(AnyLock){
+bool rgb_matrix_indicators_user(uint8_t anylock){
+  if(anylock){
     #if defined(LED_NUMS) && (LED_NUMS != NO_LED)
-    if (AnyLock & 0x01) // Determine NumsLock
-      set_color(LED_NUMS, 200, 0, 0);
+    if (anylock & 0x01) // Determine NumsLock
+      rgb_matrix_set_color(LED_NUMS, 255, 0, 0);
     else
-      set_color(LED_NUMS, 0, 0, 0);
+      rgb_matrix_set_color(LED_NUMS, 0, 0, 0);
     #endif
 
     #if defined(LED_CAPS) && (LED_CAPS != NO_LED)
-    if (AnyLock & 0x02) // Determine CapsLock
-      set_color(LED_CAPS, 0, 200, 0);
+    if (anylock & 0x02) // Determine CapsLock
+      rgb_matrix_set_color(LED_CAPS, 0, 255, 0);
     else
-      set_color(LED_CAPS, 0, 0, 0);
+      rgb_matrix_set_color(LED_CAPS, 0, 0, 0);
     #endif
 
     #if defined(LED_SCROLL) && (LED_SCROLL != NO_LED)
-    if (AnyLock & 0x04) // Determine ScrollLock
-      set_color(LED_SCROLL, 0, 0, 200);
+    if (anylock & 0x04) // Determine ScrollLock
+      rgb_matrix_set_color(LED_SCROLL, 0, 0, 255);
     else
-      set_color(LED_SCROLL, 0, 0, 0);
+      rgb_matrix_set_color(LED_SCROLL, 0, 0, 0);
     #endif
 
     #if defined(LED_COMPOSE) && (LED_COMPOSE != NO_LED)
-    if (AnyLock & 0x08) // Determine ComposeLock
-      set_color(LED_COMPOSE, 255, 255, 0);
+    if (anylock & 0x08) // Determine ComposeLock
+      rgb_matrix_set_color(LED_COMPOSE, 255, 255, 0);
     else
-      set_color(LED_COMPOSE, 0, 0, 0);
+      rgb_matrix_set_color(LED_COMPOSE, 0, 0, 0);
     #endif
 
     #if defined(LED_KANA) && (LED_KANA != NO_LED)
-    if (AnyLock & 0x10) // Determine KanaLock
-      set_color(LED_KANA, 255, 255, 255);
+    if (anylock & 0x10) // Determine KanaLock
+      rgb_matrix_set_color(LED_KANA, 255, 255, 255);
     else
-      set_color(LED_KANA, 0, 0, 0);
+      rgb_matrix_set_color(LED_KANA, 0, 0, 0);
     #endif
   }
+  return true;
 }
 #endif

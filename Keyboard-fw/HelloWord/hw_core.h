@@ -8,28 +8,24 @@
 #include "hw_types.h"
 
 #ifndef RGB_MATRIX_ENABLE
-#undef LED_SLEEP_ENABLE
-#undef KEYBOARD_LOCK_STATE_ENABLE
 #undef RGB_MATRIX_KEYREACTIVE_ENABLED
 #undef RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #endif
 
-#if defined(KEYBOARD_LOCK_STATE_ENABLE)
-  #ifndef LED_NUMS
-  #define LED_NUMS NO_LED
-  #endif
-  #ifndef LED_CAPS
-  #define LED_CAPS NO_LED
-  #endif
-  #ifndef LED_SCROLL
-  #define LED_SCROLL NO_LED
-  #endif
-  #ifndef LED_COMPOSE
-  #define LED_COMPOSE NO_LED
-  #endif
-  #ifndef LED_KANA
-  #define LED_KANA NO_LED
-  #endif
+#ifndef LED_NUMS
+#define LED_NUMS NO_LED
+#endif
+#ifndef LED_CAPS
+#define LED_CAPS NO_LED
+#endif
+#ifndef LED_SCROLL
+#define LED_SCROLL NO_LED
+#endif
+#ifndef LED_COMPOSE
+#define LED_COMPOSE NO_LED
+#endif
+#ifndef LED_KANA
+#define LED_KANA NO_LED
 #endif
 
 #if defined(EEPROM_CONFIG)
@@ -38,14 +34,6 @@
   #endif
 #else
 #undef EEPROM_CONFIG_TIME
-#endif
-
-#if defined(LED_SLEEP_ENABLE)
-  #ifndef LED_SLEEP_TIME
-  #define LED_SLEEP_TIME 600 * 1000
-  #endif
-#else
-#undef LED_SLEEP_TIME
 #endif
 
 #if defined(RGB_MATRIX_KEYREACTIVE_ENABLED)
