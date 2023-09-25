@@ -365,11 +365,11 @@ void rgb_matrix_task(void) {
 }
 
 void rgb_matrix_indicators(void) {
-    rgb_matrix_indicators_kb(hwled.anylock);
+    rgb_matrix_indicators_kb();
 }
 
-__attribute__((weak)) bool rgb_matrix_indicators_kb(uint8_t anylock) {
-    return rgb_matrix_indicators_user(anylock);
+__attribute__((weak)) bool rgb_matrix_indicators_kb(void) {
+    return rgb_matrix_indicators_user(hwled.anylock);
 }
 
 __attribute__((weak)) bool rgb_matrix_indicators_user(uint8_t anylock) {

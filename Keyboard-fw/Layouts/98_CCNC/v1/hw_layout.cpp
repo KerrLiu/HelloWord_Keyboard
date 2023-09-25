@@ -36,42 +36,41 @@ led_config_t g_led_config = {
  * uint8_t anylock & 0x01 nums 0x02 caps 0x04 scroll 0x08 compare 0x10 kana
  */
 bool rgb_matrix_indicators_user(uint8_t anylock){
-  if(anylock){
-    #if defined(LED_NUMS) && (LED_NUMS != NO_LED)
-    if (anylock & 0x01) // Determine NumsLock
-      rgb_matrix_set_color(LED_NUMS, 255, 0, 0);
-    else
-      rgb_matrix_set_color(LED_NUMS, 0, 0, 0);
-    #endif
+  #if defined(LED_NUMS) && (LED_NUMS != NO_LED)
+  if (anylock & 0x01) // Determine NumsLock
+    rgb_matrix_set_color(LED_NUMS, 255, 0, 0);
+  else
+    rgb_matrix_set_color(LED_NUMS, 0, 0, 0);
+  #endif
 
-    #if defined(LED_CAPS) && (LED_CAPS != NO_LED)
-    if (anylock & 0x02) // Determine CapsLock
-      rgb_matrix_set_color(LED_CAPS, 0, 255, 0);
-    else
-      rgb_matrix_set_color(LED_CAPS, 0, 0, 0);
-    #endif
+  #if defined(LED_CAPS) && (LED_CAPS != NO_LED)
+  if (anylock & 0x02) // Determine CapsLock
+    rgb_matrix_set_color(LED_CAPS, 0, 255, 0);
+  else
+    rgb_matrix_set_color(LED_CAPS, 0, 0, 0);
+  #endif
 
-    #if defined(LED_SCROLL) && (LED_SCROLL != NO_LED)
-    if (anylock & 0x04) // Determine ScrollLock
-      rgb_matrix_set_color(LED_SCROLL, 0, 0, 255);
-    else
-      rgb_matrix_set_color(LED_SCROLL, 0, 0, 0);
-    #endif
+  #if defined(LED_SCROLL) && (LED_SCROLL != NO_LED)
+  if (anylock & 0x04) // Determine ScrollLock
+    rgb_matrix_set_color(LED_SCROLL, 0, 0, 255);
+  else
+    rgb_matrix_set_color(LED_SCROLL, 0, 0, 0);
+  #endif
 
-    #if defined(LED_COMPOSE) && (LED_COMPOSE != NO_LED)
-    if (anylock & 0x08) // Determine ComposeLock
-      rgb_matrix_set_color(LED_COMPOSE, 255, 255, 0);
-    else
-      rgb_matrix_set_color(LED_COMPOSE, 0, 0, 0);
-    #endif
+  #if defined(LED_COMPOSE) && (LED_COMPOSE != NO_LED)
+  if (anylock & 0x08) // Determine ComposeLock
+    rgb_matrix_set_color(LED_COMPOSE, 255, 255, 0);
+  else
+    rgb_matrix_set_color(LED_COMPOSE, 0, 0, 0);
+  #endif
 
-    #if defined(LED_KANA) && (LED_KANA != NO_LED)
-    if (anylock & 0x10) // Determine KanaLock
-      rgb_matrix_set_color(LED_KANA, 255, 255, 255);
-    else
-      rgb_matrix_set_color(LED_KANA, 0, 0, 0);
-    #endif
-  }
+  #if defined(LED_KANA) && (LED_KANA != NO_LED)
+  if (anylock & 0x10) // Determine KanaLock
+    rgb_matrix_set_color(LED_KANA, 255, 255, 255);
+  else
+    rgb_matrix_set_color(LED_KANA, 0, 0, 0);
+  #endif
+
   return true;
 }
 

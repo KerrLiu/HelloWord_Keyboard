@@ -71,7 +71,6 @@ uint8_t *HWKeyboard::Remap(uint8_t _layer) {
     }
     remapBuffer[i] = ~remapBuffer[i];
   }
-  // memcpy(lastHidBuffer, hidBuffer, KEY_REPORT_SIZE);
   memset(hidBuffer, 0, KEY_REPORT_SIZE);
 
   int i = 0, j = 0;

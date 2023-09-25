@@ -220,6 +220,6 @@ extern "C" void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
 
 extern "C" void HID_OnEventOutCallback(uint8_t event_idx, uint8_t state) {
   if (event_idx == 1) {
-    hwled.anylock = state;
+      hwled.anylock = state;
   }
 }
